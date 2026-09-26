@@ -1,0 +1,1001 @@
+{
+  "headline": "United Nations General Assembly: Iran, Trump, Ukraine",
+  "date": "2026-09-23",
+  "model": "gemini-3.8-flash",
+  "variants": {
+    "C": {
+      "headline_dig": {
+        "calls": [
+          {
+            "usage": {
+              "prompt": 1572,
+              "tool_use_prompt": 0,
+              "output": 2276,
+              "thinking": 0,
+              "total": 3848
+            },
+            "seconds": 7.4,
+            "finish_reason": "FinishReason.STOP",
+            "thinking_level": "low",
+            "grounded": true,
+            "result": {
+              "what_happened": "At the 81st United Nations General Assembly in New York, President Donald Trump delivered an address threatening to 'annihilate' Iran if conflict negotiations stall, while envoys held side talks with Iranian delegates and Trump scheduled meetings with Ukrainian President Volodymyr Zelenskyy.",
+              "why_now": "The annual UN General Assembly high-level debate brings head-of-state diplomacy to New York amid a nearly seven-month active conflict involving the US and Iran, alongside mounting friction over the grinding war between Russia and Ukraine.",
+              "at_stake": "The security of key global shipping chokepoints like the Strait of Hormuz, stability across world energy markets, and the future viability of multinational institutions are on the line as unilateral deterrence clashes with global diplomatic frameworks.",
+              "contested": "While the White House framed maximalist rhetoric as necessary leverage to force rapid settlements, Iranian President Masoud Pezeshkian denounced US military aggression from the same podium, and foreign leaders questioned whether coercive threats undermine durable conflict resolution.",
+              "to_watch": [
+                "Outcomes of sideline meetings between US envoys and Iranian foreign ministry officials regarding regional maritime de-escalation [1.2.2]",
+                "Bilateral discussions between Donald Trump and Ukrainian President Volodymyr Zelenskyy concerning energy infrastructure strikes",
+                "Security Council responses to Iranian assertions regarding civilian casualties and international legal violations"
+              ],
+              "coverage": "broad",
+              "trails": [
+                {
+                  "move": "tension",
+                  "dimension": "social",
+                  "question": "Why do leaders deploy total destruction rhetoric while simultaneously conducting quiet bilateral negotiations in adjoining rooms?",
+                  "hook": "Hours after threatening Iran's annihilation at the podium, US envoys met Iranian officials backstage.",
+                  "seed": "coercive diplomacy public threats private negotiations international relations",
+                  "relevance": 0.8499,
+                  "picked_by": "best social",
+                  "rank": 3
+                },
+                {
+                  "move": "mechanism",
+                  "dimension": "semantic",
+                  "question": "How do host country visa obligations actually constrain United Nations diplomacy during active military conflicts?",
+                  "hook": "Iranian President Pezeshkian's attendance remained uncertain until Washington issued a last-minute travel visa.",
+                  "seed": "UN Headquarters Agreement host country visa obligations diplomatic immunity",
+                  "relevance": 0.8115,
+                  "picked_by": "MMR 0.327",
+                  "rank": 4
+                },
+                {
+                  "move": "precedent",
+                  "dimension": "semantic",
+                  "question": "When has public General Assembly brinkmanship ever produced a verified multilateral peace accord afterwards?",
+                  "hook": "Trump claimed past podium confrontations pressured adversaries into landmark global diplomatic settlements.",
+                  "seed": "UN General Assembly rhetoric historical peace treaty negotiation outcomes",
+                  "relevance": 0.8203,
+                  "picked_by": "best semantic",
+                  "rank": 1
+                },
+                {
+                  "move": "stakes",
+                  "dimension": "experiential",
+                  "question": "How do local energy workforces survive when refineries and grids become primary diplomatic bargaining chips?",
+                  "hook": "Negotiators debated halting mutual infrastructure attacks while regional diesel plants burned across battle lines.",
+                  "seed": "critical energy infrastructure warfare civilian survival electricity grid strikes",
+                  "relevance": 0.7769,
+                  "picked_by": "best experiential",
+                  "rank": 2
+                },
+                {
+                  "move": "frame",
+                  "dimension": "social",
+                  "question": "Why do middle-power states interpret unilateral ceasefire enforcement as extortion rather than security stabilization?",
+                  "hook": "Iran framed US security ultimatums as unprovoked aggression, while Washington defined them as counter-terror defense.",
+                  "seed": "unilateral intervention legitimacy sovereignty UN charter self defense debate",
+                  "relevance": 0.7827
+                },
+                {
+                  "move": "hidden",
+                  "dimension": "social",
+                  "question": "Which backchannel intermediaries carry actual diplomatic weight when warring parties refuse direct ambassadorial communication?",
+                  "hook": "Talks on de-escalation relied on Pakistani and Qatari envoys shuffling proposals between hotel delegations.",
+                  "seed": "backchannel diplomacy third party mediation mechanisms modern conflict resolution",
+                  "relevance": 0.7729
+                },
+                {
+                  "move": "scale",
+                  "dimension": "semantic",
+                  "question": "How fast do localized naval threats in maritime straits translate into household commodity spikes globally?",
+                  "hook": "Rhetoric over the Strait of Hormuz immediately spiked maritime tanker insurance rates worldwide.",
+                  "seed": "Strait of Hormuz commercial shipping disruption global oil price transmission",
+                  "relevance": 0.7549
+                },
+                {
+                  "move": "unknowns",
+                  "dimension": "experiential",
+                  "question": "What empirical metrics distinguish between post-strike military degradation and actual long-term political submission?",
+                  "hook": "Officials debated whether seven months of sustained missile strikes altered adversary governance or deepened defiance.",
+                  "seed": "strategic bombing effectiveness political transformation versus military capability degradation",
+                  "relevance": 0.7531
+                }
+              ]
+            },
+            "search_queries": [
+              "UN General Assembly Iran Trump Ukraine September 2024",
+              "United Nations General Assembly Iran Trump Ukraine September 2024 CNN"
+            ],
+            "sources_total": 6,
+            "sources_cited": 6,
+            "sources_top5": [
+              {
+                "domain": "sentinelcolorado.com",
+                "url": "https://sentinelcolorado.com/uncategorized/trump-returns-to-un-at-a-moment-of-anxiety-about-iran-ai-and-the-future-of-the-world-body-itself/",
+                "cited": 4
+              },
+              {
+                "domain": "theguardian.com",
+                "url": "https://www.theguardian.com/world/2026/sep/24/united-nations-general-assembly-key-takeaways-day-two-iran-venezuela-ukraine",
+                "cited": 3
+              },
+              {
+                "domain": "wxxinews.org",
+                "url": "https://www.wxxinews.org/npr-news/2026-09-23/heres-what-happened-on-day-2-of-the-un-general-assembly",
+                "cited": 3
+              },
+              {
+                "domain": "pbs.org",
+                "url": "https://www.pbs.org/newshour/world/watch-live-trump-addresses-2026-united-nations-general-assembly",
+                "cited": 2
+              },
+              {
+                "domain": "cbsnews.com",
+                "url": "https://www.cbsnews.com/news/trump-address-united-nations-general-assembly-meetings-world-leaders-iran-ukraine/",
+                "cited": 1
+              }
+            ],
+            "retried": true,
+            "first_parse_error": "JSONDecodeError: Expecting value: line 6 column 14 (char 1354)"
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why do leaders deploy total destruction rhetoric while simultaneously conducting quiet bilateral negotiations in adjoining rooms?",
+          "hook": "Hours after threatening Iran's annihilation at the podium, US envoys met Iranian officials backstage.",
+          "seed": "coercive diplomacy public threats private negotiations international relations",
+          "relevance": 0.8499,
+          "picked_by": "best social",
+          "rank": 3
+        },
+        {
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How do host country visa obligations actually constrain United Nations diplomacy during active military conflicts?",
+          "hook": "Iranian President Pezeshkian's attendance remained uncertain until Washington issued a last-minute travel visa.",
+          "seed": "UN Headquarters Agreement host country visa obligations diplomatic immunity",
+          "relevance": 0.8115,
+          "picked_by": "MMR 0.327",
+          "rank": 4
+        },
+        {
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When has public General Assembly brinkmanship ever produced a verified multilateral peace accord afterwards?",
+          "hook": "Trump claimed past podium confrontations pressured adversaries into landmark global diplomatic settlements.",
+          "seed": "UN General Assembly rhetoric historical peace treaty negotiation outcomes",
+          "relevance": 0.8203,
+          "picked_by": "best semantic",
+          "rank": 1
+        },
+        {
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How do local energy workforces survive when refineries and grids become primary diplomatic bargaining chips?",
+          "hook": "Negotiators debated halting mutual infrastructure attacks while regional diesel plants burned across battle lines.",
+          "seed": "critical energy infrastructure warfare civilian survival electricity grid strikes",
+          "relevance": 0.7769,
+          "picked_by": "best experiential",
+          "rank": 2
+        },
+        {
+          "move": "frame",
+          "dimension": "social",
+          "question": "Why do middle-power states interpret unilateral ceasefire enforcement as extortion rather than security stabilization?",
+          "hook": "Iran framed US security ultimatums as unprovoked aggression, while Washington defined them as counter-terror defense.",
+          "seed": "unilateral intervention legitimacy sovereignty UN charter self defense debate",
+          "relevance": 0.7827
+        },
+        {
+          "move": "hidden",
+          "dimension": "social",
+          "question": "Which backchannel intermediaries carry actual diplomatic weight when warring parties refuse direct ambassadorial communication?",
+          "hook": "Talks on de-escalation relied on Pakistani and Qatari envoys shuffling proposals between hotel delegations.",
+          "seed": "backchannel diplomacy third party mediation mechanisms modern conflict resolution",
+          "relevance": 0.7729
+        },
+        {
+          "move": "scale",
+          "dimension": "semantic",
+          "question": "How fast do localized naval threats in maritime straits translate into household commodity spikes globally?",
+          "hook": "Rhetoric over the Strait of Hormuz immediately spiked maritime tanker insurance rates worldwide.",
+          "seed": "Strait of Hormuz commercial shipping disruption global oil price transmission",
+          "relevance": 0.7549
+        },
+        {
+          "move": "unknowns",
+          "dimension": "experiential",
+          "question": "What empirical metrics distinguish between post-strike military degradation and actual long-term political submission?",
+          "hook": "Officials debated whether seven months of sustained missile strikes altered adversary governance or deepened defiance.",
+          "seed": "strategic bombing effectiveness political transformation versus military capability degradation",
+          "relevance": 0.7531
+        }
+      ],
+      "shown": [
+        {
+          "rank": 1,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When has public General Assembly brinkmanship ever produced a verified multilateral peace accord afterwards?",
+          "hook": "Trump claimed past podium confrontations pressured adversaries into landmark global diplomatic settlements.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How do local energy workforces survive when refineries and grids become primary diplomatic bargaining chips?",
+          "hook": "Negotiators debated halting mutual infrastructure attacks while regional diesel plants burned across battle lines.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why do leaders deploy total destruction rhetoric while simultaneously conducting quiet bilateral negotiations in adjoining rooms?",
+          "hook": "Hours after threatening Iran's annihilation at the podium, US envoys met Iranian officials backstage.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How do host country visa obligations actually constrain United Nations diplomacy during active military conflicts?",
+          "hook": "Iranian President Pezeshkian's attendance remained uncertain until Washington issued a last-minute travel visa.",
+          "picked_by": "MMR 0.327"
+        }
+      ],
+      "trail1_dig": {
+        "calls": [
+          {
+            "usage": {
+              "prompt": 837,
+              "tool_use_prompt": 0,
+              "output": 1164,
+              "thinking": 0,
+              "total": 2001
+            },
+            "seconds": 8.6,
+            "finish_reason": "FinishReason.STOP",
+            "thinking_level": "low",
+            "grounded": true,
+            "result": {
+              "short_answer": "Public brinkmanship and grandstanding at the UN General Assembly podium have virtually never produced a verified multilateral peace accord on their own. Instead, theatrical threats and hardline rhetoric function as domestic posturing or public leverage, while durable, verified treaties are hammered out through months or years of confidential, backchannel diplomacy. At most, podium ultimatums signal red lines or catalyze external mediators to convene separate, closed-door negotiations.",
+              "deeper_story": "The UN General Assembly is structurally designed as a deliberative debating forum whose resolutions are non-binding under Chapter IV of the UN Charter, unlike the enforcement mandates of the Security Council. Historically, when leaders deploy rhetorical brinkmanship—such as ultimatums regarding nuclear capability, sovereignty disputes, or territorial conflicts—it rarely generates immediate diplomatic concessions from adversaries. Public threats create audience costs that make mutual compromise politically toxic back home. Consequently, major verified multilateral peace agreements, from the 1979 Egypt-Israel Peace Treaty and the 1995 Dayton Accords to the 2015 JCPOA, were engineered away from the General Assembly cameras in remote country retreats, neutral capitals, or bilateral working groups, with the UNGA serving only as a backdrop for post-hoc validation or symbolic grandstanding.",
+              "evidence": [
+                "Under the UN Charter, General Assembly resolutions carry moral and political weight but lack Chapter VII enforcement authority, preventing podium debates from imposing binding terms.",
+                "During the 1962 Cuban Missile Crisis, the pivotal diplomatic exchange took place via private letters and secret Robert Kennedy-Anatoly Dobrynin meetings, not Adlai Stevenson's theatrical UN presentation.",
+                "The 1978 Camp David Accords and 1993 Oslo Accords were negotiated in strict isolation without public UN deliberations, despite years of fiery General Assembly speeches on the Middle East.",
+                "Statistical studies of UN diplomacy show that bilateral backchannel talks and multilateral working groups account for verified accord verification mechanisms, rather than General Debate speeches."
+              ],
+              "still_open": "Diplomatic historians still debate whether aggressive public rhetoric ever truly accelerates concessions by convincing adversaries of erratic resolve (the 'madman theory'), or whether it universally hardens defensive alliances and eliminates the domestic political flexibility required to negotiate verifiable compliance mechanisms.",
+              "coverage": "broad",
+              "trails": [
+                {
+                  "move": "tension",
+                  "dimension": "social",
+                  "question": "Why do leaders use General Assembly speeches for ultimatums if public threats make compromise harder?",
+                  "hook": "Public red lines trigger immediate domestic audience costs that penalize subsequent diplomatic concessions.",
+                  "seed": "audience costs public diplomacy unga rhetoric bargaining model of war",
+                  "relevance": 0.864,
+                  "picked_by": "best social",
+                  "rank": 3
+                },
+                {
+                  "move": "mechanism",
+                  "dimension": "semantic",
+                  "question": "How do secret backchannels succeed in drafting verification regimes when plenary debates fail?",
+                  "hook": "Confidential negotiation rooms allow technical monitoring protocols to be drafted without immediate public leaks.",
+                  "seed": "backchannel diplomacy verification mechanisms multilateral arms control",
+                  "relevance": 0.8239,
+                  "picked_by": "MMR 0.344",
+                  "rank": 4
+                },
+                {
+                  "move": "precedent",
+                  "dimension": "semantic",
+                  "question": "When did high-profile theatrical UN confrontations actually alter the final terms of a treaty?",
+                  "hook": "Adlai Stevenson’s dramatic 1962 photographic reveal embarrassed Moscow but resolved no nuclear terms.",
+                  "seed": "historical UN confrontations diplomatic outcomes missile crisis treaties",
+                  "relevance": 0.8307,
+                  "picked_by": "best semantic",
+                  "rank": 1
+                },
+                {
+                  "move": "frame",
+                  "dimension": "social",
+                  "question": "Why do domestic constituencies reward rhetorical defiance even when it collapses peace negotiations?",
+                  "hook": "Speeches at the General Debate are broadcast directly to voter bases rather than delegates.",
+                  "seed": "domestic political incentives diplomatic grandstanding un general debate",
+                  "relevance": 0.8228
+                },
+                {
+                  "move": "stakes",
+                  "dimension": "experiential",
+                  "question": "What happens to front-line civilian monitors when public diplomatic grandstanding derails ceasefire verifications?",
+                  "hook": "Collapsed monitoring protocols directly precede artillery resumptions along disputed demarcation zones.",
+                  "seed": "ceasefire monitoring collapse civilian impact un verification missions",
+                  "relevance": 0.801,
+                  "picked_by": "best experiential",
+                  "rank": 2
+                },
+                {
+                  "move": "hidden",
+                  "dimension": "social",
+                  "question": "Who does the actual drafting of multilateral treaties while heads of state give speeches?",
+                  "hook": "Permanent career diplomats negotiate comma placements in side rooms while plenary addresses occur upstairs.",
+                  "seed": "role of working groups drafting multilateral treaties unga sidelines",
+                  "relevance": 0.8203
+                },
+                {
+                  "move": "scale",
+                  "dimension": "semantic",
+                  "question": "How long does a verified multilateral verification regime take compared to an annual UNGA cycle?",
+                  "hook": "Comprehensive arms control treaties average four to seven years of technical inspections modeling.",
+                  "seed": "average duration arms control treaty negotiations un verification",
+                  "relevance": 0.8036
+                },
+                {
+                  "move": "unknowns",
+                  "dimension": "semantic",
+                  "question": "Can the 'madman theory' ever be empirically separated from bluffing in historical peace deals?",
+                  "hook": "Declassified archives show adversaries often dismissed extreme podium rhetoric as routine domestic performance.",
+                  "seed": "madman theory empirical evidence deterrence international relations",
+                  "relevance": 0.8285
+                }
+              ]
+            },
+            "search_queries": [],
+            "sources_total": 0,
+            "sources_cited": 0,
+            "sources_top5": [],
+            "retried": false
+          }
+        ]
+      },
+      "trail1_candidates": [
+        {
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why do leaders use General Assembly speeches for ultimatums if public threats make compromise harder?",
+          "hook": "Public red lines trigger immediate domestic audience costs that penalize subsequent diplomatic concessions.",
+          "seed": "audience costs public diplomacy unga rhetoric bargaining model of war",
+          "relevance": 0.864,
+          "picked_by": "best social",
+          "rank": 3
+        },
+        {
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How do secret backchannels succeed in drafting verification regimes when plenary debates fail?",
+          "hook": "Confidential negotiation rooms allow technical monitoring protocols to be drafted without immediate public leaks.",
+          "seed": "backchannel diplomacy verification mechanisms multilateral arms control",
+          "relevance": 0.8239,
+          "picked_by": "MMR 0.344",
+          "rank": 4
+        },
+        {
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When did high-profile theatrical UN confrontations actually alter the final terms of a treaty?",
+          "hook": "Adlai Stevenson’s dramatic 1962 photographic reveal embarrassed Moscow but resolved no nuclear terms.",
+          "seed": "historical UN confrontations diplomatic outcomes missile crisis treaties",
+          "relevance": 0.8307,
+          "picked_by": "best semantic",
+          "rank": 1
+        },
+        {
+          "move": "frame",
+          "dimension": "social",
+          "question": "Why do domestic constituencies reward rhetorical defiance even when it collapses peace negotiations?",
+          "hook": "Speeches at the General Debate are broadcast directly to voter bases rather than delegates.",
+          "seed": "domestic political incentives diplomatic grandstanding un general debate",
+          "relevance": 0.8228
+        },
+        {
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "What happens to front-line civilian monitors when public diplomatic grandstanding derails ceasefire verifications?",
+          "hook": "Collapsed monitoring protocols directly precede artillery resumptions along disputed demarcation zones.",
+          "seed": "ceasefire monitoring collapse civilian impact un verification missions",
+          "relevance": 0.801,
+          "picked_by": "best experiential",
+          "rank": 2
+        },
+        {
+          "move": "hidden",
+          "dimension": "social",
+          "question": "Who does the actual drafting of multilateral treaties while heads of state give speeches?",
+          "hook": "Permanent career diplomats negotiate comma placements in side rooms while plenary addresses occur upstairs.",
+          "seed": "role of working groups drafting multilateral treaties unga sidelines",
+          "relevance": 0.8203
+        },
+        {
+          "move": "scale",
+          "dimension": "semantic",
+          "question": "How long does a verified multilateral verification regime take compared to an annual UNGA cycle?",
+          "hook": "Comprehensive arms control treaties average four to seven years of technical inspections modeling.",
+          "seed": "average duration arms control treaty negotiations un verification",
+          "relevance": 0.8036
+        },
+        {
+          "move": "unknowns",
+          "dimension": "semantic",
+          "question": "Can the 'madman theory' ever be empirically separated from bluffing in historical peace deals?",
+          "hook": "Declassified archives show adversaries often dismissed extreme podium rhetoric as routine domestic performance.",
+          "seed": "madman theory empirical evidence deterrence international relations",
+          "relevance": 0.8285
+        }
+      ],
+      "trail1_dropped_loops": [],
+      "trail1_shown": [
+        {
+          "rank": 1,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When did high-profile theatrical UN confrontations actually alter the final terms of a treaty?",
+          "hook": "Adlai Stevenson’s dramatic 1962 photographic reveal embarrassed Moscow but resolved no nuclear terms.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "What happens to front-line civilian monitors when public diplomatic grandstanding derails ceasefire verifications?",
+          "hook": "Collapsed monitoring protocols directly precede artillery resumptions along disputed demarcation zones.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why do leaders use General Assembly speeches for ultimatums if public threats make compromise harder?",
+          "hook": "Public red lines trigger immediate domestic audience costs that penalize subsequent diplomatic concessions.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How do secret backchannels succeed in drafting verification regimes when plenary debates fail?",
+          "hook": "Confidential negotiation rooms allow technical monitoring protocols to be drafted without immediate public leaks.",
+          "picked_by": "MMR 0.344"
+        }
+      ],
+      "token_totals": {
+        "headline": {
+          "prompt": 1572,
+          "tool_use_prompt": 0,
+          "output": 2276,
+          "thinking": 0,
+          "total": 3848
+        },
+        "trail1": {
+          "prompt": 837,
+          "tool_use_prompt": 0,
+          "output": 1164,
+          "thinking": 0,
+          "total": 2001
+        }
+      }
+    },
+    "D": {
+      "headline_dig": {
+        "calls": [
+          {
+            "usage": {
+              "prompt": 462,
+              "tool_use_prompt": 0,
+              "output": 794,
+              "thinking": 0,
+              "total": 1256
+            },
+            "seconds": 4.5,
+            "finish_reason": "FinishReason.STOP",
+            "thinking_level": "low",
+            "grounded": true,
+            "result": {
+              "what_happened": "U.S. President Donald Trump addressed the 81st United Nations General Assembly in New York, defending U.S. military action against Iran, threatening to \"annihilate\" the Islamic Republic if an agreement is not reached, and confronting ongoing security crises involving Ukraine.",
+              "why_now": "The remarks coincided with the annual September opening debate of the UN General Assembly, providing a global stage as the U.S. conflict with Iran approaches its seventh month and diplomatic pressure mounts around the Russia-Ukraine war.",
+              "at_stake": "At stake are regional stability in the Middle East, global energy flows through the Strait of Hormuz, the trajectory of international support for Ukraine, and the standing of multilateral institutions amidst rising unilateral U.S. foreign policy.",
+              "contested": "Critics and delegates, some of whom walked out, strongly condemned Trump's explicit threat to annihilate a fellow UN member state. Meanwhile, fact-checkers challenged several of his claims regarding settled foreign wars, climate science, and international agreements.",
+              "to_watch": [
+                "Iranian President Masoud Pezeshkian's response during his own General Assembly address",
+                "Outcomes of sideline meetings between Trump and Ukrainian President Volodymyr Zelenskyy",
+                "Further developments regarding low-level talks between U.S. envoys and Iranian officials"
+              ],
+              "coverage": "broad"
+            },
+            "search_queries": [],
+            "sources_total": 0,
+            "sources_cited": 0,
+            "sources_top5": [],
+            "retried": true,
+            "first_parse_error": "JSONDecodeError: Expecting value: line 6 column 14 (char 1446)"
+          },
+          {
+            "usage": {
+              "prompt": 871,
+              "tool_use_prompt": 0,
+              "output": 679,
+              "thinking": 2928,
+              "total": 4478
+            },
+            "seconds": 13.2,
+            "finish_reason": "FinishReason.STOP",
+            "thinking_level": "medium",
+            "grounded": false,
+            "result": {
+              "trails": [
+                {
+                  "move": "tension",
+                  "dimension": "social",
+                  "question": "Why do warring adversaries sustain quiet diplomatic talks while leaders publicly threaten total annihilation?",
+                  "hook": "Envoys hold low-level talks even as Trump threatens to annihilate the Islamic Republic.",
+                  "seed": "backchannel diplomacy during active military conflict",
+                  "relevance": 0.8189
+                },
+                {
+                  "move": "mechanism",
+                  "dimension": "semantic",
+                  "question": "How does the United Nations Charter legally address a member state threatening another with annihilation?",
+                  "hook": "Delegates walked out after Trump explicitly threatened to annihilate a fellow UN member state.",
+                  "seed": "UN Charter Article 2 4 prohibition on threat of force",
+                  "relevance": 0.8403,
+                  "picked_by": "best semantic",
+                  "rank": 1
+                },
+                {
+                  "move": "precedent",
+                  "dimension": "semantic",
+                  "question": "When in diplomatic history have General Assembly walkouts forced a major power to change policy?",
+                  "hook": "Several delegates walked out during Trump's speech defending military actions against Iran.",
+                  "seed": "diplomatic walkouts UN General Assembly historical impact",
+                  "relevance": 0.8396,
+                  "picked_by": "MMR 0.330",
+                  "rank": 4
+                },
+                {
+                  "move": "stakes",
+                  "dimension": "experiential",
+                  "question": "How do commercial shipping crews navigate passage when military conflict threatens the Strait of Hormuz?",
+                  "hook": "Global energy flows moving through the Strait of Hormuz face disruption from ongoing conflict.",
+                  "seed": "commercial shipping safety protocols Strait of Hormuz conflict",
+                  "relevance": 0.7768
+                },
+                {
+                  "move": "hidden",
+                  "dimension": "social",
+                  "question": "Why do multilateral summits yield fewer binding commitments than informal bilateral sideline meetings?",
+                  "hook": "Trump scheduled sideline meetings with Ukrainian President Volodymyr Zelenskyy during the UN summit.",
+                  "seed": "sideline diplomacy bilateral meetings multilateral summits effectiveness",
+                  "relevance": 0.794
+                },
+                {
+                  "move": "frame",
+                  "dimension": "social",
+                  "question": "How do non-Western leaders frame superpower threats when addressing the UN General Assembly podium?",
+                  "hook": "Iranian President Masoud Pezeshkian will deliver his General Assembly address following Trump's remarks.",
+                  "seed": "Global South rhetoric UN General Assembly US hegemony",
+                  "relevance": 0.8714,
+                  "picked_by": "best social",
+                  "rank": 3
+                },
+                {
+                  "move": "scale",
+                  "dimension": "semantic",
+                  "question": "At what duration does an undeclared military engagement transform into a legally defined war?",
+                  "hook": "U.S. military operations against Iran are now approaching their seventh consecutive month.",
+                  "seed": "duration threshold undeclared military conflict War Powers",
+                  "relevance": 0.8204
+                },
+                {
+                  "move": "unknowns",
+                  "dimension": "experiential",
+                  "question": "What real-time indicators show whether prolonged military confrontation is directly disrupting civilian supply lines?",
+                  "hook": "The confrontation with Iran has stretched to seven months as regional stability deteriorates.",
+                  "seed": "measuring civilian supply disruption prolonged regional military conflict",
+                  "relevance": 0.8094,
+                  "picked_by": "best experiential",
+                  "rank": 2
+                }
+              ]
+            },
+            "retried": false
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why do warring adversaries sustain quiet diplomatic talks while leaders publicly threaten total annihilation?",
+          "hook": "Envoys hold low-level talks even as Trump threatens to annihilate the Islamic Republic.",
+          "seed": "backchannel diplomacy during active military conflict",
+          "relevance": 0.8189
+        },
+        {
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How does the United Nations Charter legally address a member state threatening another with annihilation?",
+          "hook": "Delegates walked out after Trump explicitly threatened to annihilate a fellow UN member state.",
+          "seed": "UN Charter Article 2 4 prohibition on threat of force",
+          "relevance": 0.8403,
+          "picked_by": "best semantic",
+          "rank": 1
+        },
+        {
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When in diplomatic history have General Assembly walkouts forced a major power to change policy?",
+          "hook": "Several delegates walked out during Trump's speech defending military actions against Iran.",
+          "seed": "diplomatic walkouts UN General Assembly historical impact",
+          "relevance": 0.8396,
+          "picked_by": "MMR 0.330",
+          "rank": 4
+        },
+        {
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How do commercial shipping crews navigate passage when military conflict threatens the Strait of Hormuz?",
+          "hook": "Global energy flows moving through the Strait of Hormuz face disruption from ongoing conflict.",
+          "seed": "commercial shipping safety protocols Strait of Hormuz conflict",
+          "relevance": 0.7768
+        },
+        {
+          "move": "hidden",
+          "dimension": "social",
+          "question": "Why do multilateral summits yield fewer binding commitments than informal bilateral sideline meetings?",
+          "hook": "Trump scheduled sideline meetings with Ukrainian President Volodymyr Zelenskyy during the UN summit.",
+          "seed": "sideline diplomacy bilateral meetings multilateral summits effectiveness",
+          "relevance": 0.794
+        },
+        {
+          "move": "frame",
+          "dimension": "social",
+          "question": "How do non-Western leaders frame superpower threats when addressing the UN General Assembly podium?",
+          "hook": "Iranian President Masoud Pezeshkian will deliver his General Assembly address following Trump's remarks.",
+          "seed": "Global South rhetoric UN General Assembly US hegemony",
+          "relevance": 0.8714,
+          "picked_by": "best social",
+          "rank": 3
+        },
+        {
+          "move": "scale",
+          "dimension": "semantic",
+          "question": "At what duration does an undeclared military engagement transform into a legally defined war?",
+          "hook": "U.S. military operations against Iran are now approaching their seventh consecutive month.",
+          "seed": "duration threshold undeclared military conflict War Powers",
+          "relevance": 0.8204
+        },
+        {
+          "move": "unknowns",
+          "dimension": "experiential",
+          "question": "What real-time indicators show whether prolonged military confrontation is directly disrupting civilian supply lines?",
+          "hook": "The confrontation with Iran has stretched to seven months as regional stability deteriorates.",
+          "seed": "measuring civilian supply disruption prolonged regional military conflict",
+          "relevance": 0.8094,
+          "picked_by": "best experiential",
+          "rank": 2
+        }
+      ],
+      "shown": [
+        {
+          "rank": 1,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How does the United Nations Charter legally address a member state threatening another with annihilation?",
+          "hook": "Delegates walked out after Trump explicitly threatened to annihilate a fellow UN member state.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "unknowns",
+          "dimension": "experiential",
+          "question": "What real-time indicators show whether prolonged military confrontation is directly disrupting civilian supply lines?",
+          "hook": "The confrontation with Iran has stretched to seven months as regional stability deteriorates.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "frame",
+          "dimension": "social",
+          "question": "How do non-Western leaders frame superpower threats when addressing the UN General Assembly podium?",
+          "hook": "Iranian President Masoud Pezeshkian will deliver his General Assembly address following Trump's remarks.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When in diplomatic history have General Assembly walkouts forced a major power to change policy?",
+          "hook": "Several delegates walked out during Trump's speech defending military actions against Iran.",
+          "picked_by": "MMR 0.330"
+        }
+      ],
+      "trail1_dig": {
+        "calls": [
+          {
+            "usage": {
+              "prompt": 285,
+              "tool_use_prompt": 0,
+              "output": 593,
+              "thinking": 0,
+              "total": 878
+            },
+            "seconds": 8.5,
+            "finish_reason": "FinishReason.STOP",
+            "thinking_level": "low",
+            "grounded": true,
+            "result": {
+              "short_answer": "Under Article 2(4) of the UN Charter, all member states are strictly prohibited from the threat or use of force against the territorial integrity or political independence of any state. Threatening another nation with total annihilation represents an explicit violation of this core obligation, as well as a potential threat to international peace under Chapter VII.",
+              "deeper_story": "The prohibition on the threat of force in Article 2(4) mirrors the ban on the actual use of force. In its 1996 advisory opinion on nuclear weapons, the International Court of Justice clarified that if a proposed use of force is illegal, the threat to execute it is equally unlawful. A threat of annihilation directly challenges a sovereign state's legal right to exist. While Article 51 permits the inherent right of self-defense, it is strictly triggered by an armed attack, not merely hostile rhetoric. If rhetoric constitutes a credible danger, the UN Security Council holds Chapter VII authority to determine a \"threat to the peace\" and impose sanctions or collective military measures, though enforcement often stalls due to permanent-member vetoes.",
+              "evidence": [
+                "Article 2(4) mandates that member states refrain from the 'threat or use of force against the territorial integrity or political independence of any state' [1.1.2].",
+                "In the 1996 Nuclear Weapons Advisory Opinion, the ICJ ruled that any threat to use force is unlawful whenever the underlying force would be unlawful under the UN Charter.",
+                "Chapter VII, Article 39 empowers the UN Security Council to formally designate verbal or posturing threats as a 'threat to the peace' and authorize binding countermeasures.",
+                "Article 51 establishes an exception allowing force exclusively for self-defense if an actual armed attack occurs, leaving preventive unilateral force legally unrecognized under standard Charter interpretation."
+              ],
+              "still_open": "Scholars and states remain divided on when hostile rhetoric crosses into an imminent armed threat that might justify pre-emptive action, and political divisions on the Security Council frequently block formal enforcement against coercive threats.",
+              "coverage": "broad"
+            },
+            "search_queries": [
+              "ICJ Nuclear Weapons Advisory Opinion threat of force Article 2 paragraph 4",
+              "UN Charter Article 2 4 prohibition threat of force annihilation"
+            ],
+            "sources_total": 9,
+            "sources_cited": 9,
+            "sources_top5": [
+              {
+                "domain": "diplomacyandlaw.com",
+                "url": "https://www.diplomacyandlaw.com/post/article-2-4-of-the-un-charter-explained",
+                "cited": 4
+              },
+              {
+                "domain": "ouplaw.com",
+                "url": "https://opil.ouplaw.com/display/10.1093/law:epil/9780199231690/law-9780199231690-e428?d=%2F10.1093%2Flaw%3Aepil%2F9780199231690%2Flaw-9780199231690-e428&p=emailAiQJVQNciEYlM&print",
+                "cited": 4
+              },
+              {
+                "domain": "youtube.com",
+                "url": "https://www.youtube.com/watch?v=mUioDv_tEM8",
+                "cited": 3
+              },
+              {
+                "domain": "icj-cij.org",
+                "url": "https://www.icj-cij.org/case/95",
+                "cited": 3
+              },
+              {
+                "domain": "un.org",
+                "url": "https://legal.un.org/repertory/art2/english/rep_supp7_vol1_art2_4.pdf",
+                "cited": 2
+              }
+            ],
+            "retried": false
+          },
+          {
+            "usage": {
+              "prompt": 1045,
+              "tool_use_prompt": 0,
+              "output": 490,
+              "thinking": 1938,
+              "total": 3473
+            },
+            "seconds": 9.8,
+            "finish_reason": "FinishReason.STOP",
+            "thinking_level": "medium",
+            "grounded": false,
+            "result": {
+              "trails": [
+                {
+                  "move": "tension",
+                  "dimension": "social",
+                  "question": "Why does international law require nations to absorb an attack before claiming self-defense rights?",
+                  "hook": "Article 51 strictly requires an actual armed attack before permitting military self-defense.",
+                  "seed": "Article 51 armed attack requirement anticipatory self defense international law",
+                  "relevance": 0.7958
+                },
+                {
+                  "move": "mechanism",
+                  "dimension": "semantic",
+                  "question": "How do international courts determine whether coercive bluster crosses into an illegal threat?",
+                  "hook": "The 1996 ICJ opinion ruled threats unlawful whenever the underlying force is unlawful.",
+                  "seed": "ICJ legal threshold for unlawful threat of force Article 2 4",
+                  "relevance": 0.8338
+                },
+                {
+                  "move": "precedent",
+                  "dimension": "semantic",
+                  "question": "When has the Security Council authorized military intervention based strictly on threats rather than violence?",
+                  "hook": "Chapter VII empowers the Security Council to authorize binding countermeasures against verbal threats.",
+                  "seed": "UN Security Council Chapter VII military authorization verbal threats history",
+                  "relevance": 0.8385,
+                  "picked_by": "best semantic",
+                  "rank": 1
+                },
+                {
+                  "move": "hidden",
+                  "dimension": "social",
+                  "question": "How do non-permanent states enforce international law when permanent Security Council members paralyze enforcement?",
+                  "hook": "Security Council enforcement against coercive threats often stalls due to permanent-member vetoes.",
+                  "seed": "General Assembly Uniting for Peace resolution circumventing Security Council veto",
+                  "relevance": 0.7941
+                },
+                {
+                  "move": "stakes",
+                  "dimension": "experiential",
+                  "question": "How do targeted nations maintain deterrence when formal treaties bar preemptive military strikes?",
+                  "hook": "Standard Charter interpretations leave preventive unilateral force legally unrecognized.",
+                  "seed": "deterrence strategies under international law prohibition of preemptive force",
+                  "relevance": 0.8396,
+                  "picked_by": "best experiential",
+                  "rank": 2
+                },
+                {
+                  "move": "unknowns",
+                  "dimension": "semantic",
+                  "question": "What empirical evidence distinguishes empty political rhetoric from an actionable signal of imminent annihilation?",
+                  "hook": "Scholars remain divided on when hostile rhetoric crosses into an imminent armed threat.",
+                  "seed": "distinguishing political rhetoric from imminent military threat international security",
+                  "relevance": 0.7582
+                },
+                {
+                  "move": "frame",
+                  "dimension": "social",
+                  "question": "Why do nuclear powers argue deterrence posturing is lawful while Charter rules ban threats?",
+                  "hook": "The 1996 ICJ advisory opinion explicitly evaluated threats within the context of nuclear weapons.",
+                  "seed": "nuclear deterrence compatibility UN Charter Article 2 4 threat of force",
+                  "relevance": 0.8134,
+                  "picked_by": "best social",
+                  "rank": 3
+                },
+                {
+                  "move": "scale",
+                  "dimension": "experiential",
+                  "question": "How do small nations maintain governance under constant existential threats from nuclear neighbors?",
+                  "hook": "A threat of annihilation directly challenges a sovereign state's legal right to exist.",
+                  "seed": "small state security strategies existential military threats sovereignty",
+                  "relevance": 0.8336,
+                  "picked_by": "MMR 0.329",
+                  "rank": 4
+                }
+              ]
+            },
+            "retried": false
+          }
+        ]
+      },
+      "trail1_candidates": [
+        {
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why does international law require nations to absorb an attack before claiming self-defense rights?",
+          "hook": "Article 51 strictly requires an actual armed attack before permitting military self-defense.",
+          "seed": "Article 51 armed attack requirement anticipatory self defense international law",
+          "relevance": 0.7958
+        },
+        {
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How do international courts determine whether coercive bluster crosses into an illegal threat?",
+          "hook": "The 1996 ICJ opinion ruled threats unlawful whenever the underlying force is unlawful.",
+          "seed": "ICJ legal threshold for unlawful threat of force Article 2 4",
+          "relevance": 0.8338
+        },
+        {
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When has the Security Council authorized military intervention based strictly on threats rather than violence?",
+          "hook": "Chapter VII empowers the Security Council to authorize binding countermeasures against verbal threats.",
+          "seed": "UN Security Council Chapter VII military authorization verbal threats history",
+          "relevance": 0.8385,
+          "picked_by": "best semantic",
+          "rank": 1
+        },
+        {
+          "move": "hidden",
+          "dimension": "social",
+          "question": "How do non-permanent states enforce international law when permanent Security Council members paralyze enforcement?",
+          "hook": "Security Council enforcement against coercive threats often stalls due to permanent-member vetoes.",
+          "seed": "General Assembly Uniting for Peace resolution circumventing Security Council veto",
+          "relevance": 0.7941
+        },
+        {
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How do targeted nations maintain deterrence when formal treaties bar preemptive military strikes?",
+          "hook": "Standard Charter interpretations leave preventive unilateral force legally unrecognized.",
+          "seed": "deterrence strategies under international law prohibition of preemptive force",
+          "relevance": 0.8396,
+          "picked_by": "best experiential",
+          "rank": 2
+        },
+        {
+          "move": "unknowns",
+          "dimension": "semantic",
+          "question": "What empirical evidence distinguishes empty political rhetoric from an actionable signal of imminent annihilation?",
+          "hook": "Scholars remain divided on when hostile rhetoric crosses into an imminent armed threat.",
+          "seed": "distinguishing political rhetoric from imminent military threat international security",
+          "relevance": 0.7582
+        },
+        {
+          "move": "frame",
+          "dimension": "social",
+          "question": "Why do nuclear powers argue deterrence posturing is lawful while Charter rules ban threats?",
+          "hook": "The 1996 ICJ advisory opinion explicitly evaluated threats within the context of nuclear weapons.",
+          "seed": "nuclear deterrence compatibility UN Charter Article 2 4 threat of force",
+          "relevance": 0.8134,
+          "picked_by": "best social",
+          "rank": 3
+        },
+        {
+          "move": "scale",
+          "dimension": "experiential",
+          "question": "How do small nations maintain governance under constant existential threats from nuclear neighbors?",
+          "hook": "A threat of annihilation directly challenges a sovereign state's legal right to exist.",
+          "seed": "small state security strategies existential military threats sovereignty",
+          "relevance": 0.8336,
+          "picked_by": "MMR 0.329",
+          "rank": 4
+        }
+      ],
+      "trail1_dropped_loops": [],
+      "trail1_shown": [
+        {
+          "rank": 1,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When has the Security Council authorized military intervention based strictly on threats rather than violence?",
+          "hook": "Chapter VII empowers the Security Council to authorize binding countermeasures against verbal threats.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How do targeted nations maintain deterrence when formal treaties bar preemptive military strikes?",
+          "hook": "Standard Charter interpretations leave preventive unilateral force legally unrecognized.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "frame",
+          "dimension": "social",
+          "question": "Why do nuclear powers argue deterrence posturing is lawful while Charter rules ban threats?",
+          "hook": "The 1996 ICJ advisory opinion explicitly evaluated threats within the context of nuclear weapons.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "scale",
+          "dimension": "experiential",
+          "question": "How do small nations maintain governance under constant existential threats from nuclear neighbors?",
+          "hook": "A threat of annihilation directly challenges a sovereign state's legal right to exist.",
+          "picked_by": "MMR 0.329"
+        }
+      ],
+      "token_totals": {
+        "headline": {
+          "prompt": 1333,
+          "tool_use_prompt": 0,
+          "output": 1473,
+          "thinking": 2928,
+          "total": 5734
+        },
+        "trail1": {
+          "prompt": 1330,
+          "tool_use_prompt": 0,
+          "output": 1083,
+          "thinking": 1938,
+          "total": 4351
+        }
+      }
+    }
+  }
+}

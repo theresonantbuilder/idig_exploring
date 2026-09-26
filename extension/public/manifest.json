@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "iDIG Exploring",
+  "version": "0.1.0",
+  "description": "See a headline you want to understand? Snip it and dig into the context around it.",
+  "permissions": ["storage", "downloads"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["launcher.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["review/review.html", "review.js", "chunks/*", "assets/*"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "action": {
+    "default_title": "iDIG — select something you dig",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

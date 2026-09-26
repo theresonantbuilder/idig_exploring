@@ -1,0 +1,438 @@
+{
+  "headline": "United Nations General Assembly: Iran, Trump, Ukraine",
+  "source_domain": "cnn.com",
+  "captured": "2026-09-23",
+  "settings": {
+    "research_model": "gemini-2.5-flash",
+    "thinking_budget": 0,
+    "max_output_tokens": 1500,
+    "embed_model": "gemini-embedding-001",
+    "embed_dims": 768,
+    "mmr_lambda": 0.7
+  },
+  "headline_dig": {
+    "result": {
+      "overview": "The 81st United Nations General Assembly (UNGA), which began on September 22, 2026, has been significantly shaped by ongoing international conflicts and geopolitical tensions. Key discussions have revolved around the war between the United States and Iran, the continuing conflict in Ukraine, and statements made by former U.S. President Donald Trump regarding these issues and global governance.",
+      "key_points": [
+        "Former U.S. President Donald Trump addressed the UNGA, defending U.S. military actions in Iran and Venezuela, and criticizing international institutions and globalist agendas.",
+        "The war between the U.S. and Iran, which began in February 2026, was a central topic, with Trump threatening to \"annihilate\" Iran while also indicating a willingness for a deal.",
+        "Iranian President Masoud Pezeshkian responded defiantly at the UNGA, stating Iran would not surrender to military action or sanctions and would retain its nuclear program.",
+        "The ongoing Russia-Ukraine war, now in its fifth year, was also a major focus, with calls for an immediate ceasefire and concerns about escalating civilian casualties and regional spillover."
+      ],
+      "context": "The 81st UN General Assembly is taking place amidst a complex global landscape, including a multi-month war between the U.S. and Iran, a prolonged conflict in Ukraine, and debates over the role of international cooperation and institutions. These events are influencing discussions on global security, energy prices, and humanitarian concerns.",
+      "coverage": "broad",
+      "trail_candidates": [
+        {
+          "dimension": "semantic",
+          "title": "Details of the US-Iran War",
+          "relates": "Explores the origins, key events, and current status of the conflict between the United States and Iran.",
+          "seed": "US Iran war 2026 timeline",
+          "relevance": 0.8469,
+          "picked_by": "best semantic",
+          "rank": 1
+        },
+        {
+          "dimension": "semantic",
+          "title": "Iran's Nuclear Program Status",
+          "relates": "Investigates the current state of Iran's nuclear capabilities and international monitoring efforts.",
+          "seed": "Iran nuclear program 2026 IAEA",
+          "relevance": 0.8
+        },
+        {
+          "dimension": "semantic",
+          "title": "Russia-Ukraine War Developments",
+          "relates": "Covers the latest military and political developments in the ongoing conflict in Ukraine.",
+          "seed": "Russia Ukraine war 2026 updates",
+          "relevance": 0.8244
+        },
+        {
+          "dimension": "experiential",
+          "title": "Civilian Impact of Iran War",
+          "relates": "Examines the humanitarian consequences and civilian casualties resulting from the US-Iran conflict.",
+          "seed": "civilian casualties Iran war 2026",
+          "relevance": 0.823
+        },
+        {
+          "dimension": "experiential",
+          "title": "Refugee Crisis from Ukraine War",
+          "relates": "Focuses on the displacement of people and the humanitarian crisis caused by the Ukraine conflict.",
+          "seed": "Ukraine refugee crisis 2026",
+          "relevance": 0.8012
+        },
+        {
+          "dimension": "social",
+          "title": "International Reactions to Trump's UN Speech",
+          "relates": "Analyzes how other world leaders and international bodies responded to President Trump's statements at the UNGA.",
+          "seed": "international reaction Donald Trump UNGA 2026 speech",
+          "relevance": 0.8575,
+          "mmr_score": 0.3462,
+          "picked_by": "MMR (best remaining, least redundant)",
+          "rank": 4
+        },
+        {
+          "dimension": "social",
+          "title": "UN's Role in Global Conflicts",
+          "relates": "Explores the effectiveness and challenges of the United Nations in addressing ongoing international wars and crises.",
+          "seed": "United Nations effectiveness global conflicts 2026",
+          "relevance": 0.8659,
+          "picked_by": "best social",
+          "rank": 3
+        },
+        {
+          "dimension": "social",
+          "title": "Impact of AI on Global Security Debates",
+          "relates": "Investigates how discussions around artificial intelligence are influencing international security and governance at the UN.",
+          "seed": "AI regulation UN General Assembly 2026",
+          "relevance": 0.8395
+        },
+        {
+          "dimension": "experiential",
+          "title": "Global Energy Market Impact of Conflicts",
+          "relates": "Examines how the wars in Iran and Ukraine are affecting global oil prices and energy security.",
+          "seed": "global energy prices Iran Ukraine war 2026",
+          "relevance": 0.852,
+          "picked_by": "best experiential",
+          "rank": 2
+        }
+      ]
+    },
+    "parse_error": null,
+    "raw_text": null,
+    "sources": [
+      {
+        "title": "pbs.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz9XwgZE1FQesMRtohgBquh_yrE_f3JrA9xm1ATzIqaXaBzy-KN2M2m-ufo5ciDSJboGOf3YN0fVGtgvoTHECPGbZFmHcyhc3H_T8Koj0MKmLqDoaj3x5oA5fxD-_ZKNeoFNr5mNX6fDD0wb0VkD7sARu4I2vKNYijN7bK9vK_U5SaTL2wDBVqLbeR9gYBPbyP6SS1joI7y9lprh534NgfRB5x0mJIRjw="
+      },
+      {
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7Ao6dEG-25Qs6S-kZDuNlUfSG4e-XTBmZyPtPXfWwvOxMnkuJAwsC1UFGnlh7mijKAemtu2WZbkpugXfQycwdmeW7onvW9bptge_Q-62x5b7HyhaJGH2gX5BZQXc_HjNKycRE9-0="
+      },
+      {
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx8wOxxJg7pERwE_g7vcaNdogvCJII6r3xq1gApX2A8g1qXvoge_1V1pweWhWWjDv_HmV--6QfAUvFWtT9WcCBHH3yLFbwmbLImV62Lm6rh_JgkWQLCLEKYLlaZYcw6YXm6e_yDu4="
+      },
+      {
+        "title": "cbsnews.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKTaDglTuiWMYoVnZV4Z2iXmCuBqsfv8J5AOV70yqi3A1BIK3_0HLCvH6qYZZUantl8HltxgWb3JEcbnaQ5Br6OB36lw_A_l6YLwbal-pFtq9hXimUXgXpCktkYDUqIu92vvhwYLOYXAtEZOVkEVpy_n_EpmYFMUIl8COicnVU2man2tFLsE9g3VHT3c2vq93ni9COYzRuuQR-r3kYUxM_ONxdpovW8Dt7jw=="
+      },
+      {
+        "title": "wlrn.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEadjiEf2UA0w9_PCamPjaCX-2z9BMNy_A7fRaoQAuRP3soI3wiZ7MD89q_ApP4DP1Vbstdn5rllI7hgN0hk5AqEH9ByUvviYYXZMd4H1-Ipk5yr08DCpGs4CD8d9-bwa9Nc-NYE07uMta2OnhKJUG2HgR0R39lsiF_qKAlHAE2PXNuI3jmlt6VCcCqeTa1vwPx3_F6UUO499CUf7WZ0mg98oXcWtccc_V2Rd215EhtwHUv0r0TYQdE_A=="
+      },
+      {
+        "title": "brookings.edu",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1ByZTJk-kc10m4S1LhfVnhNLBkdNHwB5Uhd9bELAViKebccV0IJm6zIuIuRkOWWWCZrcCGJFRFlfXUjRhfe1T-1JZ-yoMaJcO2K0OC8T8KL58I1D_AS70oTU8kS5VvGVch9ekN_PyuN9wg0PZyXUtksZ2I9AYYNKE8g=="
+      },
+      {
+        "title": "fox5ny.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEZB1zv9k1rDANlyGIiRuJVlrYfzAGVRwfDlpAp8P52pDbBtYcpwBN7lbBDMmXsBjQ382GmM--18tgXncTr0NumwV5gCFTjMtvRoEpG7kUKBBLZbRLjGn319VkIMKWMx5_pIWW35FuqCKWiozYjVpV4VNwWHS7jLNPlVA6o6P1VrFtpwNW"
+      },
+      {
+        "title": "europa.eu",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGykx1bfUy4C8qJSu8Uk4NWfPT9vLvzscY2W_UNE_rfb9HLubRaZa8_bznE-R_bhwXyBYHDulxvGLfF3Hylas23W2hjvHHc0pH0vAqOjMrgFTSkRNhzdaQBomBzVntuzf_caUXl70-2eXo3Gwmz1cBd5YJYbdCammj2AxAsspxwhf4UJt2B7YMAHwA="
+      },
+      {
+        "title": "whitehouse.gov",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuA9kLy2nz-TALpsyVYhru59zPwc8fiG3vbmLmbYnC-XbMQuFgBbcHhewOQN-1yptCGTKU8nrrs0O1rnlDphDiYTfp9twtV0pQjXmn_ONsGSEiZJsBWdIvPncPkhClUKu2z037oJE76LoP58519w5VaSGkyAoCLDv-QvVFG8Znw79vDLp5Kb1-JWQ8CRygPxgKTISzGt_YJl-1-fArcX1hzqVzyadl0MNxav8ETU1i1fpfYQ=="
+      },
+      {
+        "title": "kgou.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGtGJ-X1VifE6rgXGiGMDLE9QlJFL9JiTB5t3T7MxpYrGkLtQq-bdJPRuuUtWYbhiQHHmnTTlBxJv58em9MLAc31NJz_iBRbDmLXWMZahQ3s2kEIsZWLml5Gs-wqmuSyEsD9bCwVqe22kMslySmNneFovCyzLzUprwGbaj75IcdN83kiZ_mzB4IwOFZTQQLVB378BDYAFGI-QvUYyPas5iS_8vHvCQ6AE9kbGd2A=="
+      },
+      {
+        "title": "theguardian.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjziV1698LYUHD5_5ppmR3dPBydxgyjc12ce1rJkT7c269qxwiLjan4xCGH2Cp_a6QKAU8caO0iE7jjo-SsclnPS2oehkiSnZCr-YrAs-APzuCPw1HeFVlia36UEfHQ7qHrGRctcex2VdwcdQm7hmY82yFQWZ5BCIzFcp41e-gXeIRszn4FB9ObI69Hp0ExzyDWfgOBMS8cVluU9JPXvgqbgeK_r3EEXlVlA418v4="
+      },
+      {
+        "title": "salon.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCQ4TCvBq1bG-kKfne3WQo3piuMKSesVBjeUtZcKYuWUcsMkfgiQ8MPi9MLh4SL8uPF1mwqhxYnI2ZEvF5fKpOZIWvA_YozD8GpFoRlCXnvEtPJ9hQuMlPek05tsfEXw1QBVWMn4bShXTEo2m_nGIEMp55GOqajxZ4cYf9gK7Khwbyf_OITA=="
+      },
+      {
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg0pNv45l5AtgD_8JDDt7MO8HdDaLNf5kzV-qDeKCwyvahB1btqBsOvUNKmPFIfn_IJGCXEPLEoAjpD8n52Kb0twX4dEwdEpFRZ4r6BmVLOulJtJNx2foLXs_eYADREVzFLNsWFM4="
+      },
+      {
+        "title": "timesofisrael.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0m_POxYm7UP1od-N-uynctEUoapUj_cHtKsKcYnWn6FPsmBGPfDotJZrNslwu6RsS2kIocQ88G37sFWHlBxilI4mo2U5erOEZb-aopy8O28my1GOjpx890_XyuVZvY1l4VJWxgcJSlMga1miY6eW3SDHQ4OepIWIwpAtMbIyw-lcmhMnAyGZUyEcH9jPxE89LvGDcUyv7z0HCOvFJDFQh9XQd9ivKE92FoBE="
+      },
+      {
+        "title": "democracynow.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo7xs1pNuq2SaJcSdVstAaqJC0JVcL4A0cX6BCOM_rEgYfNX98Ozp5J8YF__EYbQSZtD_11b2P1YKB2Nuw9eFupfI7SIEgzm_lkD58Tv8zF0HSRrR-ZsG9o62Zi1TeV_dBRHnwzG6gVC7Q0w2mN1Mxq7bXWa62fYOYX8YZBGJabpeVGQ_lb_H4IRxpx__CG_PMPvZMUdwcul8atP3Gr0vC6_LBk5JWDnTwiOuYSdQ3"
+      },
+      {
+        "title": "washingtonpost.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtFD9E4sXKm80flf1DxfduMKZ67wE0F0xFFgZwWRABgOo8eY2iue9iMH6mAfPdB-YM_QY5yEtM4GXrP5nZp_n7cSeZGzkxov3S4_5wvEhGzvHLtDSon8z8cGis83YJroUlxUZbMfc7IX1CR9LrymviOORtWQ--Cj5kouJaJhjWrW2NgGWJFMrqNtBLJ3ZdgAkd-Qa0rKaYIEid_u7gtlw3qHUe7yQbXAhn8fS20tJJr_ydF-gDs8zOCv4="
+      },
+      {
+        "title": "youtube.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBxDm2SPbY17kpmh39F3AC-vBCyi8Otmzr9bF5v5M9SYVgz2hUuTkJwopf38pUpj4Fm4yblkvdoK6xrWGN9OEdDLPFr2INxT9U7S0IHOIrZoqrhF_BLtf-Xa0_y73xnb_4arDlZrQ="
+      },
+      {
+        "title": "jta.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5uq7Ap_r95OlNSNinjzL3peswTEuMM50naxA-0VbY_nOaoRp4ypPTtJwmZwzNmJVum4e8VJNuSYS7ZxXSoeEIcqRIMgzZ-U8YavyAas54hnqDaAF60QZ05jFMFHghMNbAmzDxuroTWx2m0bHi160WMt6wYV7QcPi5L-wdSGXBDY7o5DydnkSeMJPAsnb8a2uN3ExWzf_dQ8Mg45UOjKGM9jU1bYR8LQzWwyeaxkWYEP3g5B8w4KZS0Z9yt29MDMJ0qVXgKHWlm25gPMVi"
+      },
+      {
+        "title": "china.org.cn",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFlhzOyPvj2eL_9ojxdc0DDOXdW5iEXoCvtmQKBtqTxVOVYdbiQMVp6iNHbl5tFW_5dBr-imYif7cj3iD7dHhptgLPsRMJ6aFb4-wqKwpaytBXhICmb4t4b_JgNOmWCYYCuOv9UKlO5dIjmQv8FTdxvlbqYV8="
+      },
+      {
+        "title": "reliefweb.int",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSMOucm_ZWEKgMQ0G6_XTAmaAfkdAjhIJZ9vFalWz1t8E-Q_5j13lq4S4kJQgDmJ_oL-hdNCoQhgTaztwxf3lrVla-ePXadXmtoEHsogQ8l8k_Dfs6XK2rkWUPDgtpSIKnxgYYlESAN6mtaUx_bEfegVGBFdoGLG_tbu_DyVhkf-N8sbMOyunIMSHdTaCZM-_6geI53L6B4sS36Nk7-GOq88LotlOz0n8F"
+      },
+      {
+        "title": "un.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIas1yatY7ZKiw3D0gjued_9VTK5APsYLAXj0IcqDcD4Mjm8oTZC0F16Az-c4ygeXvtpKZAIz46MkmEThLerrIWtNlCNK4E9Y6cptqV0jkfc4x9S7ka72DfrT2p-flBQ=="
+      },
+      {
+        "title": "ohchr.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyfzrL3gxK7-9iKNvVG-OULXZKA4BG8ai4y1P3V2w5X_F2DPlA0vLhnAR-5UG2pXCTyfTzZ1L3G_DXhPnbx6I4fkbKSrS6VwvMEy3OL-20oOLNhBkA1pvtfYQ2ZJpFMCoQkHun1Ii7z1Ti2BQsd3qBTW-UT1lghD-IiH3adc0Ub7g7aKxubgs2wJ1jIS0="
+      },
+      {
+        "title": "securitycouncilreport.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwLXvkyo-rBo8WQgJ3q5k315-qnNb57NgcAwxugg0JT5jMI0kaLYDUxshYK8LFa3oY5ZqRh-EV6O5_hWADrsSD24NlXdEDSovfd8TqJ6rgqYI0Gz9CICxcioqYd9AJYFEsjRQXUuCKbnFmAkwPDpwAMAJPXwwBcLGRdlvB_npqwhhz7HrhYIk9GeSmtY9dlDkXXf_YIGw="
+      },
+      {
+        "title": "cfr.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMZrCyBc5BqNh0g-zd-MvE7abfPOd1tomCkd6nknU7X6gDpU4kXr5xNwqrYQMttWUnvjDaqEMd-MhD8EqyY-uX6UAvTNr3nxH3UsaVm6cx-w3LyaXswG900xrcctfk1vK0uQgd8zX08iNHuK1RN1mYnFs6SUlG"
+      },
+      {
+        "title": "middleeasteye.net",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNapNSB2uCnmuLrtWsHV2po8R25Kh9u4Tkd8UXjAC9xyuTiBJx30p1XQ6SxsgwJ0PEgcgYyq10dJ2713lWsDOZWe1N3UJ2ZDpvSLiOr95BBXAxkBocc5BQTifqWZFQPQWXmGj4foDw3M4urQCSPp8JwuWwq96YyRD1ji7hacE_vUqvYr9gxyRrFxPrVN0xzuAdZ6EOa4Hg9VNN"
+      }
+    ],
+    "search_queries": [
+      "United Nations General Assembly Iran Trump Ukraine 2026",
+      "UN General Assembly 2026 agenda Iran",
+      "UN General Assembly 2026 agenda Trump",
+      "UN General Assembly 2026 agenda Ukraine",
+      "Iran nuclear deal UN 2026",
+      "Trump's statements on UN 2026",
+      "Ukraine conflict UN 2026"
+    ],
+    "finish_reason": "FinishReason.STOP",
+    "usage": {
+      "prompt_tokens": 364,
+      "output_tokens": 1070,
+      "thinking_tokens": null,
+      "tool_use_prompt_tokens": 457,
+      "total_tokens": 1891
+    },
+    "seconds": 8.2,
+    "model": "gemini-2.5-flash"
+  },
+  "trails_shown": [
+    {
+      "rank": 1,
+      "dimension": "semantic",
+      "title": "Details of the US-Iran War",
+      "relates": "Explores the origins, key events, and current status of the conflict between the United States and Iran.",
+      "seed": "US Iran war 2026 timeline",
+      "relevance": 0.8469,
+      "picked_by": "best semantic",
+      "mmr_score": null
+    },
+    {
+      "rank": 2,
+      "dimension": "experiential",
+      "title": "Global Energy Market Impact of Conflicts",
+      "relates": "Examines how the wars in Iran and Ukraine are affecting global oil prices and energy security.",
+      "seed": "global energy prices Iran Ukraine war 2026",
+      "relevance": 0.852,
+      "picked_by": "best experiential",
+      "mmr_score": null
+    },
+    {
+      "rank": 3,
+      "dimension": "social",
+      "title": "UN's Role in Global Conflicts",
+      "relates": "Explores the effectiveness and challenges of the United Nations in addressing ongoing international wars and crises.",
+      "seed": "United Nations effectiveness global conflicts 2026",
+      "relevance": 0.8659,
+      "picked_by": "best social",
+      "mmr_score": null
+    },
+    {
+      "rank": 4,
+      "dimension": "social",
+      "title": "International Reactions to Trump's UN Speech",
+      "relates": "Analyzes how other world leaders and international bodies responded to President Trump's statements at the UNGA.",
+      "seed": "international reaction Donald Trump UNGA 2026 speech",
+      "relevance": 0.8575,
+      "picked_by": "MMR (best remaining, least redundant)",
+      "mmr_score": 0.3462
+    }
+  ],
+  "trail1_dig": {
+    "result": {
+      "overview": "The war between the United States and Iran began on February 28, 2026, with coordinated U.S. and Israeli strikes against military and strategic sites in Iran, including nuclear installations and leadership targets. Iran quickly retaliated with missile and drone attacks against Israel and U.S. interests across the Middle East, leading to a rapid escalation of the conflict. Despite a Pakistan-brokered ceasefire in April and a memorandum of understanding in June, hostilities have continued intermittently, particularly concerning the Strait of Hormuz.",
+      "key_points": [
+        "The conflict, code-named Operation Epic Fury by the U.S., started on February 28, 2026, with U.S. and Israeli strikes on Iran.",
+        "Initial strikes killed Iranian Supreme Leader Ali Khamenei and other officials, and also resulted in civilian casualties, including a controversial strike on a girls' school.",
+        "Iran responded with widespread missile and drone attacks targeting U.S. bases, Israeli territory, and regional infrastructure, expanding the conflict's scope.",
+        "Ceasefires and diplomatic efforts have been attempted, but a lasting peace remains elusive, with ongoing exchanges of fire and disputes over the Strait of Hormuz."
+      ],
+      "context": "Tensions between the U.S. and Iran had been escalating for years due to Iran's nuclear program, ballistic missile development, and regional influence. Failed attempts to renegotiate a nuclear deal in 2025 and early 2026, coupled with internal protests in Iran and prior conflicts with Israel, set the stage for the 2026 war.",
+      "coverage": "broad",
+      "trail_candidates": [
+        {
+          "dimension": "semantic",
+          "title": "Causes of US-Iran War 2026",
+          "relates": "Explores the underlying reasons and immediate triggers that led to the outbreak of the conflict.",
+          "seed": "causes of US Iran war February 2026",
+          "relevance": 0.8458,
+          "picked_by": "best semantic",
+          "rank": 1
+        },
+        {
+          "dimension": "semantic",
+          "title": "International reactions to US-Iran War 2026",
+          "relates": "Examines how other countries and international bodies responded to the conflict.",
+          "seed": "international response US Iran war 2026",
+          "relevance": 0.8251
+        },
+        {
+          "dimension": "semantic",
+          "title": "Strait of Hormuz impact 2026 conflict",
+          "relates": "Investigates the role and impact of the Strait of Hormuz in the ongoing conflict and global economy.",
+          "seed": "Strait of Hormuz 2026 US Iran war",
+          "relevance": 0.8076
+        },
+        {
+          "dimension": "experiential",
+          "title": "Civilian casualties US-Iran War 2026",
+          "relates": "Focuses on the human cost of the conflict, including civilian deaths and displacement.",
+          "seed": "civilian impact US Iran war 2026",
+          "relevance": 0.8159,
+          "picked_by": "best experiential",
+          "rank": 2
+        },
+        {
+          "dimension": "experiential",
+          "title": "Economic consequences of US-Iran War 2026",
+          "relates": "Analyzes the broader economic effects of the war, including on global markets and energy supplies.",
+          "seed": "economic impact US Iran war 2026",
+          "relevance": 0.8147
+        },
+        {
+          "dimension": "social",
+          "title": "Role of Israel in 2026 Iran conflict",
+          "relates": "Examines Israel's involvement and its strategic objectives in the conflict with Iran.",
+          "seed": "Israel's role in 2026 Iran war",
+          "relevance": 0.8318,
+          "mmr_score": 0.3158,
+          "picked_by": "MMR (best remaining, least redundant)",
+          "rank": 4
+        },
+        {
+          "dimension": "social",
+          "title": "Diplomatic efforts US-Iran War 2026",
+          "relates": "Investigates the various attempts at mediation, ceasefires, and peace negotiations.",
+          "seed": "diplomacy US Iran war 2026",
+          "relevance": 0.8394,
+          "picked_by": "best social",
+          "rank": 3
+        },
+        {
+          "dimension": "social",
+          "title": "Iran's regional allies 2026 conflict",
+          "relates": "Explores the involvement and actions of Iran's allied groups and nations in the broader Middle East conflict.",
+          "seed": "Iran regional allies 2026 war",
+          "relevance": 0.8255
+        }
+      ]
+    },
+    "parse_error": null,
+    "raw_text": null,
+    "sources": [
+      {
+        "title": "detective-store.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7Pnva6sp0PDlRbzooHBYFugzzmcc1zuHesERiSISyO7wJtASZk6_gpoz7Oz5H74HYxDpvHAb4mXsR9GM96xB25C65FZBH8TG0S5RXD0ql8wmvvBs5z9oos9e2JQONswzTppI7dw2nrPKHy4wpFgboyQHIwxZ4m4oRCYJ2euNuF4oARhJz2xvYvC7leiSMkilO2GXd"
+      },
+      {
+        "title": "militaryspend.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7G5No_1j7plzhX3W5ceeHw9-jjcF3saFaojT4D5J1L7RZVP5ge5FI7tBrt57DtCEeKM63E9NadCM2DG9GWk0MTrMcTvckGRE9OmlAJVldAoFzB6GyfNr0RFSNh8KTCDI7UUuKAQ=="
+      },
+      {
+        "title": "taskandpurpose.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb_HGUx6EwfeXlIU1s7fbUss0b9MtO1KFJO8EEx8GczCLgab-32KHgh3Up94QBR_-CiPUU5E0YgIo-TarXojtCMalyY5MX6nTiVRB927vkVPDIwDq16n5VqwwLz2qNUNlVmQtQ7B_2r_x7rE4="
+      },
+      {
+        "title": "time.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlggr2EM8C6drWGPlkjKqrq0idUXdayqMGys9Aoy36KEyiQK6bquyjIhl4YZSyYr6aP37KHe9Cr8Wev1-lcczF49Nr3TGK_DpZC4KoTGKHa6w0HvcvCsQlpD4UJQemnqoeIzWP3Jkuc4p_DT7n9ditNFHiOjFu1SNhP6vBqjqCadeaT34JG1SQOQ9d0q3Vv6I2Lw=="
+      },
+      {
+        "title": "britannica.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm1G_uw7I5wx2qNsZGSYw_s4tdj9jw7ZANgxqGMWZx01ZYPYunKDazpodS1QnbJxn8pwIRlFAALDl1t0MuH7jZCH3N9Rn3D1uoZ1exp_hofOgIX55lSGSKiwMT7ViSa-UU6CVuI7hXeA=="
+      },
+      {
+        "title": "wikipedia.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQoWVhak6ldDi9kAQEbPUeloALejYtiJj7kBasmKrkhbJb7NonvMTeW-68aMpicN0KiFTlZN2Z2608w0LOz-pKhYF1gnTy2HMOS9IoYwx67x4ReTdVBDaNK38jF2ddTFlqXDYIEg=="
+      },
+      {
+        "title": "cfr.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvf9l66x9JT6QqU0it6Ene1aShM2yTCnBJdpo5r3uMz6xSFSR_T1KuQZfjVSmnE4co8tJidQjQzYvLAzvDy25m5xg8Y7Oy2uD-D1-SGjExbd9PAsc50HMn2H0-42k4jLJHcw89DtUIKR9pg0oKXtD4Molli_KMeWrJzgk4pnsHCqk1HxehfOZgQy6YXUyRSUdQxxvPToc8WtvIew=="
+      },
+      {
+        "title": "iranintl.com",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYezdsNdqnNo3t3zDTMpV6uCS8QAteQRJcgghRjHVmnf0NgLK2Iurytu7vyfYwtAvT2FUnucwxMVwN37NYXlMUD4RgHfvttw-QXjlpjhFWgv5jC4HdHRm8OQQHhYJmfopW0w=="
+      },
+      {
+        "title": "wikipedia.org",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgQ-1Av_LoXjrgiQieeubLM2Y-k-FdKTlPP0VqzG6CMWpo4JUulVzW5vwJFdtAJi0BKK0eXXbpXf2mIQftIBpxQlbal_JfeYCzbPp2IenYNvys8uEll1XxiHP7ikD41DKb2Wyl6c46pWRbA_7u00yCCWiTvunKZQDldD5NMwQdCC4Z7lKgRwVta9YtIYR9uUoQ"
+      },
+      {
+        "title": "parliament.uk",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTOWXzXmuoiU8GJ327t4r62qeb7nz9La5GtZCAPasAtqbVaR1GQnycnHM89yb8qGAwV-mQHteu6ajWvs-VNJp2kgMEP-uMigg1d26k6fbCVHpjGV8vWOpSIOVdt75i50E-vpBh_7RHP5hFOFOShD15G8JzqaDyB4yG7NYw"
+      }
+    ],
+    "search_queries": [
+      "US Iran war 2026 timeline",
+      "US Iran conflict 2026 key events",
+      "escalation of US Iran tensions 2026"
+    ],
+    "finish_reason": "FinishReason.STOP",
+    "usage": {
+      "prompt_tokens": 468,
+      "output_tokens": 1015,
+      "thinking_tokens": null,
+      "tool_use_prompt_tokens": 513,
+      "total_tokens": 1996
+    },
+    "seconds": 6.2,
+    "model": "gemini-2.5-flash"
+  },
+  "trail1_trails_shown": [
+    {
+      "rank": 1,
+      "dimension": "semantic",
+      "title": "Causes of US-Iran War 2026",
+      "relates": "Explores the underlying reasons and immediate triggers that led to the outbreak of the conflict.",
+      "relevance": 0.8458,
+      "picked_by": "best semantic"
+    },
+    {
+      "rank": 2,
+      "dimension": "experiential",
+      "title": "Civilian casualties US-Iran War 2026",
+      "relates": "Focuses on the human cost of the conflict, including civilian deaths and displacement.",
+      "relevance": 0.8159,
+      "picked_by": "best experiential"
+    },
+    {
+      "rank": 3,
+      "dimension": "social",
+      "title": "Diplomatic efforts US-Iran War 2026",
+      "relates": "Investigates the various attempts at mediation, ceasefires, and peace negotiations.",
+      "relevance": 0.8394,
+      "picked_by": "best social"
+    },
+    {
+      "rank": 4,
+      "dimension": "social",
+      "title": "Role of Israel in 2026 Iran conflict",
+      "relates": "Examines Israel's involvement and its strategic objectives in the conflict with Iran.",
+      "relevance": 0.8318,
+      "picked_by": "MMR (best remaining, least redundant)"
+    }
+  ]
+}

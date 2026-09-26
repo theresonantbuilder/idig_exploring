@@ -1,0 +1,17 @@
+{
+  "name": "idig-exploring-extension",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && vite build && vite build -c vite.content.config.ts",
+    "build:dev": "tsc --noEmit && vite build --mode development && vite build -c vite.content.config.ts --mode development",
+    "typecheck": "tsc --noEmit",
+    "icons": "node scripts/make-icons.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iDIG Exploring</title>
+    <link rel="stylesheet" href="./review.css" />
+  </head>
+  <body>
+    <header class="brand">
+      <span class="mark">iDIG</span>
+      <span class="lens">exploring</span>
+    </header>
+
+    <nav class="tabs" id="tabs" role="tablist" hidden>
+      <button type="button" class="tab" data-tab="capture" role="tab" aria-selected="true">Snip</button>
+      <button type="button" class="tab" data-tab="history" role="tab" aria-selected="false">History</button>
+      <button type="button" class="tab" data-tab="preview" role="tab" aria-selected="false">Preview</button>
+      <div class="tab-actions">
+        <button type="button" id="remove-launcher" class="link">Remove button</button>
+        <button type="button" id="new-snip" class="new-snip">+ New snip</button>
+      </div>
+    </nav>
+
+    <input type="file" id="import-file" accept="application/json" hidden />
+
+    <main>
+      <p id="panel-status" class="empty" hidden></p>
+
+      <section id="capture" data-panel hidden>
+        <div class="history-head">
+          <h1>Your snip</h1>
+          <div class="history-tools">
+            <button type="button" class="export-btn link">Export</button>
+            <button type="button" class="import-btn link">Import</button>
+            <button type="button" class="clear-btn link">Clear all</button>
+          </div>
+        </div>
+        <figure class="crop">
+          <img id="crop" alt="The area you selected" />
+        </figure>
+        <p class="source">
+          From <span id="domain"></span>
+          <a id="url" class="url" target="_blank" rel="noopener noreferrer"></a>
+        </p>
+      </section>
+
+      <section id="history" data-panel hidden>
+        <div class="history-head">
+          <h1>History</h1>
+          <div class="history-tools">
+            <button type="button" class="export-btn link">Export</button>
+            <button type="button" class="import-btn link">Import</button>
+            <button type="button" class="clear-btn link">Clear all</button>
+          </div>
+        </div>
+        <p id="history-empty" class="empty" hidden>Nothing saved yet.</p>
+        <ul id="history-list"></ul>
+      </section>
+
+      <section id="preview" data-panel hidden>
+        <p class="dev-note">
+          Mock content, hand-written from real research — not from the real Gemini pipeline
+          (Phase D/E doesn't exist yet). For exploring layout only.
+        </p>
+        <div id="dig-root"></div>
+      </section>
+
+      <section id="problem" class="problem" hidden>
+        <h1 id="problem-title"></h1>
+        <p id="problem-text"></p>
+      </section>
+    </main>
+
+    <footer class="actions">
+      <button id="cancel" type="button" class="secondary">Cancel</button>
+      <button id="save" type="button" class="primary" hidden>Save</button>
+    </footer>
+
+    <script type="module" src="./review.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+{
+  "headline": "United Nations General Assembly: Iran, Trump, Ukraine",
+  "source_domain": "cnn.com",
+  "captured": "2026-09-23",
+  "model": "gemini-2.5-flash",
+  "variants": {
+    "A_thinking_0": {
+      "thinking_budget": 0,
+      "headline_dig": {
+        "result": {
+          "what_happened": "The 81st United Nations General Assembly (UNGA) in September 2026 featured prominent discussions on the ongoing wars involving Iran and Ukraine, with former U.S. President Donald Trump's address sparking considerable attention. Trump defended the U.S. military actions against Iran and threatened further escalation, while also meeting with Ukrainian President Volodymyr Zelenskyy to discuss the conflict with Russia.",
+          "why_now": "The UNGA is an annual gathering of world leaders, making it a natural forum for addressing pressing global issues. The ongoing conflicts in Iran and Ukraine, both with significant international repercussions, are at critical junctures, demanding diplomatic attention. Trump's participation and his strong rhetoric on these conflicts, particularly the seven-month war with Iran, further amplified their prominence at this year's assembly.",
+          "at_stake": "The discussions at UNGA could influence the trajectory of the Iran and Ukraine wars, potentially leading to de-escalation or further conflict. The global economy, particularly energy prices, is directly impacted by these conflicts, and diplomatic efforts could stabilize markets. The credibility and effectiveness of the United Nations as a multilateral institution in addressing global crises are also being tested.",
+          "contested": "Accounts differ on the specifics of U.S.-Iran interactions, with Trump stating that U.S. and Iranian officials had a \"very good meeting\" on the sidelines, while Iranian President Masoud Pezeshkian condemned U.S. actions as \"terrorism.\" There are also differing views on the effectiveness of Ukrainian drone attacks on Russian energy facilities, with some suggesting they drive up energy prices while Ukraine defends them as a tactic to weaken Russia's war efforts.",
+          "to_watch": [
+            "Any progress in direct or indirect negotiations between the U.S. and Iran regarding a peace deal or de-escalation of the conflict.",
+            "Further developments in the proposed 'energy ceasefire' between Russia and Ukraine, and its impact on global energy markets.",
+            "Statements and actions from other major powers regarding their support for either side in the Iran and Ukraine conflicts, and their commitment to UN-led diplomatic efforts."
+          ],
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "How do nations balance national sovereignty with the need for international cooperation on global issues?",
+              "hook": "Trump's 'America First' stance at the UN General Assembly highlights the tension between national interests and global challenges.",
+              "seed": "national sovereignty vs international cooperation UNGA",
+              "relevance": 0.8452,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "What specific mechanisms does the UN General Assembly have to enforce resolutions or mediate conflicts?",
+              "hook": "Despite extensive discussions on Iran and Ukraine, the UN's power to enforce peace remains a critical question.",
+              "seed": "UN General Assembly enforcement mechanisms conflict resolution",
+              "relevance": 0.858,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "When have similar threats of 'annihilation' been made by world leaders at the UN, and what were the outcomes?",
+              "hook": "Trump's threat to 'annihilate' Iran echoes past strong rhetoric at the UN, raising questions about historical parallels.",
+              "seed": "historical threats of annihilation UN General Assembly",
+              "relevance": 0.8497,
+              "picked_by": "MMR (0.344)",
+              "rank": 4
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "How do different countries' domestic political calendars influence their foreign policy positions at international forums?",
+              "hook": "The upcoming U.S. midterm elections are cited as a factor in potential Iran deal timing, illustrating domestic political influence.",
+              "seed": "domestic elections impact foreign policy UNGA",
+              "relevance": 0.8158
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "What are the direct, tangible impacts of disruptions in key shipping lanes on everyday global consumers?",
+              "hook": "The closure of the Strait of Hormuz due to the Iran conflict has direct consequences for global oil prices and consumers.",
+              "seed": "Strait of Hormuz closure impact on global consumers",
+              "relevance": 0.7715,
+              "picked_by": "best experiential",
+              "rank": 2
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "What role do non-state actors and private corporations play in shaping the agenda and outcomes of UNGA discussions?",
+              "hook": "Beyond state leaders, technology executives and private corporations are increasingly involved in UNGA discussions, particularly on AI.",
+              "seed": "non-state actors influence UN General Assembly",
+              "relevance": 0.8043
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "How do current civilian casualty rates in ongoing conflicts compare to historical averages in similar conflicts?",
+              "hook": "Reports of significantly higher Ukrainian civilian casualties in 2026 highlight the escalating human cost of the conflict.",
+              "seed": "civilian casualty rates Ukraine war historical comparison",
+              "relevance": 0.7899
+            },
+            {
+              "move": "unknowns",
+              "dimension": "semantic",
+              "question": "What evidence would definitively confirm or refute claims of war crimes in recent international conflicts?",
+              "hook": "A UN report citing 'reasonable grounds' for U.S. war crimes in Iran raises questions about the evidence needed for such determinations.",
+              "seed": "evidence for war crimes allegations international law",
+              "relevance": 0.8019
+            }
+          ]
+        },
+        "parse_error": null,
+        "raw_text": null,
+        "sources_top5": [
+          {
+            "domain": "nv.ua",
+            "url": "https://english.nv.ua/nation/u-n-general-assembly-2026-trump-zelenskyy-talks-macron-farewell-and-greenland-deal-50643493.html",
+            "cited_times": 5
+          },
+          {
+            "domain": "cfr.org",
+            "url": "https://www.cfr.org/articles/what-to-watch-for-at-unga-2026",
+            "cited_times": 5
+          },
+          {
+            "domain": "tempo.co",
+            "url": "https://en.tempo.co/read/2120163/day-2-of-unga-2026-whats-on-the-agenda",
+            "cited_times": 4
+          },
+          {
+            "domain": "pbs.org",
+            "url": "https://www.pbs.org/newshour/world/watch-live-trump-addresses-2026-united-nations-general-assembly",
+            "cited_times": 4
+          },
+          {
+            "domain": "cbsnews.com",
+            "url": "https://www.cbsnews.com/news/trump-address-united-nations-general-assembly-meetings-world-leaders-iran-ukraine/",
+            "cited_times": 3
+          }
+        ],
+        "sources_total": 28,
+        "sources_cited": 28,
+        "search_queries": [
+          "United Nations General Assembly Iran Trump Ukraine 2026",
+          "UN General Assembly 2026 agenda Iran",
+          "UN General Assembly 2026 agenda Trump",
+          "UN General Assembly 2026 agenda Ukraine",
+          "Iran's role in UN General Assembly 2026",
+          "Donald Trump's involvement UN General Assembly 2026",
+          "Ukraine's focus UN General Assembly 2026",
+          "Iran nuclear deal UNGA 2026",
+          "US foreign policy UNGA 2026",
+          "Russia-Ukraine conflict UNGA 2026"
+        ],
+        "finish_reason": "FinishReason.STOP",
+        "usage": {
+          "prompt": 893,
+          "tool_use_prompt": 1033,
+          "output": 1341,
+          "thinking": 0,
+          "total": 3267
+        },
+        "seconds": 10.3
+      },
+      "trails_shown": [
+        {
+          "rank": 1,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "What specific mechanisms does the UN General Assembly have to enforce resolutions or mediate conflicts?",
+          "hook": "Despite extensive discussions on Iran and Ukraine, the UN's power to enforce peace remains a critical question.",
+          "seed": "UN General Assembly enforcement mechanisms conflict resolution",
+          "relevance": 0.858,
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "What are the direct, tangible impacts of disruptions in key shipping lanes on everyday global consumers?",
+          "hook": "The closure of the Strait of Hormuz due to the Iran conflict has direct consequences for global oil prices and consumers.",
+          "seed": "Strait of Hormuz closure impact on global consumers",
+          "relevance": 0.7715,
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "tension",
+          "dimension": "social",
+          "question": "How do nations balance national sovereignty with the need for international cooperation on global issues?",
+          "hook": "Trump's 'America First' stance at the UN General Assembly highlights the tension between national interests and global challenges.",
+          "seed": "national sovereignty vs international cooperation UNGA",
+          "relevance": 0.8452,
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When have similar threats of 'annihilation' been made by world leaders at the UN, and what were the outcomes?",
+          "hook": "Trump's threat to 'annihilate' Iran echoes past strong rhetoric at the UN, raising questions about historical parallels.",
+          "seed": "historical threats of annihilation UN General Assembly",
+          "relevance": 0.8497,
+          "picked_by": "MMR (0.344)"
+        }
+      ],
+      "trail1_dig": {
+        "result": null,
+        "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+        "raw_text": "{{\n  \"short_answer\": \"The UN General Assembly primarily uses recommendations, debate, and its convening power to address conflicts and promote peace, rather than direct enforcement. While its resolutions are not legally binding, they carry significant political and moral authority.\",\n  \"deeper_story\": \"The General Assembly (UNGA) serves as the UN's main deliberative and policymaking body, where all 193 member states have equal representation. It can discuss and make recommendations on a wide range of international issues, including peace and security, human rights, and international law. Although UNGA resolutions are generally not legally enforceable, except for decisions on the UN budget, they reflect the international community's stance on an issue. The UNGA can also censure states for violating UN Charter principles, bar them from UN panels, or remove them from bodies like the Human Rights Council. In terms of mediation, the UNGA has adopted resolutions to strengthen the role of mediation in peaceful dispute settlement and conflict prevention, and the UN Secretary-General and his representatives actively engage in mediation efforts.\",\n  \"evidence\": [\n    \"The UN General Assembly is the chief deliberative, policymaking, and representative organ of the United Nations.\",\n    \"It can make recommendations to states on international issues within its competence, including peace and security.\",\n    \"UNGA resolutions are generally not legally binding, with the exception of decisions on the UN's budget.\",\n    \"The General Assembly can censure states, bar them from UN panels, or remove them from bodies like the Human Rights Council for violating UN Charter principles.\"\n  ],\n  \"still_open\": \"While the UNGA can make recommendations and facilitate mediation, the extent to which its resolutions influence state behavior without direct enforcement mechanisms remains a subject of ongoing debate and depends heavily on the political will of member states.\",\n  \"coverage\": \"broad\",\n  \"trails\": [\n    {\n      \"move\": \"mechanism\",\n      \"dimension\": \"semantic\",\n      \"question\": \"How does a non-binding resolution still exert influence on a country?\",\n      \"hook\": \"Given that UNGA resolutions are not legally binding, how do they still carry weight?\",\n      \"seed\": \"impact of non-binding UN resolutions\"\n    },\n    {\n      \"move\": \"tension\",\n      \"dimension\": \"social\",\n      \"question\": \"Why does the UN Security Council have enforcement powers, but the General Assembly doesn't?\",\n      \"hook\": \"The UNGA makes recommendations, but the Security Council can enforce; why the difference?\",\n      \"seed\": \"difference in powers UN General Assembly Security Council\"\n    },\n    {\n      \"move\": \"precedent\",\n      \"dimension\": \"semantic\",\n      \"question\": \"When has the UNGA successfully mediated a major international conflict?\",\n      \"hook\": \"The UNGA promotes mediation; when has this approach led to a lasting peace?\",\n      \"seed\": \"successful UN General Assembly mediation examples\"\n    },\n    {\n      \"move\": \"hidden\",\n      \"dimension\": \"social\",\n      \"question\": \"What role do regional organizations play in implementing UNGA recommendations?\",\n      \"hook\": \"Beyond the UNGA, who else helps put these recommendations into practice?\",\n      \"seed\": \"regional organizations implementing UN General Assembly resolutions\"\n    },\n    {\n      \"move\": \"stakes\",\n      \"dimension\": \"experiential\",\n      \"question\": \"What happens to a country when it is censured by the UN General Assembly?\",\n      \"hook\": \"The UNGA can censure states; what are the real-world consequences of such a censure?\",\n      \"seed\": \"consequences of UN General Assembly censure\"\n    },\n    {\n      \"move\": \"unknowns\",\n      \"dimension\": \"semantic\",\n      \"question\": \"What evidence would show that UNGA resolutions directly change state policy?\",\n      \"hook\": \"If UNGA resolutions are not enforceable, how can we measure their direct impact?\",\n      \"seed\": \"measuring impact of UN General Assembly resolutions\"\n    },\n    {\n      \"move\": \"frame\",\n      \"dimension\": \"social\",\n      \"question\": \"How do different member states interpret the 'responsibility to protect' principle?\",\n      \"hook\": \"The UNGA discusses peace and security, but how do nations agree on intervention?\",\n      \"seed\": \"interpretations of Responsibility to Protect UN\"\n    },\n    {\n      \"move\": \"scale\",\n      \"dimension\": \"semantic\",\n      \"question\": \"How many UNGA resolutions are passed each year, and on what topics?\",\n      \"hook\": \"The UNGA makes many recommendations; how numerous and varied are they annually?\",\n      \"seed\": \"number and topics of UN General Assembly resolutions per year\"\n    }\n  ]\n}",
+        "sources_top5": [
+          {
+            "domain": "crin.org",
+            "url": "https://archive.crin.org/en/guides/un-international-system/general-assembly.html",
+            "cited_times": 5
+          },
+          {
+            "domain": "un.org",
+            "url": "https://www.un.org/en/ga/about/background.shtml",
+            "cited_times": 4
+          },
+          {
+            "domain": "cfr.org",
+            "url": "https://www.cfr.org/backgrounders/un-general-assembly-unga-role",
+            "cited_times": 3
+          },
+          {
+            "domain": "wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/United_Nations_General_Assembly",
+            "cited_times": 2
+          },
+          {
+            "domain": "kyymca.org",
+            "url": "https://www.kyymca.org/wp-content/uploads/2015/01/KUNA-USG-Packet.pdf",
+            "cited_times": 1
+          }
+        ],
+        "sources_total": 7,
+        "sources_cited": 7,
+        "search_queries": [
+          "UN General Assembly enforcement mechanisms conflict resolution",
+          "UN General Assembly powers",
+          "UN General Assembly mediation roles"
+        ],
+        "finish_reason": "FinishReason.STOP",
+        "usage": {
+          "prompt": 934,
+          "tool_use_prompt": 965,
+          "output": 1063,
+          "thinking": 0,
+          "total": 2962
+        },
+        "seconds": 6.9
+      }
+    },
+    "B_thinking_1024": {
+      "thinking_budget": 1024,
+      "headline_dig": {
+        "result": null,
+        "parse_error": "JSONDecodeError: Invalid control character at: line 60 column 50 (char 4456)",
+        "raw_text": "The 81st United Nations General Assembly (UNGA) convened in September 2026, with the high-level general debate commencing on September 22. US President Donald Trump delivered an address on September 22, heavily focusing on the ongoing war with Iran, the conflict in Ukraine, and artificial intelligence. Trump defended his decision to initiate the war with Iran, which was nearing its seven-month mark, and issued a threat to \"annihilate\" Iran if a deal was not reached. Iranian President Masoud Pezeshkian was also scheduled to address the assembly on September 23, his first since the war began, and Iranian and US officials held meetings on the sidelines. Ukrainian President Volodymyr Zelenskyy attended the UNGA, meeting with various world leaders, including Trump, to advocate for increased military support, particularly air defenses against Russian jet-powered drones, and to seek direct talks with Chinese President Xi Jinping. Discussions regarding Ukraine highlighted the fifth year of Russia's war, a significant increase in civilian casualties, and concerns over attacks on energy infrastructure and grain exports.\n\nThe annual UN General Assembly served as a platform for world leaders amidst the seven-month US-Iran war and the ongoing five-year conflict in Ukraine. Approaching US midterm elections, which President Trump suggested Iran was awaiting before a deal, added a domestic political dimension to the international discussions. The race for the next UN Secretary-General also contributed to the high-stakes diplomatic environment.\n\nAt stake are the potential escalation or resolution of the US-Iran conflict, impacting global oil prices and maritime security in the Strait of Hormuz. The future of Ukraine and its sovereignty, along with global food security, hinges on the outcome of the war and international support. The effectiveness and future relevance of the United Nations in addressing global crises and emerging challenges like artificial intelligence are also under scrutiny.\n\nPresident Trump's claims of success in resolving conflicts and his approach to Iran and the UN faced skepticism from allies and observers. The overall effectiveness of the UN was debated, with some characterizing it as being in a \"permanent crisis\" while others underscored its essential functions. Trump's dismissal of AI warnings as a \"hoax\" contrasted sharply with the UN Secretary-General's call for global cooperation on AI regulation. Russia's portrayal of the Ukraine war was described as a \"one-sided\" narrative by some UNGA speakers.\n\n```json\n{\n  \"what_happened\": \"The 81st United Nations General Assembly (UNGA) convened in September 2026, with the high-level general debate commencing on September 22. US President Donald Trump delivered an address, heavily focusing on the ongoing war with Iran, the conflict in Ukraine, and artificial intelligence, while Iranian President Masoud Pezeshkian and Ukrainian President Volodymyr Zelenskyy also participated in the assembly and held key meetings.\",\n  \"why_now\": \"The UNGA is an annual event, providing a platform for leaders amidst the seven-month US-Iran war and the five-year conflict in Ukraine. Approaching US midterm elections added a domestic political dimension to Trump's address, and the race for the next UN Secretary-General was also a significant discussion.\",\n  \"at_stake\": \"The future of the US-Iran conflict, its impact on global oil prices and maritime security, and the outcome of the war in Ukraine, including civilian protection and global food security, are at stake. The effectiveness of the UN in resolving conflicts and regulating AI, along with the stability of international alliances, also hangs in the balance.\",\n  \"contested\": \"President Trump's claims of success and his approach to Iran and the UN were met with skepticism, and the UN's overall effectiveness was debated. Trump dismissed AI warnings as a 'hoax,' contrasting with calls for global regulation, and Russia's narrative on the Ukraine war was challenged as one-sided.\",\n  \"to_watch\": [\n    \"Further developments in US-Iran negotiations and the potential for a peace deal or escalation.\",\n    \"The trajectory of international support for Ukraine, particularly regarding air defenses and grain exports.\",\n    \"The selection of the next UN Secretary-General and the future direction of the organization.\"\n  ],\n  \"coverage\": \"broad\",\n  \"trails\": [\n    {\n      \"move\": \"tension\",\n      \"dimension\": \"social\",\n      \"question\": \"How do leaders balance national interests with global cooperation at the UN?\",\n      \"hook\": \"President Trump's 'America First' stance at the UNGA highlights the inherent tension between national sovereignty and multilateralism.\",\n      \"seed\": \"national interest vs global cooperation UNGA\"\n    },\n    {\n      \"move\": \"mechanism\",\n      \"dimension\": \"semantic\",\n      \"question\": \"How do UN Security Council resolutions influence ongoing military conflicts?\",\n      \"hook\": \"The UN Security Council's condemnation of Iran's attacks raises questions about the practical impact of such resolutions.\",\n      \"seed\": \"UN Security Council resolution impact on active conflicts\"\n    },\n    {\n      \"move\": \"precedent\",\n      \"dimension\": \"semantic\",\n      \"question\": \"When has a US President threatened 'annihilation' at the UN, and what followed?\",\n      \"hook\": \"President Trump's threat to 'annihilate' Iran echoes past strong rhetoric at the UN, prompting a look at historical outcomes.\",\n      \"seed\": \"US President UNGA 'annihilate' historical context\"\n    },\n    {\n      \"move\": \"frame\",\n      \"dimension\": \"social\",\n      \"question\": \"How do different nations define 'peace' in the context of ongoing wars?\",\n      \"hook\": \"Trump's assertion of having 'made peace' while defending military action contrasts with other nations' views on conflict resolution.\",\n      \"seed\": \"definitions of peace in international relations\"\n    },\n    {\n      \"move\": \"stakes\",\n      \"dimension\": \"experiential\",\n      \"question\": \"What are the concrete impacts of Strait of Hormuz disruptions on global economies?\",\n      \"hook\": \"The US-Iran war and the largely closed Strait of Hormuz are driving urgent economic and diplomatic pressure at the UNGA.\",\n      \"seed\": \"Strait of Hormuz closure economic impact\"\n    },\n    {\n      \"move\": \"hidden\",\n      \"dimension\": \"social\",\n      \"question\": \"Who are the key non-state actors influencing UNGA discussions and outcomes?\",\n      \"hook\": \"Beyond national leaders, AI company CEOs briefed the UN Security Council, indicating the growing influence of non-state actors.\",\n      \"seed\": \"non-state actors influence UN General Assembly\"\n    },\n    {\n      \"move\": \"scale\",\n      \"dimension\": \"semantic\",\n      \"question\": \"How do current civilian casualty rates in Ukraine compare to other recent conflicts?\",\n      \"hook\": \"Ukrainian civilian casualties in the first half of 2026 were 114% higher than in 2024, highlighting the escalating human cost.\",\n      \"seed\": \"Ukraine civilian casualties```json\n{\n  \"what_happened\": \"The 81st United Nations General Assembly (UNGA) convened in September 2026, with the high-level general debate commencing on September 22. US President Donald Trump delivered an address, heavily focusing on the ongoing war with Iran, the conflict in Ukraine, and artificial intelligence, while Iranian President Masoud Pezeshkian and Ukrainian President Volodymyr Zelenskyy also participated in the assembly and held key meetings. [cite: 3, 5, 7, 9, 11, 13, 15, 17, 18, 19, 20, 21, 24, 26]\",\n  \"why_now\": \"The UNGA is an annual event, providing a platform for leaders amidst the seven-month US-Iran war and the five-year conflict in Ukraine. Approaching US midterm elections added a domestic political dimension to Trump's address, and the race for the next UN Secretary-General was also a significant discussion. [cite: 4, 5, 6, 8, 10, 11, 16, 19, 25]\",\n  \"at_stake\": \"The future of the US-Iran conflict, its impact on global oil prices and maritime security, and the outcome of the war in Ukraine, including civilian protection and global food security, are at stake. The effectiveness of the UN in resolving conflicts and regulating AI, along with the stability of international alliances, also hangs in the balance. [cite: 4, 5, 6, 8, 10, 11, 12, 17, 20, 25]\",\n  \"contested\": \"President Trump's claims of success and his approach to Iran and the UN were met with skepticism, and the UN's overall effectiveness was debated. Trump dismissed AI warnings as a 'hoax,' contrasting with calls for global regulation, and Russia's narrative on the Ukraine war was challenged as one-sided. [cite: 3, 4, 8, 11, 15, 17, 25]\",\n  \"to_watch\": [\n    \"Further developments in US-Iran negotiations and the potential for a peace deal or escalation.\",\n    \"The trajectory of international support for Ukraine, particularly regarding air defenses and grain exports.\",\n    \"The selection of the next UN Secretary-General and the future direction of the organization.\"\n  ],\n  \"coverage\": \"broad\",\n  \"trails\": [\n    {\n      \"move\": \"tension\",\n      \"dimension\": \"social\",\n      \"question\": \"How do leaders balance national interests with global cooperation at the UN?\",\n      \"hook\": \"President Trump's 'America First' stance at the UNGA highlights the inherent tension between national sovereignty and multilateralism.\",\n      \"seed\": \"national interest vs global cooperation UNGA\"\n    },\n    {\n      \"move\": \"mechanism\",\n      \"dimension\": \"semantic\",\n      \"question\": \"How do UN Security Council resolutions influence ongoing military conflicts?\",\n      \"hook\": \"The UN Security Council's condemnation of Iran's attacks raises questions about the practical impact of such resolutions. [cite: 23]\",\n      \"seed\": \"UN Security Council resolution impact on active conflicts\"\n    },\n    {\n      \"move\": \"precedent\",\n      \"dimension\": \"semantic\",\n      \"question\": \"When has a US President threatened 'annihilation' at the UN, and what followed?\",\n      \"hook\": \"President Trump's threat to 'annihilate' Iran echoes past strong rhetoric at the UN, prompting a look at historical outcomes. [cite: 5, 9, 17]\",\n      \"seed\": \"US President UNGA 'annihilate' historical context\"\n    },\n    {\n      \"move\": \"frame\",\n      \"dimension\": \"social\",\n      \"question\": \"How do different nations define 'peace' in the context of ongoing wars?\",\n      \"hook\": \"Trump's assertion of having 'made peace' while defending military action contrasts with other nations' views on conflict resolution. [cite: 3, 18]\",\n      \"seed\": \"definitions of peace in international relations\"\n    },\n    {\n      \"move\": \"stakes\",\n      \"dimension\": \"experiential\",\n      \"question\": \"What are the concrete impacts of Strait of Hormuz disruptions on global economies?\",\n      \"hook\": \"The US-Iran war and the largely closed Strait of Hormuz are driving urgent economic and diplomatic pressure at the UNGA. [cite: 4]\",\n      \"seed\": \"Strait of Hormuz closure economic impact\"\n    },\n    {\n      \"move\": \"hidden\",\n      \"dimension\": \"social\",\n      \"question\": \"Who are the key non-state actors influencing UNGA discussions and outcomes?\",\n      \"hook\": \"Beyond national leaders, AI company CEOs briefed the UN Security Council, indicating the growing influence of non-state actors. [cite: 11]\",\n      \"seed\": \"non-state actors influence UN General Assembly\"\n    },\n    {\n      \"move\": \"scale\",\n      \"dimension\": \"semantic\",\n      \"question\": \"How do current civilian casualty rates in Ukraine compare to other recent conflicts?\",\n      \"hook\": \"Ukrainian civilian casualties in the first half of 2026 were 114% higher than in 2024, highlighting the escalating human cost. [cite: 8]\",\n      \"seed\": \"Ukraine civilian casualties",
+        "sources_top5": [
+          {
+            "domain": "tempo.co",
+            "url": "https://en.tempo.co/read/2120163/day-2-of-unga-2026-whats-on-the-agenda",
+            "cited_times": 10
+          },
+          {
+            "domain": "thenationalnews.com",
+            "url": "https://www.thenationalnews.com/news/us/2026/09/01/unga-2026-whats-on-the-agenda/",
+            "cited_times": 10
+          },
+          {
+            "domain": "cbsnews.com",
+            "url": "https://www.cbsnews.com/news/trump-address-united-nations-general-assembly-meetings-world-leaders-iran-ukraine/",
+            "cited_times": 9
+          },
+          {
+            "domain": "theguardian.com",
+            "url": "https://www.theguardian.com/us-news/2026/sep/22/trump-calls-on-allies-enforce-complete-economic-isolation-iran-un-speech",
+            "cited_times": 9
+          },
+          {
+            "domain": "brookings.edu",
+            "url": "https://www.brookings.edu/articles/whats-at-stake-at-unga-2026/",
+            "cited_times": 9
+          }
+        ],
+        "sources_total": 22,
+        "sources_cited": 22,
+        "search_queries": [
+          "UN General Assembly September 2026 Iran Trump Ukraine",
+          "UNGA 2026 agenda Iran",
+          "UNGA 2026 agenda Ukraine",
+          "Donald Trump statements UN General Assembly 2026 Iran Ukraine",
+          "Iran nuclear deal UNGA 2026",
+          "Ukraine war UNGA 2026"
+        ],
+        "finish_reason": "FinishReason.MAX_TOKENS",
+        "usage": {
+          "prompt": 893,
+          "tool_use_prompt": 1363,
+          "output": 2815,
+          "thinking": 1407,
+          "total": 6478
+        },
+        "seconds": 18.2
+      }
+    }
+  }
+}
