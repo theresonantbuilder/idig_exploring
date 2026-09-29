@@ -1,0 +1,1737 @@
+{
+  "model": "gemini-3.8-flash",
+  "loop_threshold": 0.85,
+  "runs": [
+    {
+      "label": "political_clear_claim",
+      "headline": "Government can use Social Security data to identify noncitizen voters, Supreme Court rules",
+      "date": "2026-09-25",
+      "headline_dig": {
+        "usage": {
+          "prompt": 2569,
+          "tool_use_prompt": 0,
+          "output": 3364,
+          "thinking": 0,
+          "total": 5933
+        },
+        "seconds": 20.7,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "claim": "The Supreme Court ruled that the federal government may allow states to use Social Security administration records integrated into a federal database to identify noncitizen voters on voter rolls.",
+          "what_happened": "In an unsigned emergency ruling on Friday, September 25, 2026, the Supreme Court lifted a federal judge's injunction that had blocked the Department of Homeland Security from letting state and local election officials conduct bulk voter eligibility checks using an overhauled Systematic Alien Verification for Entitlements (SAVE) database containing Social Security data. The decision temporarily reinstates access to the expanded database ahead of the 2026 midterm elections while underlying legal challenges proceed in lower courts, drawing a public dissent from the court's three liberal justices.",
+          "why_now": "The ruling resolves an emergency petition filed by the Justice Department after U.S. District Judge Sparkle Sooknanan blocked the modified database in June 2026 on federal privacy grounds. With the November 2026 midterm elections less than 40 days away, the Supreme Court weighed whether the federal government would suffer irreparable harm if barred from offering the verification tool to requesting states during the election cycle.",
+          "established": [
+            "The Supreme Court granted emergency relief pausing a district court injunction, permitting the Department of Homeland Security to operate its modified SAVE program with Social Security data during ongoing litigation.",
+            "Under Executive Order 14248, issued in March 2025, DHS revamped SAVE to allow election authorities to submit bulk voter registration queries cross-referenced with Social Security Administration data.",
+            "Participation in the expanded SAVE database is voluntary for states; federal officials cannot directly remove names from state voter registration lists.",
+            "Federal law restricts states from conducting systematic voter purges within 90 days of a federal election, narrowing the immediate practical reach of the system before November."
+          ],
+          "contested": [
+            {
+              "held_by": "James Percival, general counsel for the Department of Homeland Security",
+              "position": "characterized the decision as a vital victory for election integrity, arguing the federal government is legally bound to assist states in halting unlawful noncitizen voting."
+            },
+            {
+              "held_by": "The Supreme Court majority",
+              "position": "maintained that the voting rights groups' legal claims likely lack merit and that the lower court order improperly hobbled federal obligations under immigration law."
+            },
+            {
+              "held_by": "Justice Ketanji Brown Jackson, writing in dissent for the liberal minority",
+              "position": "argued the court improperly prioritized theoretical government harm over tangible risks to lawful voters disenfranchised by an error-prone database."
+            },
+            {
+              "held_by": "Advocacy organizations, including the League of Women Voters",
+              "position": "contended the modified system violates privacy laws and relies on outdated Social Security citizenship records, risking wrongful disenfranchisement of naturalized citizens."
+            }
+          ],
+          "left_out": "While the headline conveys a broad green light to identify noncitizen voters, the emergency order does not permanently decide the merits of the case. Crucially, the National Voter Registration Act's 90-day quiet period bars states from systematically purging registered voters so close to the midterm election, meaning the database cannot legally trigger mass, immediate removals before balloting begins.",
+          "still_unknown": [
+            "What final legal standard the D.C. Circuit Court of Appeals and a merits-stage Supreme Court will set regarding federal privacy limits when merging Social Security data into law-enforcement or voter-screening systems.",
+            "How many state election agencies will actively submit voter rolls for bulk verification before the midterms given the 90-day statutory purge ban."
+          ],
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "How does a database originally created to determine eligibility for welfare and driver's licenses verify whether someone is allowed to cast a ballot?",
+              "hook": "The SAVE database, designed in 1986 for public benefits, was modified to permit bulk voter screening.",
+              "seed": "Systematic Alien Verification for Entitlements SAVE database voter registration verification mechanism",
+              "relevance": 0.8319,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "Why does citizenship status in Social Security Administration files frequently fail to match a resident's current legal right to vote?",
+              "hook": "Social Security records show citizenship at application time, not updating automatically when permanent residents naturalize.",
+              "seed": "Social Security Administration citizenship records naturalization update lag voter rolls",
+              "relevance": 0.7758
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "What administrative steps must a legally registered citizen take to remain on the rolls after being flagged by a federal database query?",
+              "hook": "In Travis County, Texas, county officials reported that up to 21% of flagged noncitizens were lawful citizens.",
+              "seed": "voter roll purge notice proof of citizenship response requirements local election offices",
+              "relevance": 0.8041
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "When courts evaluate emergency election cases just weeks before voting, how did the principle against late-stage rule changes evolve?",
+              "hook": "The Supreme Court stayed a district injunction 39 days before midterms, despite longstanding Purcell principle precedents.",
+              "seed": "Purcell principle election law timing Supreme Court emergency docket changes",
+              "relevance": 0.8247,
+              "picked_by": "MMR 0.336",
+              "rank": 4
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "How do proponents of voter-list maintenance and defenders of ballot access measure the acceptable margin of error when cross-referencing government records?",
+              "hook": "Texas identified 2,724 potential noncitizens among 18 million voters, while advocates highlighted the risk of false positives.",
+              "seed": "voter roll maintenance vs voter purge false positive rates citizenship data",
+              "relevance": 0.8084,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "How rare is confirmed noncitizen voting in modern federal elections compared to the scale of administrative roll errors?",
+              "hook": "Federal officials initially estimated 16,000 noncitizens on Nevada rolls before revising the figure down to 185.",
+              "seed": "incidence of noncitizen voting United States federal elections research audits",
+              "relevance": 0.7769
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Who bears the legal and financial burden at the county level when federal agencies flag thousands of voter registrations for investigation?",
+              "hook": "Participation in SAVE remains optional, placing all follow-up inquiries and verification investigations entirely on local clerks.",
+              "seed": "local election administrators cost burden voter citizenship verification SAVE",
+              "relevance": 0.7923
+            },
+            {
+              "move": "unknowns",
+              "dimension": "experiential",
+              "question": "How does the federal 90-day election quiet period distinguish between systematic purges and one-by-one voter eligibility challenges?",
+              "hook": "Federal law blocks systematic voter cancellations within 90 days, but states continue individualized inquiries.",
+              "seed": "National Voter Registration Act 90-day provision systematic removal vs individualized challenge",
+              "relevance": 0.8173,
+              "picked_by": "best experiential",
+              "rank": 2
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "Supreme Court noncitizen voting social security database",
+          "\"Social Security\" \"noncitizen voters\" Supreme Court september 2026 OR 2024 OR 2025",
+          "Supreme Court Social Security data noncitizen voters ruling OR order",
+          "Supreme Court rules government can use social security data noncitizen voters"
+        ],
+        "sources_cited": 15,
+        "sources_top5": [
+          {
+            "domain": "cbsnews.com",
+            "url": "https://www.cbsnews.com/news/supreme-court-trump-save-database-voter-citizenship/",
+            "cited": 10
+          },
+          {
+            "domain": "washingtonpost.com",
+            "url": "https://www.washingtonpost.com/politics/2026/09/25/government-can-use-social-security-data-identify-noncitizen-voters-supreme-court-rules/",
+            "cited": 9
+          },
+          {
+            "domain": "whyy.org",
+            "url": "https://whyy.org/articles/election-supreme-court-trump-federal-voter-database/",
+            "cited": 7
+          },
+          {
+            "domain": "supremecourt.gov",
+            "url": "https://www.supremecourt.gov/opinions/25pdf/26a308_pok0.pdf",
+            "cited": 5
+          },
+          {
+            "domain": "latimes.com",
+            "url": "https://www.latimes.com/politics/story/2026-09-25/justices-uphold-trumps-expanded-data-checks-to-spot-non-citizens-who-registered-to-vote",
+            "cited": 4
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "semantic": 3,
+          "social": 3,
+          "experiential": 2
+        },
+        "distinct_moves": 8,
+        "meets_shape": true
+      },
+      "loaded_words": [],
+      "shown": [
+        {
+          "rank": 1,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How does a database originally created to determine eligibility for welfare and driver's licenses verify whether someone is allowed to cast a ballot?",
+          "hook": "The SAVE database, designed in 1986 for public benefits, was modified to permit bulk voter screening.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "unknowns",
+          "dimension": "experiential",
+          "question": "How does the federal 90-day election quiet period distinguish between systematic purges and one-by-one voter eligibility challenges?",
+          "hook": "Federal law blocks systematic voter cancellations within 90 days, but states continue individualized inquiries.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "frame",
+          "dimension": "social",
+          "question": "How do proponents of voter-list maintenance and defenders of ballot access measure the acceptable margin of error when cross-referencing government records?",
+          "hook": "Texas identified 2,724 potential noncitizens among 18 million voters, while advocates highlighted the risk of false positives.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When courts evaluate emergency election cases just weeks before voting, how did the principle against late-stage rule changes evolve?",
+          "hook": "The Supreme Court stayed a district injunction 39 days before midterms, despite longstanding Purcell principle precedents.",
+          "picked_by": "MMR 0.336"
+        }
+      ],
+      "trail1_dig": {
+        "usage": {
+          "prompt": 2476,
+          "tool_use_prompt": 0,
+          "output": 2879,
+          "thinking": 0,
+          "total": 5355
+        },
+        "seconds": 13.4,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "evidence_story": "The Systematic Alien Verification for Entitlements (SAVE) program is an electronic query service operated by U.S. Citizenship and Immigration Services rather than a standalone, all-inclusive master register of citizens. Established under the Immigration Reform and Control Act of 1986 to check immigrant eligibility for public assistance, Medicaid, and driver's licenses, the system operates as an intermediary querying underlying federal databases. In voter maintenance, a participating state election office submits individual or batch records containing a voter's name, date of birth, and an identifying number, such as a Social Security number or Alien Registration number. SAVE routes these records first through Social Security Administration files to check birth or citizenship status. If federal files indicate historical foreign citizenship or an Alien number, the system pulls Department of Homeland Security naturalization and immigration histories to assess current status. The mechanism returns a point-in-time status record, leaving final determination and removal proceedings to state election boards.",
+          "evidence": [
+            "Congress established the statutory mandate for SAVE in the Immigration Reform and Control Act of 1986, creating a tool for verifying noncitizen eligibility for federal entitlement programs.",
+            "Over 25 state election authorities maintain active memoranda of agreement with the Department of Homeland Security allowing citizenship checks on voter lists.",
+            "System updates deployed in 2025 enabled bulk data submissions and authorized lookups using partial or full Social Security numbers without requiring an existing immigration identifier.",
+            "Official guidelines from U.S. Citizenship and Immigration Services specify that SAVE transmits raw verification data rather than an administrative or legal determination of a person's voter eligibility."
+          ],
+          "interpretations": [
+            {
+              "held_by": "Federal immigration and election integrity officials",
+              "position": "argue that multi-agency data links between immigration registries and Social Security rolls efficiently safeguard federal elections by catching ineligible noncitizen registrants before ballots are cast."
+            },
+            {
+              "held_by": "Voting rights researchers and legal scholars, such as those at the Campaign Legal Center",
+              "position": "contend the system's reliance on static historical data systematically misidentifies naturalized citizens whose records lag behind their naturalization."
+            },
+            {
+              "held_by": "Civil rights litigators",
+              "position": "argue that repurposing entitlement verification networks for list maintenance violates federal protections, placing unfair evidentiary burdens on lawfully registered individuals to prove their citizenship."
+            },
+            {
+              "held_by": "State election directors",
+              "position": "observe that SAVE provides a rare federal check on local rolls, but emphasize that manual review is legally required before taking administrative action against any registrant."
+            }
+          ],
+          "still_open": "Federal lawsuits and state administrative reviews continue to contest how frequently automated Social Security cross-references deliver false positives for recently naturalized citizens. It remains legally unsettled whether using SAVE for systematic list maintenance violates the National Voter Registration Act's strict deadlines and procedural safeguards against voter purges right before elections.",
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "Why does cross-referencing Social Security numbers against naturalization databases produce false noncitizen flags even after someone has completed their citizenship oath?",
+              "hook": "SSA files only record citizenship when naturalized citizens manually notify local offices with original papers.",
+              "seed": "Social Security Administration Numident citizenship record update naturalization lag",
+              "relevance": 0.8035
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "How did Florida's 2012 attempt to purge thousands of noncitizens using federal immigration databases collapse after county election supervisors reviewed the records?",
+              "hook": "Initial state screening flagged 180,000 potential noncitizens, but confirmed only 85 ineligible voters statewide.",
+              "seed": "Florida 2012 noncitizen voter purge SAVE database supervisor review outcome",
+              "relevance": 0.8154
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "How can a database configured for single manual lookups handle tens of millions of simultaneous voter verification inquiries without crashing municipal administrative workflows?",
+              "hook": "SAVE processed more than 205 million verification queries within ten months after launching bulk submissions.",
+              "seed": "SAVE database bulk query processing capacity election administration volume",
+              "relevance": 0.8398,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "What exact steps must a naturalized citizen take to restore their voting eligibility when an automated state list maintenance audit cancels their ballot access?",
+              "hook": "Voters who fail initial database matching typically face a thirty-day window to present physical papers.",
+              "seed": "procedural due process requirements challenged voter citizenship removal notice",
+              "relevance": 0.8519,
+              "picked_by": "best experiential",
+              "rank": 2
+            },
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "Why would motor vehicle departments verify identity for driver's licenses under federal REAL ID rules yet produce records that federal immigration queries flag as doubtful?",
+              "hook": "Proposed SAVE modifications seek motor vehicle records because most local registration lists lack Social Security numbers.",
+              "seed": "REAL ID state motor vehicle driver license SAVE immigration verification tension",
+              "relevance": 0.839,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "How did federal courts come to view voter roll verification as both a mandatory duty of state secretaries and a potential violation of federal anti-purge protections?",
+              "hook": "The National Voter Registration Act bans systematic voter removals within ninety days of an election.",
+              "seed": "National Voter Registration Act 90-day quiet period systematic removal court interpretation",
+              "relevance": 0.839
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Who actually pays the operational processing fees when state election directors decide to screen millions of active voter profiles against federal registries?",
+              "hook": "USCIS eliminated per-search transaction charges in 2025 to encourage state election offices to query registrations.",
+              "seed": "USCIS SAVE fee waiver state election verification operational funding",
+              "relevance": 0.8349,
+              "picked_by": "MMR 0.340",
+              "rank": 4
+            },
+            {
+              "move": "unknowns",
+              "dimension": "semantic",
+              "question": "What evidentiary threshold separates an unconfirmed database query match from legally admissible proof of intentional unlawful voter registration?",
+              "hook": "SAVE agreements explicitly state the platform delivers snapshot data rather than voter qualification rulings.",
+              "seed": "federal voter fraud prosecution evidentiary standard SAVE database admissibility",
+              "relevance": 0.8276
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "Systematic Alien Verification for Entitlements voter rolls process steps",
+          "SAVE database voter registration verification mechanism USCIS how it works"
+        ],
+        "sources_cited": 13,
+        "sources_top5": [
+          {
+            "domain": "uscis.gov",
+            "url": "https://www.uscis.gov/save/current-user-agencies/guidance/voter-registration-and-voter-list-maintenance-fact-sheet?ref=theamericanquorum.com",
+            "cited": 5
+          },
+          {
+            "domain": "uscis.gov",
+            "url": "https://www.uscis.gov/newsroom/news-releases/uscis-enhances-voter-verification-systems",
+            "cited": 4
+          },
+          {
+            "domain": "uscis.gov",
+            "url": "https://www.uscis.gov/save/current-user-agencies/guidance/voter-registration-and-voter-list-maintenance-fact-sheet?ref=theamericanquorum.com",
+            "cited": 3
+          },
+          {
+            "domain": "superlawyers.com",
+            "url": "https://www.superlawyers.com/resources/civil-rights/save-system-voter-citizenship-registration/",
+            "cited": 3
+          },
+          {
+            "domain": "jeelani-law.com",
+            "url": "https://www.jeelani-law.com/articles/systematic-alien-verification-for-entitlements",
+            "cited": 2
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "trail1_candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "semantic": 4,
+          "experiential": 1,
+          "social": 3
+        },
+        "distinct_moves": 8,
+        "meets_shape": false
+      },
+      "trail1_loaded_words": [],
+      "trail1_dropped_loops": [
+        {
+          "question": "How did federal courts come to view voter roll verification as both a mandatory duty of state secretaries and a potential violation of federal anti-purge protections?",
+          "loop": 0.871
+        }
+      ],
+      "trail1_shown": [
+        {
+          "rank": 1,
+          "move": "scale",
+          "dimension": "semantic",
+          "question": "How can a database configured for single manual lookups handle tens of millions of simultaneous voter verification inquiries without crashing municipal administrative workflows?",
+          "hook": "SAVE processed more than 205 million verification queries within ten months after launching bulk submissions.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "What exact steps must a naturalized citizen take to restore their voting eligibility when an automated state list maintenance audit cancels their ballot access?",
+          "hook": "Voters who fail initial database matching typically face a thirty-day window to present physical papers.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "tension",
+          "dimension": "social",
+          "question": "Why would motor vehicle departments verify identity for driver's licenses under federal REAL ID rules yet produce records that federal immigration queries flag as doubtful?",
+          "hook": "Proposed SAVE modifications seek motor vehicle records because most local registration lists lack Social Security numbers.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "hidden",
+          "dimension": "social",
+          "question": "Who actually pays the operational processing fees when state election directors decide to screen millions of active voter profiles against federal registries?",
+          "hook": "USCIS eliminated per-search transaction charges in 2025 to encourage state election offices to query registrations.",
+          "picked_by": "MMR 0.340"
+        }
+      ],
+      "token_totals": {
+        "headline": {
+          "prompt": 2569,
+          "tool_use_prompt": 0,
+          "output": 3364,
+          "thinking": 0,
+          "total": 5933
+        },
+        "trail1": {
+          "prompt": 2476,
+          "tool_use_prompt": 0,
+          "output": 2879,
+          "thinking": 0,
+          "total": 5355
+        }
+      }
+    },
+    {
+      "label": "non_political",
+      "headline": "Scientists discover two tiny new snail species in Montenegro",
+      "date": "2026-09-26",
+      "headline_dig": {
+        "usage": {
+          "prompt": 2569,
+          "tool_use_prompt": 0,
+          "output": 3378,
+          "thinking": 0,
+          "total": 5947
+        },
+        "seconds": 17.0,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "claim": "Researchers have described two previously undocumented snail species found in the mountains and river canyons of northern Montenegro.",
+          "what_happened": "In a study published in Biodiversity Data Journal, a collaborative team of international biologists and citizen scientists formally described Cochlostoma komarnica and Cochlostoma dobrido, two tiny limestone-dwelling land snails discovered in Komarnica Canyon and Durmitor National Park. The researchers confirmed their taxonomic status through anatomical dissections, shell morphology, and DNA barcoding conducted in makeshift field laboratories and university research facilities.",
+          "why_now": "While formal taxonomic publication occurred in late July 2026, scientific outreach organizations and international science portals circulated the findings widely in late September 2026. The timing coincided with intensified civic and scientific campaigns against a long-delayed 172-megawatt hydropower dam on the Komarnica River, making the newly named species prominent symbols in Montenegro's conservation debates.",
+          "established": [
+            "The newly named species, Cochlostoma dobrido and Cochlostoma komarnica, measure approximately 6 millimeters long and possess an operculum—a specialized plate on the tail that acts like a door to seal the shell aperture.",
+            "The specimens were collected during field expeditions run between 2018 and 2025 by Taxon Expeditions in collaboration with the Montenegrin Ecologists Society (MES).",
+            "Unlike common pulmonate garden snails that carry eyes at the tips of tentacles, these snails bear their eyes at the base or sides of the head and belong to the caenogastropod family Cochlostomatidae.",
+            "Komarnica Canyon, where Cochlostoma komarnica lives, is candidate Emerald Network habitat and faces a proposed 171-meter-high concrete arch hydropower dam."
+          ],
+          "contested": [
+            {
+              "held_by": "Jovana Đokić of the Montenegrin Ecologists Society",
+              "position": "Maintains that the dam project must be abandoned because flooding an intact canyon for hydropower cannot be considered green or sustainable energy."
+            },
+            {
+              "held_by": "State power utility Elektroprivreda Crne Gore (EPCG)",
+              "position": "Contends the Komarnica hydropower plant is an essential renewable energy asset needed to meet national generation targets, arguing modern standards can balance energy and conservation."
+            },
+            {
+              "held_by": "European environmental groups such as EuroNatur and the Save the Blue Heart campaign",
+              "position": "Argue the canyon should be permanently incorporated into the neighboring Durmitor UNESCO World Heritage site to halt construction permanently."
+            },
+            {
+              "held_by": "Montenegrin energy planners and development advocates",
+              "position": "State that the planned reservoir would support regional economic development through tourism, aquaculture, and grid stability without damaging upstream scenic sections like Nevidio Canyon."
+            }
+          ],
+          "left_out": "The headline presents the discovery simply as a neat zoological find, omitting the explicit political and conservation context behind the fieldwork. The expeditions were organized deliberately to document undocumented endemic species in Komarnica Canyon to generate legal and scientific leverage against state-backed dam construction while Montenegro negotiates environmental standards under European Union accession talks.",
+          "still_unknown": [
+            "Whether the Montenegrin government will approve EPCG's revised environmental impact assessment or officially incorporate the Komarnica Canyon into Durmitor National Park; an official cabinet decision and UNESCO petition review would settle the canyon's protected status.",
+            "The full geographic distribution of Cochlostoma komarnica; systematic surveys across adjacent limestone massifs would determine whether the species is an ultra-narrow endemic restricted solely to the reservoir footprint."
+          ],
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "How can an energy project qualify as clean climate action under national targets while threatening to wipe out the exact ecosystems conservation laws exist to defend?",
+              "hook": "Montenegro lists the 172-megawatt Komarnica dam as renewable energy, but environmentalists argue its reservoir destroys uncataloged life.",
+              "seed": "hydropower green energy versus river biodiversity conflict Balkans",
+              "relevance": 0.8062
+            },
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "What makes limestone karst landscapes so effective at isolating small invertebrate populations into completely distinct species living just kilometers apart?",
+              "hook": "The two newly named snails live on adjacent limestone formations yet show distinct genetic divergences.",
+              "seed": "karst limestone endemism speciation mechanisms microgastropods",
+              "relevance": 0.8405,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "When has discovering a previously unnamed species actually halted a major infrastructure project, and when has construction gone ahead anyway?",
+              "hook": "Campaigners previously cited endemic snails to halt damming on the Little Tennessee River in 1973.",
+              "seed": "endangered species discovery infrastructure project cancellation history Snail Darter",
+              "relevance": 0.8328,
+              "picked_by": "MMR 0.342",
+              "rank": 4
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "Why do development planners view river reservoirs as catalysts for tourism and recreation while conservationists view the exact same water bodies as biological dead zones?",
+              "hook": "Concession holders promised the Komarnica reservoir would boost regional boating and fish farming.",
+              "seed": "reservoir creation ecological impact versus recreational economic framing",
+              "relevance": 0.7559
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "What happens to a community when international ecological protections clash with state plans for industrial grid expansion?",
+              "hook": "Towns around Šavnik face competing promises of municipal employment versus river ecotourism preservation.",
+              "seed": "local economic impacts hydropower construction versus river conservation Western Balkans",
+              "relevance": 0.7984
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "How did paying tourists joining citizen-science expeditions become key frontline catalogers in international taxonomy?",
+              "hook": "Volunteer participants collected and voted on the formal Latin names of the Montenegrin snails.",
+              "seed": "citizen science ecotourism taxonomic discovery Taxon Expeditions",
+              "relevance": 0.8619,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "How many undescribed invertebrate species remain hidden inside densely settled, historically well-mapped continents like Europe?",
+              "hook": "Biologists found two previously unknown mollusks living above ground in European mountains in the 2020s.",
+              "seed": "undiscovered invertebrate biodiversity Europe Linnaean shortfall",
+              "relevance": 0.8391
+            },
+            {
+              "move": "unknowns",
+              "dimension": "experiential",
+              "question": "What evidence determines whether an environmental treaty like the Bern Convention can force an aspiring European Union member state to redesign its power grid?",
+              "hook": "Environmental organizations filed a formal Bern Convention complaint over Montenegro's Komarnica River candidate site.",
+              "seed": "Bern Convention Emerald Network enforcement EU accession chapter 27 Montenegro",
+              "relevance": 0.82,
+              "picked_by": "best experiential",
+              "rank": 2
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "\"Komarnica\" hydropower dam project status Montenegro",
+          "\"Two new Cochlostoma species from the Durmitor and Komarnica regions\"",
+          "Scientists discover two tiny new snail species in Montenegro ScienceDaily",
+          "two new snail species discovered Montenegro 2024 OR 2025 OR 2026",
+          "two tiny new snail species Montenegro",
+          "\"Two new Cochlostoma species\" \"Biodiversity Data Journal\""
+        ],
+        "sources_cited": 18,
+        "sources_top5": [
+          {
+            "domain": "indiatimes.com",
+            "url": "https://timesofindia.indiatimes.com/etimes/animals/researchers-discover-two-new-snail-species-in-montenegro-after-studying-differences-in-their-shells-anatomy-and-dna/articleshow/134520066.cms",
+            "cited": 8
+          },
+          {
+            "domain": "sciencedaily.com",
+            "url": "https://www.sciencedaily.com/releases/2026/09/260923035936.htm",
+            "cited": 7
+          },
+          {
+            "domain": "scitechdaily.com",
+            "url": "https://scitechdaily.com/scientists-find-remarkable-new-snail-species-in-montenegros-mountains/",
+            "cited": 6
+          },
+          {
+            "domain": "balkanrivers.net",
+            "url": "https://www.balkanrivers.net/en/news/international-day-of-action-for-rivers-spotlight-on-montenegros-threatened-komarnica-canyon",
+            "cited": 4
+          },
+          {
+            "domain": "coe.int",
+            "url": "https://rm.coe.int/files-2022-4-montenegro-hydropower-plant-development-on-emerald-networ/48802ac9fd",
+            "cited": 4
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "social": 3,
+          "semantic": 3,
+          "experiential": 2
+        },
+        "distinct_moves": 8,
+        "meets_shape": true
+      },
+      "loaded_words": [],
+      "shown": [
+        {
+          "rank": 1,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "What makes limestone karst landscapes so effective at isolating small invertebrate populations into completely distinct species living just kilometers apart?",
+          "hook": "The two newly named snails live on adjacent limestone formations yet show distinct genetic divergences.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "unknowns",
+          "dimension": "experiential",
+          "question": "What evidence determines whether an environmental treaty like the Bern Convention can force an aspiring European Union member state to redesign its power grid?",
+          "hook": "Environmental organizations filed a formal Bern Convention complaint over Montenegro's Komarnica River candidate site.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "hidden",
+          "dimension": "social",
+          "question": "How did paying tourists joining citizen-science expeditions become key frontline catalogers in international taxonomy?",
+          "hook": "Volunteer participants collected and voted on the formal Latin names of the Montenegrin snails.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When has discovering a previously unnamed species actually halted a major infrastructure project, and when has construction gone ahead anyway?",
+          "hook": "Campaigners previously cited endemic snails to halt damming on the Little Tennessee River in 1973.",
+          "picked_by": "MMR 0.342"
+        }
+      ],
+      "trail1_dig": {
+        "usage": {
+          "prompt": 2486,
+          "tool_use_prompt": 0,
+          "output": 2934,
+          "thinking": 0,
+          "total": 5420
+        },
+        "seconds": 14.3,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "evidence_story": "Limestone karst environments act as evolutionary cradles because the chemical dissolution of calcium carbonate creates highly fragmented physical structures both above and below the surface. Slightly acidic groundwater carves mazes of isolated sinkholes, underground drainages, fissures, and caves separated by impassable non-carbonate terrain. For organisms with extremely low mobility, such as microgastropods and troglobitic invertebrates, these features turn contiguous landmasses into de facto archipelagos. \n\nBecause snails require constant moisture to avoid desiccation and high concentrations of dissolved calcium carbonate to secrete shells, they cannot cross non-calcareous soils or open, dry terrain. A valley just a few hundred meters wide or a non-porous rock layer forms an absolute barrier to dispersal. Confined to a single spring, cave stream, or limestone outcrop, populations experience immediate genetic severance. Genetic drift and local adaptation to minute chemical or thermal differences then operate without the diluting effect of gene flow, rapidly cementing reproductive isolation and producing distinct species across tiny geographic distances.",
+          "evidence": [
+            "A 2008 biogeographical survey of 43 limestone karsts across Malaysia established that non-calcareous surrounding soil types accounted for the dominant share of variation in land snail endemism, functioning as ecological moats that completely cut off gene flow.",
+            "Subterranean ecological surveys in the Dinaric Karst and South American cave systems demonstrate that stygobiont and troglobiont invertebrate species routinely exhibit single-site micro-endemism, restricted entirely to a solitary cave chamber or a localized spring system.",
+            "In East Asian karst systems, genomic resequencing of rock-specialized lineages demonstrates rapid molecular divergence linked to localized adaptation around calcium channels and microclimates, showing genetic divergence within small spatial footprints.",
+            "Land snail assessments across Southeast Asian karst towers show that communities separated by fewer than five kilometers display almost entirely non-overlapping species compositions due to lack of surface dispersal corridors."
+          ],
+          "interpretations": [
+            {
+              "held_by": "Geobiologists led by Menno Schilthuizen",
+              "position": "argue that karst formations act as continental islands, where physical isolation by surrounding acidic or non-limestone soils accelerates speciation through genetic drift and restricted dispersal."
+            },
+            {
+              "held_by": "Speleobiologists focusing on subterranean fauna",
+              "position": "emphasize that subterranean microclimate stability decouples cave-dwelling invertebrates from surface adaptations, turning deep fissures into evolutionary traps where physiological specialization prevents survival anywhere else."
+            },
+            {
+              "held_by": "Evolutionary ecologists studying limestone microflora and fauna",
+              "position": "suggest that chemical stress—specifically the biological demand to regulate extreme calcium exposure—drives active ecological selection that rapidly separates populations inhabiting different rock chemistry zones."
+            }
+          ],
+          "still_open": "It remains unresolved how often karst speciation is driven purely by passive genetic drift following physical severance versus active ecological selection against specific minerals or microclimatic differences. Biologists also debate how ancient these micro-endemic lineages actually are, as molecular clocks frequently conflict with the geomorphological ages of collapsing and reforming cave systems.",
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "How does the chemical composition of surrounding topsoil prevent calcium-dependent snails from crossing flat terrain between two karst towers?",
+              "hook": "Malaysian tower surveys found surrounding non-limestone soils explained 10% of total endemic richness variance.",
+              "seed": "non calcareous soil barrier land snail dispersal calcium physiology",
+              "relevance": 0.8202,
+              "picked_by": "MMR 0.330",
+              "rank": 4
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "What is the minimum physical distance required in terrestrial biology to maintain permanent reproductive isolation without geographical mountain ranges or oceans?",
+              "hook": "Genetically isolated karst gastropod species often live separated by less than two kilometers of forest.",
+              "seed": "minimum geographic distance microallopatric speciation invertebrates",
+              "relevance": 0.8597
+            },
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "Why do global conservation frameworks fail to protect subterranean biodiversity even when surface karst areas are formally designated as national parks?",
+              "hook": "Subterranean stygobionts remain confined to specific chambers beneath legally protected surface ground.",
+              "seed": "subterranean biodiversity conservation gaps protected area boundaries",
+              "relevance": 0.8163
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "When an underground karst conduit collapses or shifts its hydrological course, what happens to the isolated aquatic ecosystems trapped inside the disconnected chambers?",
+              "hook": "Karst aquifers frequently re-route subterranean discharge channels within mere decades following dissolution collapses.",
+              "seed": "speleogenesis hydrology shift troglobiont extinction speciation",
+              "relevance": 0.826,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "How does industrial limestone quarrying for cement alter the microclimate of subterranean cave systems miles away from the excavation site?",
+              "hook": "Limestone extraction destroys epikarst layers that regulate the internal temperature and humidity of subterranean networks.",
+              "seed": "limestone quarrying epikarst microclimate subterranean ecosystem impacts",
+              "relevance": 0.8128,
+              "picked_by": "best experiential",
+              "rank": 2
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "How do taxonomy disputes over whether microgastropods represent distinct species or local morphological variations impact infrastructure development permits?",
+              "hook": "Single-cave snail species designations routinely halt or reroute road and quarry permits across Europe.",
+              "seed": "cryptic species microgastropod taxonomic inflation environmental impact assessment",
+              "relevance": 0.8076
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Who monitors the ecological health of deep epikarst fissures that sit between surface soil and human-accessible cave passages?",
+              "hook": "Most karst invertebrates actually inhabit microscopic rock fissures too narrow for human speleologists to reach.",
+              "seed": "epikarst fauna sampling methods microarthropods monitoring",
+              "relevance": 0.8246,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "unknowns",
+              "dimension": "semantic",
+              "question": "How can subterranean invertebrates survive long periods of complete organic starvation when surface nutrient wash-ins are blocked during droughts?",
+              "hook": "Troglobionts trapped in deep karst fractures survive on food webs largely cut off from sunlight.",
+              "seed": "subterranean food webs troglobiont metabolic adaptations nutrient limitation",
+              "relevance": 0.8259
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "why karst landscapes drive micro-endemism snails subterranean troglobionts",
+          "karst limestone endemism speciation mechanisms microgastropods"
+        ],
+        "sources_cited": 9,
+        "sources_top5": [
+          {
+            "domain": "flinders.edu.au",
+            "url": "https://researchnow.flinders.edu.au/en/publications/using-biogeographical-patterns-of-endemic-land-snails-to-improve-/",
+            "cited": 10
+          },
+          {
+            "domain": "nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12523527/",
+            "cited": 4
+          },
+          {
+            "domain": "nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10257982/",
+            "cited": 4
+          },
+          {
+            "domain": "diemproject.org",
+            "url": "https://diemproject.org/sensitive-ecosystems/karst-ecosystems/",
+            "cited": 3
+          },
+          {
+            "domain": "mdpi.com",
+            "url": "https://www.mdpi.com/1424-2818/15/3/408",
+            "cited": 3
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "trail1_candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "semantic": 4,
+          "social": 3,
+          "experiential": 1
+        },
+        "distinct_moves": 8,
+        "meets_shape": false
+      },
+      "trail1_loaded_words": [],
+      "trail1_dropped_loops": [
+        {
+          "question": "What is the minimum physical distance required in terrestrial biology to maintain permanent reproductive isolation without geographical mountain ranges or oceans?",
+          "loop": 0.881
+        },
+        {
+          "question": "How do taxonomy disputes over whether microgastropods represent distinct species or local morphological variations impact infrastructure development permits?",
+          "loop": 0.861
+        }
+      ],
+      "trail1_shown": [
+        {
+          "rank": 1,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When an underground karst conduit collapses or shifts its hydrological course, what happens to the isolated aquatic ecosystems trapped inside the disconnected chambers?",
+          "hook": "Karst aquifers frequently re-route subterranean discharge channels within mere decades following dissolution collapses.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How does industrial limestone quarrying for cement alter the microclimate of subterranean cave systems miles away from the excavation site?",
+          "hook": "Limestone extraction destroys epikarst layers that regulate the internal temperature and humidity of subterranean networks.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "hidden",
+          "dimension": "social",
+          "question": "Who monitors the ecological health of deep epikarst fissures that sit between surface soil and human-accessible cave passages?",
+          "hook": "Most karst invertebrates actually inhabit microscopic rock fissures too narrow for human speleologists to reach.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How does the chemical composition of surrounding topsoil prevent calcium-dependent snails from crossing flat terrain between two karst towers?",
+          "hook": "Malaysian tower surveys found surrounding non-limestone soils explained 10% of total endemic richness variance.",
+          "picked_by": "MMR 0.330"
+        }
+      ],
+      "token_totals": {
+        "headline": {
+          "prompt": 2569,
+          "tool_use_prompt": 0,
+          "output": 3378,
+          "thinking": 0,
+          "total": 5947
+        },
+        "trail1": {
+          "prompt": 2486,
+          "tool_use_prompt": 0,
+          "output": 2934,
+          "thinking": 0,
+          "total": 5420
+        }
+      }
+    },
+    {
+      "label": "thin_live_blog",
+      "headline": "LIVE UPDATES: Sara Duterte Impeachment Trial",
+      "date": "2026-09-23",
+      "headline_dig": {
+        "usage": {
+          "prompt": 2577,
+          "tool_use_prompt": 0,
+          "output": 3435,
+          "thinking": 0,
+          "total": 6012
+        },
+        "seconds": 15.1,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "claim": "Philippine news outlet GMA Network provides continuous live coverage of the Senate impeachment trial of Vice President Sara Duterte.",
+          "what_happened": "On September 23, 2026, the Philippine Senate impeachment court conducted Day 29 of the trial of Vice President Sara Duterte, voting 13–1 to calculate the constitutional two-thirds conviction threshold using only participating senators rather than the full 24-member chamber. The decision effectively reduced the threshold to convict from 16 votes to 14, prompting procedural protests and walkouts from several allied senators.",
+          "why_now": "The trial resumed in July 2026 after the House of Representatives impeached Duterte for a second time in May 2026 with 257 votes, overcoming an earlier 2025 complaint voided by the Supreme Court. By late September, proceedings reached Article II concerning alleged unexplained wealth, false asset declarations, and corporate interests, culminating in intense clashes over the exact vote mathematics required for a conviction.",
+          "established": [
+            "The House of Representatives impeached Duterte on four primary charges: betrayal of public trust, culpable violation of the Constitution, graft and corruption, and bribery.",
+            "Presiding Officer Francis Escudero oversaw Day 29 deliberations on September 23, 2026, where the Senate voted 13–1 to reconsider how the two-thirds threshold is applied.",
+            "Four senators were excluded from the active denominator due to detention on plunder charges, active arrest warrants, or overseas medical absence, reducing active membership to 20.",
+            "House prosecutors focused late-September trial days on Duterte’s Statements of Assets, Liabilities, and Net Worth (SALN), corporate ties, and bank accounts."
+          ],
+          "contested": [
+            {
+              "held_by": "House prosecution panel",
+              "position": "Contended that the Constitution’s two-thirds requirement must reflect living, eligible, and participating members to prevent absent or detained senators from effectively casting automatic acquittal votes."
+            },
+            {
+              "held_by": "Duterte defense team",
+              "position": "Argued through counsel Michael Poa and Sheila Sison that lowering the threshold alters clear constitutional design and compromises the court's institutional impartiality."
+            },
+            {
+              "held_by": "Dissenting senators",
+              "position": "Walked out or abstained, with Senator Alan Peter Cayetano arguing that modifying the 16-vote standard is an ultra vires act that must be referred immediately to the Supreme Court."
+            },
+            {
+              "held_by": "Presiding Officer Francis Escudero",
+              "position": "Maintained that the standard denominator should remain 24 seats, yet agreed to enforce the court majority’s 14-vote ruling while warning it sets an unprecedented rule."
+            }
+          ],
+          "left_out": "The headline frames the news as an ongoing broadcast feed, omitting that the proceedings represent a historic constitutional confrontation: Duterte is the first Philippine vice president to face an impeachment trial and the first official impeached twice. It also leaves out that the trial takes place against a total rupture between the Marcos and Duterte political coalitions ahead of the 2028 presidential campaign.",
+          "still_unknown": [
+            "Whether the Supreme Court of the Philippines will accept pending petitions to review and potentially invalidate the Senate's 14-vote threshold ruling before final judgment.",
+            "Whether House prosecutors can substantiate claims that Duterte's undeclared corporate holdings and asset spikes directly constitute impeachable graft.",
+            "How many senator-judges will ultimately cast votes to convict or acquit once the defense completes its case across all articles."
+          ],
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "When a national constitution mandates a fraction of \"all members\" to convict a leader, does an empty or detained seat count as a vote for acquittal?",
+              "hook": "The Philippine Senate recalculated its two-thirds conviction rule from 16 to 14 because four senators are unavailable.",
+              "seed": "impeachment two thirds all members denominator quorum precedents",
+              "relevance": 0.8431,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "Why do high courts that invalidate legislative impeachment articles usually fail to prevent subsequent filings on the same underlying charges?",
+              "hook": "The Supreme Court voided Duterte's 2025 impeachment, yet the House approved identical charges ten months later.",
+              "seed": "constitutional court intervention legislative impeachment double jeopardy precedents",
+              "relevance": 0.8252,
+              "picked_by": "MMR 0.335",
+              "rank": 4
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "How did mandatory asset and liability disclosure filings evolve from routine bureaucratic transparency into the primary weapon for removing high-ranking elected officials?",
+              "hook": "Article II against Duterte pivots on 1,800 pages of bank records and undisclosed corporate committee roles.",
+              "seed": "SALN asset declaration removal public officials jurisprudence history",
+              "relevance": 0.7933
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "What happens to day-to-day administrative delivery in cabinet agencies when the line between official discretion and impeachable fund diversion is litigated mid-term?",
+              "hook": "Charges focus on billions in education and confidential operational funds spent during Duterte's cabinet tenure.",
+              "seed": "confidential intelligence funds audit dispute governance public administration",
+              "relevance": 0.8241,
+              "picked_by": "best experiential",
+              "rank": 2
+            },
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "How can an impeachment court remain a credible judicial tribunal when the judges running the trial are directly competing with the defendant for future executive power?",
+              "hook": "Six senators boycotted the voting threshold session, accusing colleagues of engineering rules to eliminate a 2028 rival.",
+              "seed": "senate impeachment court political bias separation of powers conflict",
+              "relevance": 0.8347,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Why do non-voting legal advisers and retired supreme court justices exert decisive sway over procedural votes during legislative trials?",
+              "hook": "Memoranda from three former chief justices acting as amici curiae prompted the Senate's threshold recalculation.",
+              "seed": "amici curiae role legislative trial impeachment proceedings",
+              "relevance": 0.7908
+            },
+            {
+              "move": "unknowns",
+              "dimension": "semantic",
+              "question": "What legal standard determines whether a legislative chamber's internal trial rules are justiciable by an independent supreme court?",
+              "hook": "Presiding officers expect the high tribunal to intervene before final voting, despite traditional separation-of-powers barriers.",
+              "seed": "judicial review of internal impeachment rules political question doctrine",
+              "relevance": 0.7987
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "Sara Duterte impeachment House of Representatives 2024 2025",
+          "Sara Duterte impeachment live updates GMA Network",
+          "Sara Duterte impeachment trial Senate Philippines",
+          "Sara Duterte impeachment trial 2025 2026"
+        ],
+        "sources_cited": 17,
+        "sources_top5": [
+          {
+            "domain": "wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/Impeachment_trial_of_Sara_Duterte",
+            "cited": 10
+          },
+          {
+            "domain": "inquirer.net",
+            "url": "https://newsinfo.inquirer.net/2312504/icymi-sara-duterte-impeachment-trial-week-12-highlights",
+            "cited": 9
+          },
+          {
+            "domain": "inquirer.net",
+            "url": "https://newsinfo.inquirer.net/2310693/highlights-day-29-of-sara-duterte-impeachment-trial-sept-23-2026",
+            "cited": 7
+          },
+          {
+            "domain": "inquirer.net",
+            "url": "https://newsinfo.inquirer.net/2312539/impeachment-court-hopes-for-swift-sc-ruling-on-2-3-threshold-computation",
+            "cited": 6
+          },
+          {
+            "domain": "youtube.com",
+            "url": "https://www.youtube.com/watch?v=Wau6Dydn6UI",
+            "cited": 6
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "candidate_shape": {
+        "trail_count": 7,
+        "per_dimension": {
+          "semantic": 4,
+          "experiential": 1,
+          "social": 2
+        },
+        "distinct_moves": 7,
+        "meets_shape": false
+      },
+      "loaded_words": [],
+      "shown": [
+        {
+          "rank": 1,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "When a national constitution mandates a fraction of \"all members\" to convict a leader, does an empty or detained seat count as a vote for acquittal?",
+          "hook": "The Philippine Senate recalculated its two-thirds conviction rule from 16 to 14 because four senators are unavailable.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "What happens to day-to-day administrative delivery in cabinet agencies when the line between official discretion and impeachable fund diversion is litigated mid-term?",
+          "hook": "Charges focus on billions in education and confidential operational funds spent during Duterte's cabinet tenure.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "tension",
+          "dimension": "social",
+          "question": "How can an impeachment court remain a credible judicial tribunal when the judges running the trial are directly competing with the defendant for future executive power?",
+          "hook": "Six senators boycotted the voting threshold session, accusing colleagues of engineering rules to eliminate a 2028 rival.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "Why do high courts that invalidate legislative impeachment articles usually fail to prevent subsequent filings on the same underlying charges?",
+          "hook": "The Supreme Court voided Duterte's 2025 impeachment, yet the House approved identical charges ten months later.",
+          "picked_by": "MMR 0.335"
+        }
+      ],
+      "trail1_dig": {
+        "usage": {
+          "prompt": 2600,
+          "tool_use_prompt": 0,
+          "output": 3092,
+          "thinking": 0,
+          "total": 5692
+        },
+        "seconds": 15.0,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "evidence_story": "Constitutional texts diverge sharply over the denominator used to tally votes for conviction in high-office impeachments. Under the United States Constitution, Article I specifies a threshold of two-thirds of the members present, meaning absent, detained, or empty seats reduce the denominator and lower the raw number of votes required to remove an official. Conversely, jurisdictions requiring a fraction of all members—such as the Philippine Constitution's mandate of two-thirds of all the members of the Senate—historically treat the full constitutional composition as the fixed baseline. In such fixed-baseline systems, any non-vote, whether caused by illness, incarceration, boycott, or an unfilled vacancy, prevents an affirmative tally and functionally operates as a vote for acquittal. \n\nHowever, parliamentary tribunals facing acute political crises have contested this arithmetic. In September 2026, the Philippine Senate impeachment tribunal voted 13–1 to overturn its traditional fixed 16-vote requirement out of 24 members. The court adopted an operational doctrine excluding four senators—who were detained on criminal charges, facing arrest warrants, or on extended medical leave—from the denominator, reducing the conviction threshold to 14. Legal challengers immediately appealed to the Supreme Court, arguing that changing the denominator rewrites constitutional text without an amendment.",
+          "evidence": [
+            "The United States Constitution calculates impeachment conviction based on two-thirds of the members present, ensuring that vacant or absent seats do not assist the defense.",
+            "Excerpts from the 1987 Philippine Constitutional Commission show framers explicitly intending two-thirds of all the members to reference the total constitutional body, making unfilled seats mathematical impediments to conviction.",
+            "On September 23, 2026, the Philippine Senate impeachment tribunal ruled 13–1 to calculate the two-thirds threshold using only senators legally and factually capable of participating.",
+            "Four Philippine senators—facing criminal detention, active arrest warrants, or medical incapacity—were excluded from the denominator, dropping the required conviction threshold from 16 votes down to 14."
+          ],
+          "interpretations": [
+            {
+              "held_by": "Textualist legal scholars",
+              "position": "hold that \"all members\" establishes an immovable baseline; failing to cast a ballot automatically aids acquittal because conviction requires affirmative supermajority concurrence across the full body."
+            },
+            {
+              "held_by": "Proponents of institutional efficacy",
+              "position": "argue that counting unreachable or incarcerated members as de facto acquittal votes paralyzes accountability and allows executive allies to block trials through strategic absence."
+            },
+            {
+              "held_by": "Constitutional framers who drafted the language",
+              "position": "maintain that supermajority bars were designed to make removals intentionally difficult, requiring a decisive absolute threshold regardless of temporary chamber shrinkage."
+            },
+            {
+              "held_by": "Petitioners before judicial review",
+              "position": "assert that redefining chamber membership during an ongoing trial amounts to an unconstitutional amendment by tribunal decree rather than proper plebiscite."
+            }
+          ],
+          "still_open": "It remains legally unresolved whether supreme courts will intervene in internal legislative trial mechanics. If high courts establish that tribunals cannot modify the denominator, empty seats permanently act as acquittals. Conversely, validating a flexible denominator raises unanswered questions about whether executive arrests of opposition legislators could manipulate the threshold for conviction.",
+          "coverage": "disputed",
+          "trails": [
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "Why would a constitution designed to hold leaders accountable grant a defensive advantage to officials when their judges are absent or detained?",
+              "hook": "Four absent senators reduced the conviction denominator from 24 to 20, shifting the required votes.",
+              "seed": "impeachment voting base all members versus members present accountability paralysis",
+              "relevance": 0.8747
+            },
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "How does the mathematical difference between counting \"members present\" versus \"all members\" reshape the tactical utility of legislative boycotts during impeachment trials?",
+              "hook": "The US Constitution requires two-thirds of attendees, whereas other charters require two-thirds of the roster.",
+              "seed": "legislative boycott quorum tactics members present constitutional threshold denominator",
+              "relevance": 0.8934
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "How have historical legislative bodies reconciled the definition of full membership when contested seats were severed by rebellion, suspension, or criminal warrants?",
+              "hook": "Andrew Johnson’s trial took place while several Southern Senate seats remained completely vacant and unrepresented.",
+              "seed": "historical senate impeachment quorum denominator vacancies reconstruction andrew johnson",
+              "relevance": 0.8309,
+              "picked_by": "MMR 0.328",
+              "rank": 4
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "At what point does a tribunal's pragmatic reinterpretation of its voting base cross the line into an informal, unratified constitutional amendment?",
+              "hook": "Challenger petitions argue that adjusting the denominator for unavailable lawmakers bypasses formal constitutional amendment mechanisms.",
+              "seed": "judicial review impeachment tribunal rules altering constitutional majority threshold",
+              "relevance": 0.8566,
+              "picked_by": "best social",
+              "rank": 3
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "How does the power to arrest sitting legislators become an existential threat to democratic checks and balances if detention lowers the conviction threshold for executive removal?",
+              "hook": "Excluding detained senators lowers the conviction bar, potentially enabling executive or rival manipulation of numbers.",
+              "seed": "executive detention of legislators altering parliamentary voting thresholds separation of powers",
+              "relevance": 0.8369,
+              "picked_by": "best experiential",
+              "rank": 2
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Which judicial arbiters ultimately decide whether a legislative chamber acts as an unreviewable court or remains subject to external constitutional oversight?",
+              "hook": "Former officials filed emergency petitions demanding high court injunctions against a legislative tribunal’s internal voting rules.",
+              "seed": "judicial review of senate impeachment trial procedures nonjusticiable political question doctrine",
+              "relevance": 0.8277
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "In parliamentary and presidential systems worldwide, how commonly do constitutions demand absolute majorities of total statutory seats rather than participating members?",
+              "hook": "Changing the baseline calculation dropped the decisive threshold for removing a high-ranking official by two whole votes.",
+              "seed": "supermajority voting denominators comparative constitutional design statutory vs sitting membership",
+              "relevance": 0.8759
+            },
+            {
+              "move": "unknowns",
+              "dimension": "semantic",
+              "question": "What evidentiary standard would a court need to distinguish between a lawmaker legitimately incapacitated by health and one boycotting proceedings for political leverage?",
+              "hook": "The tribunal ruled it would decide member incapacity case-by-case based on competent and sufficient factual evidence.",
+              "seed": "legislative quorum incapacity standard medical leave deliberate absence legal definition",
+              "relevance": 0.8364,
+              "picked_by": "best semantic",
+              "rank": 1
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "impeachment two-thirds of all the members vacancy denominator",
+          "impeachment two thirds all members denominator quorum precedents",
+          "philippines constitution two thirds of all members senate quorum vacancy"
+        ],
+        "sources_cited": 10,
+        "sources_top5": [
+          {
+            "domain": "manilatimes.net",
+            "url": "https://www.manilatimes.net/2026/09/26/opinion/columns/two-thirds-of-what-senates-great-impeachment-arithmetic-trick/2433160",
+            "cited": 7
+          },
+          {
+            "domain": "positivelyfilipino.com",
+            "url": "https://www.positivelyfilipino.com/magazine/what-does-two-thirds-of-all-members-of-the-ph-senate-mean-and-what-a-difference-two-words-make",
+            "cited": 4
+          },
+          {
+            "domain": "facebook.com",
+            "url": "https://www.facebook.com/ONENewsPH/videos/francisco-24-should-remain-the-baseline-for-impeachment-votestorycon-atty-ernest/1441131091272887/",
+            "cited": 3
+          },
+          {
+            "domain": "pna.gov.ph",
+            "url": "https://www.pna.gov.ph/articles/1284858",
+            "cited": 3
+          },
+          {
+            "domain": "senate.gov",
+            "url": "https://www.senate.gov/about/powers-procedures/impeachment.htm",
+            "cited": 2
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "trail1_candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "social": 3,
+          "semantic": 4,
+          "experiential": 1
+        },
+        "distinct_moves": 8,
+        "meets_shape": false
+      },
+      "trail1_loaded_words": [],
+      "trail1_dropped_loops": [
+        {
+          "question": "Why would a constitution designed to hold leaders accountable grant a defensive advantage to officials when their judges are absent or detained?",
+          "loop": 0.873
+        },
+        {
+          "question": "How does the mathematical difference between counting \"members present\" versus \"all members\" reshape the tactical utility of legislative boycotts during impeachment trials?",
+          "loop": 0.875
+        },
+        {
+          "question": "In parliamentary and presidential systems worldwide, how commonly do constitutions demand absolute majorities of total statutory seats rather than participating members?",
+          "loop": 0.861
+        }
+      ],
+      "trail1_shown": [
+        {
+          "rank": 1,
+          "move": "unknowns",
+          "dimension": "semantic",
+          "question": "What evidentiary standard would a court need to distinguish between a lawmaker legitimately incapacitated by health and one boycotting proceedings for political leverage?",
+          "hook": "The tribunal ruled it would decide member incapacity case-by-case based on competent and sufficient factual evidence.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How does the power to arrest sitting legislators become an existential threat to democratic checks and balances if detention lowers the conviction threshold for executive removal?",
+          "hook": "Excluding detained senators lowers the conviction bar, potentially enabling executive or rival manipulation of numbers.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "frame",
+          "dimension": "social",
+          "question": "At what point does a tribunal's pragmatic reinterpretation of its voting base cross the line into an informal, unratified constitutional amendment?",
+          "hook": "Challenger petitions argue that adjusting the denominator for unavailable lawmakers bypasses formal constitutional amendment mechanisms.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "How have historical legislative bodies reconciled the definition of full membership when contested seats were severed by rebellion, suspension, or criminal warrants?",
+          "hook": "Andrew Johnson’s trial took place while several Southern Senate seats remained completely vacant and unrepresented.",
+          "picked_by": "MMR 0.328"
+        }
+      ],
+      "token_totals": {
+        "headline": {
+          "prompt": 2577,
+          "tool_use_prompt": 0,
+          "output": 3435,
+          "thinking": 0,
+          "total": 6012
+        },
+        "trail1": {
+          "prompt": 2600,
+          "tool_use_prompt": 0,
+          "output": 3092,
+          "thinking": 0,
+          "total": 5692
+        }
+      }
+    },
+    {
+      "label": "not_breaking_news",
+      "headline": "NASA's Roman Space Telescope may now have enough fuel for at least 22 years of science",
+      "date": "2026-09-20",
+      "headline_dig": {
+        "usage": {
+          "prompt": 2589,
+          "tool_use_prompt": 0,
+          "output": 3272,
+          "thinking": 0,
+          "total": 5861
+        },
+        "seconds": 15.4,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "claim": "NASA announced that its newly launched Nancy Grace Roman Space Telescope preserved enough propellant during transit maneuvers to potentially support at least 22 years of science operations instead of its original 10-year design budget.",
+          "what_happened": "Following Roman’s August 30, 2026 launch aboard a SpaceX Falcon Heavy, orbital analysis of its August 31 mid-course trajectory correction revealed the maneuver consumed under 10% of budgeted fuel. Combined with extra fuel loaded because the spacecraft finished lighter than maximum engineering estimates, NASA projected the mission’s usable propellant lifetime could extend past 22 years.",
+          "why_now": "NASA released the fuel assessment on September 14, 2026, after mission flight dynamics teams at Goddard Space Flight Center concluded evaluations of the spacecraft's initial course-correction burn. With Roman cruising smoothly toward the Sun-Earth Lagrange point 2 (L2), engineers were able to calculate residual propellant reserves far earlier than during nominal post-insertion commissioning.",
+          "established": [
+            "Roman launched on August 30, 2026, on an orbital trajectory toward the Sun-Earth L2 Lagrange point.",
+            "The spacecraft’s baseline mission lifetime was planned for five years of primary science with a five-year potential extension, giving a 10-year fuel baseline.",
+            "The first mid-course correction burn on August 31 achieved over 99% accuracy while expending roughly 40 pounds (18 kilograms) of propellant against a 441-pound (200-kilogram) reserve budget.",
+            "Roman weighed 17,760 pounds (8,056 kilograms) at launch, well under the conservative design ceiling of 21,605 pounds (9,800 kilograms), which allowed ground crews to load additional propellant before liftoff."
+          ],
+          "contested": [
+            {
+              "held_by": "NASA Goddard leadership",
+              "position": "described the 22-year fuel milestone as an operational triumph unlocking decades of unanticipated cosmological discoveries."
+            },
+            {
+              "held_by": "Mission planners",
+              "position": "caution that fuel sufficiency does not guarantee full-mission viability, as extended operations remain contingent on future congressional budget appropriations."
+            },
+            {
+              "held_by": "Spacecraft engineers",
+              "position": "emphasize that onboard electronics, cryocoolers, solar array degradation, and reaction wheels may fail long before the fuel runs dry."
+            },
+            {
+              "held_by": "Planetary and space science observers",
+              "position": "argue that while surplus fuel enables two decades of sky surveying, deep-space micrometeorite erosion against optical components like the primary mirror may eventually degrade imaging performance regardless of propellant reserves."
+            }
+          ],
+          "left_out": "The headline emphasizes propellant as an open ticket to 22 years of science, but it leaves out the fact that Roman is not yet in its operational orbit. The estimate assumes upcoming orbital insertion burns at L2 proceed as planned, and it bypasses the reality that NASA's primary mission contract and funded timeline only guarantee operations for five years.",
+          "still_unknown": [
+            "Whether Roman will execute its subsequent orbital trim maneuvers and halo orbit insertion at L2 with matching fuel efficiency; telemetry from the final orbital insertion burns in late 2026 will settle this.",
+            "How long critical non-consumable subsystems, including the Wide-Field Instrument detectors and coronagraph mechanisms, can endure deep-space radiation without component failure; ongoing health telemetry over the 90-day commissioning window will establish baseline hardware degradation rates.",
+            "Whether future NASA budgets will fund science team operations, ground stations, and data pipeline maintenance into the late 2040s; federal appropriations across successive presidential administrations will determine actual operational longevity."
+          ],
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "How can an engineering team accidentally give a spacecraft an extra decade of life simply by designing it to be safe?",
+              "hook": "Roman launched 3,845 pounds lighter than worst-case designs, letting technicians pack bonus propellant into empty margin.",
+              "seed": "spacecraft mass margin launch vehicle propellant offload trade study",
+              "relevance": 0.863,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "Why do space agencies celebrate decades of leftover spacecraft fuel when their budgets are only approved a year at a time?",
+              "hook": "Roman has enough propellant to fire thrusters through 2048, but funding guarantees end in 2031.",
+              "seed": "NASA senior review extended mission funding process cancellation risk",
+              "relevance": 0.8382
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "What happens to a deep-space observatory when its fuel outlasts every component designed to steer it?",
+              "hook": "The Kepler space telescope lost two reaction wheels before running completely out of hydrazine thruster propellant.",
+              "seed": "reaction wheel failure space telescopes gyroscope degradation history",
+              "relevance": 0.7961
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "Even though an orbital maneuver takes minutes, how does a fraction-of-a-percent burn accuracy multiply into years of life?",
+              "hook": "Roman’s first course correction lasted only three minutes but conserved over 400 pounds of propellant.",
+              "seed": "delta-v budget station keeping halo orbit L2 propellant consumption",
+              "relevance": 0.8535,
+              "picked_by": "MMR 0.343",
+              "rank": 4
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "How does an astronomical survey change when scientists know they can observe the same field for twenty years instead of five?",
+              "hook": "Roman's camera surveys the infrared sky 100 times faster than Hubble’s primary wide-field sensors.",
+              "seed": "time-domain astronomy long baseline surveys Nancy Grace Roman Space Telescope",
+              "relevance": 0.8304,
+              "picked_by": "best experiential",
+              "rank": 2
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Who decides whether to keep operating an aging telescope when funding it means canceling an unlaunched mission?",
+              "hook": "NASA’s planetary and astrophysics divisions routinely face trade-offs between extending flagship hardware and funding new concepts.",
+              "seed": "NASA decadal survey mission priorities operational extension vs new mission cost",
+              "relevance": 0.7806
+            },
+            {
+              "move": "unknowns",
+              "dimension": "experiential",
+              "question": "What wears down first on a space telescope parked at L2 when it never runs out of gas?",
+              "hook": "Spacecraft at Lagrange point 2 endure continuous cosmic radiation and micrometeoroid impacts without Earth's magnetic shield.",
+              "seed": "Sun-Earth L2 space environment micrometeoroid damage space telescope mirrors",
+              "relevance": 0.7816
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "Why do commercial rocket launch accuracy guarantees matter more to space scientists than rocket lifting capacity?",
+              "hook": "SpaceX’s orbital insertion precision directly saved Roman nearly 90% of its planned correction maneuvers.",
+              "seed": "launch vehicle orbital injection accuracy spacecraft propellant margin savings Falcon Heavy",
+              "relevance": 0.8464,
+              "picked_by": "best social",
+              "rank": 3
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "\"Roman Space Telescope\" fuel lifetime OR \"years of science\"",
+          "\"Roman Space Telescope\" fuel \"22 years\""
+        ],
+        "sources_cited": 7,
+        "sources_top5": [
+          {
+            "domain": "nasa.gov",
+            "url": "https://science.nasa.gov/blogs/roman/2026/09/14/fuel-savings-double-potential-lifetime-for-nasas-roman-mission/",
+            "cited": 17
+          },
+          {
+            "domain": "wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/Nancy_Grace_Roman_Space_Telescope",
+            "cited": 5
+          },
+          {
+            "domain": "space.com",
+            "url": "https://www.space.com/astronomy/22-years-of-science-nasas-roman-space-telescope-doubles-its-lifetime-with-super-precise-engine-burn",
+            "cited": 5
+          },
+          {
+            "domain": "facebook.com",
+            "url": "https://www.facebook.com/museumofscience/videos/did-nasa-national-aeronautics-and-space-administrations-new-space-observatory-ju/1133304249561914/",
+            "cited": 2
+          },
+          {
+            "domain": "youtube.com",
+            "url": "https://m.youtube.com/watch?v=11B4mLESl7s",
+            "cited": 1
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "semantic": 3,
+          "social": 3,
+          "experiential": 2
+        },
+        "distinct_moves": 8,
+        "meets_shape": true
+      },
+      "loaded_words": [],
+      "shown": [
+        {
+          "rank": 1,
+          "move": "mechanism",
+          "dimension": "semantic",
+          "question": "How can an engineering team accidentally give a spacecraft an extra decade of life simply by designing it to be safe?",
+          "hook": "Roman launched 3,845 pounds lighter than worst-case designs, letting technicians pack bonus propellant into empty margin.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "stakes",
+          "dimension": "experiential",
+          "question": "How does an astronomical survey change when scientists know they can observe the same field for twenty years instead of five?",
+          "hook": "Roman's camera surveys the infrared sky 100 times faster than Hubble’s primary wide-field sensors.",
+          "picked_by": "best experiential"
+        },
+        {
+          "rank": 3,
+          "move": "frame",
+          "dimension": "social",
+          "question": "Why do commercial rocket launch accuracy guarantees matter more to space scientists than rocket lifting capacity?",
+          "hook": "SpaceX’s orbital insertion precision directly saved Roman nearly 90% of its planned correction maneuvers.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 4,
+          "move": "scale",
+          "dimension": "semantic",
+          "question": "Even though an orbital maneuver takes minutes, how does a fraction-of-a-percent burn accuracy multiply into years of life?",
+          "hook": "Roman’s first course correction lasted only three minutes but conserved over 400 pounds of propellant.",
+          "picked_by": "MMR 0.343"
+        }
+      ],
+      "trail1_dig": {
+        "usage": {
+          "prompt": 2484,
+          "tool_use_prompt": 0,
+          "output": 3060,
+          "thinking": 0,
+          "total": 5544
+        },
+        "seconds": 20.9,
+        "finish_reason": "FinishReason.STOP",
+        "result": {
+          "evidence_story": "Spacecraft mission lifespans are governed by consumable propellant rather than mechanical expiration dates. When aerospace engineers design an exploratory probe or observatory, they must protect against compounded worst-case assumptions, known as design margins. Early mission planning applies conservative mass estimates across every subsystem to absorb development growth, while navigation teams assume three-sigma launch injection errors, requiring substantial reserved fuel for post-launch correction burns. If construction yields hardware lighter than the maximum allowable weight, the unallocated mass margin allows operators to brim propellant tanks fully up to the launch vehicle’s lift capacity rather than offloading propellant. Simultaneously, modern commercial launch vehicles frequently achieve orbital injection accuracy within fractions of a percent of nominal trajectory. The combination of arriving on orbit with maximum loaded fuel and expending a sliver of the budgeted correction burn leaves an observatory with an unspent, multi-ton reserve of propulsive delta-v, quietly converting defensive margin accounting into a windfall of operational decades.",
+          "evidence": [
+            "Early design budgets for the Nancy Grace Roman Space Telescope assumed a conservative maximum spacecraft mass of 9,800 kilograms, but completed integration arrived at 8,056 kilograms, creating an unallocated mass buffer that allowed engineers to brim tanks rather than offload fuel.",
+            "NASA trajectory allocations reserved 200 kilograms of propellant for Roman's initial August 31 trajectory correction burn, but high-precision insertion by SpaceX's Falcon Heavy required only 18 kilograms.",
+            "The cumulative conversion of mass margins and trajectory reserves expanded Roman’s consumable propellant life from an initial 10-year requirement to at least 22 years.",
+            "Historic missions like the Near Earth Asteroid Rendezvous (NEAR) similarly survived catastrophic flight anomalies and achieved mission completion specifically because six kilograms of surplus launch mass margin had been converted into extra fuel."
+          ],
+          "interpretations": [
+            {
+              "held_by": "Alison Rao, NASA Goddard propulsion lead",
+              "position": "Argues that basing propellant load on maximum worst-case vehicle mass protects development programs from mass creep while intentionally creating positive operational upside if the build remains lightweight."
+            },
+            {
+              "held_by": "Spacecraft systems engineering consensus (AIAA/NASA systems standards)",
+              "position": "Holds that margin stacking is a necessary defense against the step-function costs of outgrowing a launch class, even if it inherently leads to oversized propellant tanks."
+            },
+            {
+              "held_by": "Astrodynamics specialists",
+              "position": "Attribute the lifespan windfalls primarily to modern launch guidance accuracy, arguing that trajectory margin models still reflect vintage launch vehicle dispersion statistics rather than the precision of current guidance avionics."
+            },
+            {
+              "held_by": "Mission operations analysts",
+              "position": "Note that fuel life estimates remain theoretical bounds, warning that secondary failures such as reaction wheel degradation, battery cycle limits, or optical coating erosion often kill missions long before propellant runs dry."
+            }
+          ],
+          "still_open": "Propellant reserves guarantee orbital station-keeping capability, but they do not protect against cryogenic coolant depletion, reaction wheel friction, or annual congressional operational funding cuts. Whether observatories survive long enough to utilize their fuel windfalls depends on component endurance and future institutional priorities that determine whether operating budgets are sustained.",
+          "coverage": "broad",
+          "trails": [
+            {
+              "move": "mechanism",
+              "dimension": "semantic",
+              "question": "Why do the statistical rules used to calculate rocket flight margins assume errors that guidance computers stopped making decades ago?",
+              "hook": "Roman needed only 18 kilograms of fuel where navigation models required reserving 200 kilograms.",
+              "seed": "launch vehicle 3-sigma dispersion modeling modern guidance accuracy",
+              "relevance": 0.8207
+            },
+            {
+              "move": "tension",
+              "dimension": "social",
+              "question": "How can a scientific mission secure extra operational years from fuel savings yet get turned off because ground crews cost money to run?",
+              "hook": "An observatory gained 12 bonus operating years despite having no approved operational budget beyond year ten.",
+              "seed": "NASA senior review extended mission operations funding tradeoffs",
+              "relevance": 0.8563,
+              "picked_by": "MMR 0.340",
+              "rank": 4
+            },
+            {
+              "move": "precedent",
+              "dimension": "semantic",
+              "question": "When did over-engineering a spacecraft’s fuel margins turn out to save a probe from an onboard computer catastrophe?",
+              "hook": "Six surplus kilograms of launch margin rescued the NEAR spacecraft after its primary engine abort.",
+              "seed": "NEAR Shoemaker mission abort recovery propellant margin",
+              "relevance": 0.8639,
+              "picked_by": "best semantic",
+              "rank": 1
+            },
+            {
+              "move": "frame",
+              "dimension": "social",
+              "question": "Why do launch providers and payload developers treat unused rocket lift capacity as an asset to spend differently?",
+              "hook": "Engineers brimmed the spacecraft tanks only after the final bus weighed 1,744 kilograms under budget.",
+              "seed": "spacecraft propellant offload launch vehicle performance trade study",
+              "relevance": 0.8407
+            },
+            {
+              "move": "scale",
+              "dimension": "semantic",
+              "question": "How does a one-percent decrease in a spacecraft’s structural dry mass translate into a multi-year extension in deep-space station-keeping?",
+              "hook": "Shaving 1,744 kilograms of structural estimate doubled a flagship observatory's projected operational life.",
+              "seed": "Tsiolkovsky rocket equation station keeping delta-v lifetime scaling",
+              "relevance": 0.8492
+            },
+            {
+              "move": "stakes",
+              "dimension": "experiential",
+              "question": "What changes for astronomers when a scheduled five-year survey suddenly has the consumable runway to watch the sky for a generation?",
+              "hook": "An L2 halo orbit mission design changed from a finite survey into a potential 22-year baseline.",
+              "seed": "long baseline time domain astronomy extended space missions",
+              "relevance": 0.8324
+            },
+            {
+              "move": "hidden",
+              "dimension": "social",
+              "question": "Who inside space agency budget offices determines whether an unspent propellant tank actually becomes an extended mission?",
+              "hook": "Mission propulsion teams celebrated a 22-year fuel horizon that mission directors had not requested.",
+              "seed": "NASA Planetary Science Division Senior Review process mission extension",
+              "relevance": 0.8574,
+              "picked_by": "best social",
+              "rank": 2
+            },
+            {
+              "move": "unknowns",
+              "dimension": "semantic",
+              "question": "What hardware component breaks first when a satellite carries enough fuel to outlive its designed electronic lifespan?",
+              "hook": "The telescope's propellant outlasted its original five-year instrument and reaction wheel warranty by seventeen years.",
+              "seed": "spacecraft primary mission limiting factors reaction wheel degradation battery fade",
+              "relevance": 0.8407,
+              "picked_by": "MMR 0.341",
+              "rank": 3
+            }
+          ]
+        },
+        "parse_error": null,
+        "search_queries": [
+          "spacecraft mass margin propellant offload launch vehicle performance reserve",
+          "NASA Roman Space Telescope fuel 22 years propellant offload",
+          "how spacecraft design margins lead to extended mission lifetime fuel"
+        ],
+        "sources_cited": 12,
+        "sources_top5": [
+          {
+            "domain": "nasa.gov",
+            "url": "https://science.nasa.gov/blogs/roman/2026/09/14/fuel-savings-double-potential-lifetime-for-nasas-roman-mission/",
+            "cited": 14
+          },
+          {
+            "domain": "space.com",
+            "url": "https://www.space.com/astronomy/22-years-of-science-nasas-roman-space-telescope-doubles-its-lifetime-with-super-precise-engine-burn",
+            "cited": 7
+          },
+          {
+            "domain": "businesstoday.in",
+            "url": "https://www.businesstoday.in/science/photo/how-did-nasas-roman-telescope-save-182-kg-of-fuel-in-its-first-course-correction-the-22-year-estimate-explained-555636-2026-09-15",
+            "cited": 6
+          },
+          {
+            "domain": "gitlab.io",
+            "url": "https://nanostar-project.gitlab.io/main/source/preliminary-design/systems.html",
+            "cited": 4
+          },
+          {
+            "domain": "nasa.gov",
+            "url": "https://ntrs.nasa.gov/api/citations/20090037584/downloads/20090037584.pdf",
+            "cited": 3
+          }
+        ],
+        "attempts": {
+          "research": 1,
+          "shape": 1
+        },
+        "unverified": false
+      },
+      "trail1_candidate_shape": {
+        "trail_count": 8,
+        "per_dimension": {
+          "semantic": 4,
+          "social": 3,
+          "experiential": 1
+        },
+        "distinct_moves": 8,
+        "meets_shape": false
+      },
+      "trail1_loaded_words": [],
+      "trail1_dropped_loops": [
+        {
+          "question": "How does a one-percent decrease in a spacecraft’s structural dry mass translate into a multi-year extension in deep-space station-keeping?",
+          "loop": 0.855
+        },
+        {
+          "question": "What changes for astronomers when a scheduled five-year survey suddenly has the consumable runway to watch the sky for a generation?",
+          "loop": 0.914
+        }
+      ],
+      "trail1_shown": [
+        {
+          "rank": 1,
+          "move": "precedent",
+          "dimension": "semantic",
+          "question": "When did over-engineering a spacecraft’s fuel margins turn out to save a probe from an onboard computer catastrophe?",
+          "hook": "Six surplus kilograms of launch margin rescued the NEAR spacecraft after its primary engine abort.",
+          "picked_by": "best semantic"
+        },
+        {
+          "rank": 2,
+          "move": "hidden",
+          "dimension": "social",
+          "question": "Who inside space agency budget offices determines whether an unspent propellant tank actually becomes an extended mission?",
+          "hook": "Mission propulsion teams celebrated a 22-year fuel horizon that mission directors had not requested.",
+          "picked_by": "best social"
+        },
+        {
+          "rank": 3,
+          "move": "unknowns",
+          "dimension": "semantic",
+          "question": "What hardware component breaks first when a satellite carries enough fuel to outlive its designed electronic lifespan?",
+          "hook": "The telescope's propellant outlasted its original five-year instrument and reaction wheel warranty by seventeen years.",
+          "picked_by": "MMR 0.341"
+        },
+        {
+          "rank": 4,
+          "move": "tension",
+          "dimension": "social",
+          "question": "How can a scientific mission secure extra operational years from fuel savings yet get turned off because ground crews cost money to run?",
+          "hook": "An observatory gained 12 bonus operating years despite having no approved operational budget beyond year ten.",
+          "picked_by": "MMR 0.340"
+        }
+      ],
+      "token_totals": {
+        "headline": {
+          "prompt": 2589,
+          "tool_use_prompt": 0,
+          "output": 3272,
+          "thinking": 0,
+          "total": 5861
+        },
+        "trail1": {
+          "prompt": 2484,
+          "tool_use_prompt": 0,
+          "output": 3060,
+          "thinking": 0,
+          "total": 5544
+        }
+      }
+    }
+  ],
+  "grand_total_tokens": {
+    "prompt": 20350,
+    "tool_use_prompt": 0,
+    "output": 25414,
+    "thinking": 0,
+    "total": 45764
+  }
+}

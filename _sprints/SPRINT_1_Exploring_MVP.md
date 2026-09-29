@@ -165,13 +165,20 @@ shell), bbc.com, a Substack post, a page with a sticky header. Test at browser z
       `unverified`, **at most 2 attempts per dig across all guards**, citation-marker
       stripping, loaded-word check outside attributed fields,
       shape check, and source cleanup (cited only, top 5, redirect resolved from the
-      `Location` header without following it).
+      `Location` header without following it). **Also (added v3.3): the acute-personal-crisis
+      classifier (SPEC §7.6) — a deterministic check run before research, not a prompt
+      instruction, suppressing `experiential`/Wonder trails and the whole iDIG Deeper layer
+      for content about an identifiable person's private crisis.**
 - [ ] **E5** `normalize.py` + `matcher.py`: exact → near → gray → new (SPEC §6), matching
       only `ready` digs of the same kind, freshness by kind, the insert race handled, and
       `match_type` recorded.
 - [ ] **E6** `trails.py`: batch embed, loop filter at 0.85 against the path, best per
       dimension with distinct moves, the 4th by MMR, all 8 stored with `score` and `rank`.
-      **Counts never used.**
+      **Counts never used.** If prototyping the proposed Wonder dimension this sprint (SPEC
+      §7.7, D32), its move/dimension handling is **local code in this file**, not an import
+      from or edit to `idig_logic_core` — do not touch `core/rsd.py`'s `RSDVector` or
+      `core/hcs.py`'s `DIMS`/interference-harmony math. That code is live under
+      `jobs_manager_domain`, `knowledge_center_domain`, and `recruiting_domain`.
 - [ ] **E7** `limits.py` + `supabase_writer.py` + `run.py`: per-IP daily check only before
       generating, global hourly cap, **daily token budget** (`EXPLORING_DAILY_TOKEN_BUDGET`,
       summed from today's `tokens_*` plus gray-zone calls; stop generating when reached),
@@ -251,5 +258,9 @@ _(fill in: page · zoom · crop matches? · overlay visible in crop? · notes)_
 - **Worker hosting** for production (Railway, like the Movies API server?)
 - Refresh popular stale digs ahead of demand; Turnstile if abuse appears
 - TuneAble: anonymous count signals once real data exists
+- **iDIG Deeper** (resource/commerce enrichment layer): prototyped in the extension's mock UI
+  (`extension/src/review/mockDeeper.ts`), not yet specified for the real pipeline. Must ship
+  together with the acute-personal-crisis guard (SPEC §7.6) — that guard is what makes it safe
+  to build at all.
 - **Related, separate project:** migrate Movies onto core/domains and retire its Supabase
   project. Also fix the `projectId` import bug in `useSavedFilms.ts`.

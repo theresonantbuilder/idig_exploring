@@ -1,12 +1,54 @@
-# iDIG Exploring — MVP Specification (v3.2)
+# iDIG Exploring — MVP Specification (v3.5)
 
 **Status:** Active spec. Supersedes v3, v2.1 (iDIG Summaries) and the original
 ChatGPT-drafted spec (https://chatgpt.com/share/6ab42c60-717c-83e8-9efb-1380824f8c32).
-**Revised:** 2026-09-25. **Sprint plan:** [`_sprints/SPRINT_1_Exploring_MVP.md`](_sprints/SPRINT_1_Exploring_MVP.md)
+**Revised:** 2026-09-28. **Sprint plan:** [`_sprints/SPRINT_1_Exploring_MVP.md`](_sprints/SPRINT_1_Exploring_MVP.md)
 **Evidence:** [`_experiments/`](_experiments/): exp01 (topic trails), exp02 (first question
-trails), exp03 (gemini-3.8-flash, one call vs two). Read `exp03_two_step/REPORT.md` first.
+trails), exp03 (gemini-3.8-flash, one call vs two), exp04 (claim/established/contested shape,
+validated live against the real API — see `_experiments/exp04_claims/`).
 
-### What changed in v3.2
+### What changed in v3.5
+- **Trails show an `angle` phrase, not the raw move name (D33, revises D30).** Built and
+  validated live in `dev_server/pipeline.py`: real digs now show a short, trail-specific
+  phrase ("How a database mismatch actually happens") instead of the category word
+  ("MECHANISM"). `move`/`dimension` are unchanged internally — still what `pick()` uses for
+  diversity — `angle` is a new, additional field the same call generates, display-only.
+- **Real "iDIG Deeper" pipeline built** (`pipeline.py`'s `run_deeper()`): a second grounded
+  two-call pass over the 4 shown trails, finding real, cited resources per trail (not the
+  hand-written single-headline mock). Supplementary by design — an empty/unverified result
+  never blocks the main dig from rendering.
+- **Trails carry a closed-vocabulary `pattern` tag: 25 structural/causal patterns, not
+  narrative archetypes (D35).** See §7.3a. Built specifically so D34's connector idea has an
+  explainable shared tag to match on, not just embedding similarity of free text.
+- **Trails-as-connectors, a documented future direction, not built (D34).** See §7.5.
+
+### What changed in v3.4
+- **Wonder, a proposed 4th RSD dimension, added as exploratory this-sprint-only (§7.7, D32).**
+  Non-resolving, distinct from `unknowns` (epistemic gap vs. permanent open-endedness),
+  grounded in Plato's *thaumazein*. **Built entirely inside `exploring_domain/` — nothing in
+  `idig_logic_core` is touched.** Verified by reading the actual source: `core/rsd.py`'s
+  `RSDVector` and `core/hcs.py`'s interference-harmony/stability-factor math are hardcoded to
+  exactly three dimensions, and that code is live under `jobs_manager_domain`,
+  `knowledge_center_domain`, and `recruiting_domain` — three working domains with nothing to do
+  with Exploring. Movies doesn't import `idig_logic_core` at all yet, so it was never at risk
+  either way. Promoting Wonder to core is a deliberate later decision, expected alongside the
+  planned Movies-onto-core migration, not a side effect of this sprint.
+
+### What changed in v3.3
+- **A new guard: acute personal crisis content (§7.6).** Stress-testing the trail taxonomy
+  against a real headline about a named public figure's suicide attempt surfaced a case the
+  existing Guards didn't cover: `semantic`/`social` trails about the *practice* (crisis
+  intervention, suicide-reporting standards) stay legitimate, but `experiential` trails, any
+  future Wonder-dimension trails, and — absolutely, with no exception — the resource/commerce
+  enrichment layer (working name **iDIG Deeper**, prototyped in the extension's mock UI, not
+  yet built server-side) must be suppressed for content about an identifiable person's private
+  crisis. This is specified as a deterministic code-level classifier the worker runs, not a
+  prompt instruction a model could be talked out of.
+- **AI-disclosure labeling and a real Report action, on every dig, not just `unverified` ones
+  (§5.6, §5.7).** Grounding and the `unverified` status (D27) reduce hallucination, they don't
+  eliminate it, and a reader has no way to tell a well-grounded claim from one that slipped
+  through. Every dig now shows a persistent, visible AI-disclosure line and a **[Report
+  this]** action with a real endpoint behind it, not just words next to a disclaimer.
 - **D6 reversed:** the icon is now a persistent floating launcher on every page (draggable,
   drops the toolbar-only `activeTab` trigger), not an on-click injection. That requires a
   manifest `content_scripts` entry (matching `http`/`https` pages) and `host_permissions:
@@ -100,7 +142,7 @@ Later, Exploring becomes the way into the other iDIG domains (doors, §12).
 | **Claim** | What a headline states or implies, restated in neutral words. |
 | **Trail** | A way deeper: a **question** (the enduring puzzle beneath the story) + a **hook** (a grounded fact that makes it urgent now) + a **move** + a **dimension** + a search **seed**. |
 | **Move** | The kind of question: tension, mechanism, precedent, frame, stakes, hidden, scale, unknowns (§7.3). |
-| **Dimension** | The three RSD dimensions from `idig_logic_core`: **semantic** (mechanism, precedent, scale), **experiential** (stakes, life under it), **social** (tension, frame, hidden actors). |
+| **Dimension** | The three RSD dimensions from `idig_logic_core`: **semantic** (mechanism, precedent, scale), **experiential** (stakes, life under it), **social** (tension, frame, hidden actors). *Plus a 4th under proposal, local to this domain only: **Wonder** — non-resolving, not instrumental (§7.7, D32).* |
 | **Path** | The **ordered** sequence of digs an observer follows. Order matters: reading precedent then stakes leaves a different understanding than stakes then precedent. |
 | **Archive** | The observer's own history of paths, saved automatically in IndexedDB on their device. |
 
@@ -126,7 +168,7 @@ Later, Exploring becomes the way into the other iDIG domains (doors, §12).
 | D14 | **Snips and digs are separate records. Many snips share one dig.** | Research is the expensive part, so share it (§6). |
 | D15 | **Matching ladder:** exact hash → near (embedding) → gray-zone yes/no check → new. `match_type` is recorded. | Catches rewordings without merging different events. |
 | D16 | **Three cost rules:** (1) viewing never generates; (2) generated text is the same for every observer and doesn't depend on the path; (3) generation needs a deliberate action and is rate-limited. | Cost grows with new research, not with traffic. |
-| D17 | **Trails are questions.** *(v3.1)* The research call returns **8** candidates `{move, dimension, question, hook, seed}`, at least 2 per dimension and at least 6 different moves, written to the question-craft rules (§7.3). Core shows **4**: the best per dimension, the 4th by MMR, **all 4 moves distinct**, and nothing that loops back to the path (§7.5). All 8 are stored. | exp03: question trails were far deeper than topic trails (exp01) at the same token cost. An evergreen question is reusable across headlines, and the hook makes it urgent now. |
+| D17 | **Trails are questions.** *(v3.1)* The research call returns **8** candidates `{move, dimension, pattern, angle, question, hook, seed}` *(`pattern` and `angle` added v3.5, D33/D35 — reader-facing/connector fields; see D33, D35)*, at least 2 per dimension and at least 6 different moves, written to the question-craft rules (§7.3). Core shows **4**: the best per dimension, the 4th by MMR, **all 4 moves distinct**, and nothing that loops back to the path (§7.5). All 8 are stored. | exp03: question trails were far deeper than topic trails (exp01) at the same token cost. An evergreen question is reusable across headlines, and the hook makes it urgent now. |
 | D18 | **Question digs are neutral and evergreen.** The hook, written by the parent call, carries the connection to the story. The question dig answers the question on its own terms and is cached by question, so every path that reaches the same question shares it. | Reuse across paths and headlines. The deepest digs become the most shared. |
 | D19 | **Fixed-size context:** the root headline, the path's question titles, and the question with its seed. Never earlier digs' full text. | Step six costs about what step one did (exp01: 1,891 vs 1,996 tokens). |
 | D20 | **No login. The archive is saved automatically on the device** (IndexedDB, export/import), modeled on Movies' `useSavedFilms.ts`. The extension stays stateless. | Privacy is part of the product. No friction to start. |
@@ -144,8 +186,17 @@ Later, Exploring becomes the way into the other iDIG domains (doors, §12).
 | D27 | **Search is required.** A grounded call that returns **0 search queries or 0 cited sources** is retried once. If it fails again, the dig gets status `unverified`. It's shown with a notice, never matched or reused by the cache, and re-researched on the next request. | exp03: gemini-3.x decides whether to search, and skipped it in 2 of 8 calls while still producing specific 2026 claims we couldn't verify. |
 | D28 | **The system measures its integrity, never engagement.** It tracks grounding rate, unverified rate, loaded-word flags, path diversity, and whether the payoff exceeds the hook (reviewed by a person). It **never** tracks or optimizes time on site, return visits, scroll depth or streaks (§13). | Success belongs to the observer (§0). Optimizing for reactions is exactly what destroys trust. |
 | D29 | **Any personal lens is set by the observer, on their device.** For example: "show me the history behind things," "show me how other countries see it," "push me toward what I don't usually read." It re-ranks the stored candidates in the browser. Nothing is inferred silently. History-based suggestions are only shown to the observer, and used only if they turn them on. | It serves the observer's aspirations, not their predicted impulses. The server never learns it. |
-| D30 | **Trails show why they're there.** Each shows its move ("precedent," "tension," …). **"More trails"** reveals the other stored candidates at no token cost. | Transparency is the line between invitation and manipulation. |
+| D30 | **Trails show why they're there.** *(v3.5: revised — see D33.)* ~~Each shows its move ("precedent," "tension," …).~~ **"More trails"** reveals the other stored candidates at no token cost. | Transparency is the line between invitation and manipulation. |
 | D31 | **Demo mode: only allowlisted IPs can generate.** While `EXPLORING_DEMO_MODE=on` (the default), the web app's POST routes allow new generation only from IPs in `EXPLORING_ALLOWED_IPS` (a comma-separated list; CIDR allowed, e.g. an IPv6 `/64`), plus localhost. Other visitors can open existing digs and follow **already-dug** trails, which costs nothing. Anything that would generate gets `403`. The gate **fails closed**: if the real IP can't be determined, it's blocked. | A public demo can't run up a bill faster than a Gemini budget alert can be seen. Shared links still work, so the demo can be shown to people. It's turned off only after the public limits (§8.4, §13.3) have been proven in practice. |
+| D32 | **The Wonder dimension (§7.7) is built entirely inside `exploring_domain/` this sprint — nothing in `idig_logic_core` is touched.** No new field on `core/rsd.py`'s `RSDVector`, no edit to `core/hcs.py`'s `DIMS` tuple or its interference-harmony/stability-factor math. Exploring's own dimension/move handling stays local code, not an import from core. | Verified by reading the actual source, not assuming from the design docs: `RSDVector` hardcodes exactly three fields and `validate_rsd_extraction` hardcodes that exact tuple; `hcs.py`'s "Interference Harmony" and "Stability Factor" are hand-written for exactly three pairwise comparisons (`s_emb, e_emb, soc_emb`, `/3.0` divisors), not a loop over however many dimensions exist. That shared code is live under `jobs_manager_domain`, `knowledge_center_domain`, and `recruiting_domain` today. Movies doesn't import `idig_logic_core` at all yet (confirmed: zero hits repo-wide), so it isn't at risk from an Exploring-only change — but three other working domains are, and Wonder is still unproven past two hand-built examples. Promoting Wonder to core is a deliberate, later decision — expected after this sprint's testing, timed with Paul's planned migration of Movies onto core/domains — not a side effect of building it for Exploring now. |
+
+### New in v3.5
+
+| # | Decision | Why |
+|---|---|---|
+| D33 | **Trails carry a new `angle` field — a short, trail-specific phrase (4-8 words) — shown as the visible label instead of the raw `move` name. Revises D30.** `move`/`dimension` are unchanged and still drive `pick()`'s diversity selection (§7.5); `angle` rides alongside as a sixth field in the same trail object, generated by the same call, display-only. | Showing the taxonomy word itself ("MECHANISM," "TENSION") undersold the actual question underneath it — a fixed category name can't capture what makes *this specific* trail worth following. Built and validated live: `pipeline.py`'s `QUESTION_CRAFT` now asks for the angle explicitly, with weak/strong calibration examples, and it produces genuinely specific phrases ("How a database mismatch actually happens," "Who actually makes the final call") rather than restating the move or the question. |
+| D34 | **Trails as connectors between digs — a documented future direction, not built.** When a new trail shares its `pattern` tag (D35) with a trail already stored under a *different* headline's dig, surface that as a link ("this question also came up digging into: ___"), narrowed by embedding similarity within that shared tag rather than embedding similarity alone. Needs a persistent trail store (Supabase, `exploring.trails` with `pattern` and an embedding column) and a query at dig-creation time. | This was the original premise for iDIG Exploring — "trails, doors into other domains" — not a new idea. `pick()` already embeds every candidate trail to score relevance; the raw material exists for one dig's lifetime and is currently discarded. The blocker is persistence, not the math: the current dev server (`dev_server/`) is in-memory only and has no `exploring.digs`/`exploring.trails` schema live yet (§8 describes the intended schema; it isn't provisioned). Do this after Sprint 1's real backend (Supabase, the worker, the demo gate) exists — building cross-dig matching on top of an in-memory prototype would mean rebuilding it twice. |
+| D35 | **Trails carry a closed-vocabulary `pattern` tag: one of 25 structural/causal patterns (§7.3a), not a narrative archetype.** Built now, ahead of D34, specifically so a future cross-dig connection is an explainable shared tag ("both are **Function Creep**") rather than a coincidental embedding-similarity match on free text. | Tried narrative archetypes first ("Maverick vs. The System," modeled on Movies' hand-picked trails) and rejected them: Movies' trails were hand-authored per film, but Exploring has to classify any headline automatically, and a real test case (a college-football-playoff dig) produced an angle so specific to that story's own numbers ("How 12-team math rewrites at-large bids") that it could never plausibly match a different story — which is exactly the failure D34 needs to avoid. A structural pattern names the mechanism, not the players, so it transfers: a voter-database story and a corporate-ESG story can both be **Function Creep** despite sharing nothing narratively. |
 
 ## 3. User flow
 
@@ -488,7 +539,17 @@ A trail object: `{id, move, dimension, question, hook, rank, child_dig_id, follo
 Header `X-Delete-Token: <token>`. It compares hashes, deletes the snip and decrements
 `snip_count`. The shared dig stays.
 
-### 5.6 Pages
+### 5.6 `POST /exploring/api/digs/{id}/report`
+
+A real action behind the AI-disclosure label (§5.7), not just words next to it. Body:
+`{"reason"?: "inaccurate" | "concerning" | "broken_link" | "other"}`. Response: `204`.
+Increments `report_count` on the dig (§8.1). **Not behind the demo gate (D31)** — that gate
+limits *new generation*, and flagging a problem with something already generated should never
+require allowlist access. Rate-limited per IP the same way other routes are, so reporting
+can't itself become a way to spam-hide a dig. No auto-hide in Sprint 1 — there's no moderation
+team yet, so this only needs to durably record the signal, not act on it.
+
+### 5.7 Pages
 
 | Path | What |
 |---|---|
@@ -500,6 +561,14 @@ Header `X-Delete-Token: <token>`. It compares hashes, deletes the snip and decre
 **Rendering rules:** `contested` and `interpretations` always show *who* holds each position.
 The narrator's text and attributed positions look visibly different. Open Graph previews are
 built from stored data only.
+
+**AI-disclosure label (added v3.3):** every dig — not only `unverified` ones — shows a
+persistent, visible line, not buried in a footer: *"Written by AI from real search results,
+not a human editor. Check the sources below — and tell us if something looks wrong."* An
+`unverified` dig (§5.3) gets a stronger version of the same idea, not a different one: *"We
+couldn't confirm this against search results. Treat it with care."* Both sit next to a
+**[Report this]** action (§5.6) — a disclaimer nobody can act on isn't a safeguard, it's
+decoration.
 
 ## 6. Matching and caching
 
@@ -553,7 +622,7 @@ temperature 0.4. The input is the headline, source domain and capture date.
   "left_out": "context the headline doesn't mention that changes how the claim reads, ~60 words",
   "still_unknown": ["up to 3: what isn't settled, and what evidence would settle it"],
   "coverage": "broad | thin | disputed",
-  "trails": [{"move": "…", "dimension": "…", "question": "…", "hook": "…", "seed": "…"}]
+  "trails": [{"move": "…", "dimension": "…", "pattern": "… (v3.5, D35, closed vocabulary, §7.3a)", "angle": "… (v3.5, D33)", "question": "…", "hook": "…", "seed": "…"}]
 }
 ```
 
@@ -596,6 +665,14 @@ each tied to who holds it.
 ### 7.3 Question craft (goes in the prompt)
 
 Each trail:
+- **pattern** *(added v3.5, D35):* the closest-fitting structural pattern from the fixed
+  25-item list in §7.3a — a mechanism, not a narrative label, so the model picks it
+  independent of who the story's players are. See §7.3a for the full list and rationale.
+- **angle** *(added v3.5, D33):* a short phrase, 4-8 words, shown as the trail's visible label
+  **instead of** the raw move name. Never the category word itself ("mechanism," "tension") —
+  it has to earn attention on its own, before the reader sees the question. A pull-quote
+  fragment, not a restatement of the question or the hook. Weak: "Mechanism." Strong: "How a
+  database mismatch actually happens."
 - **question:** aims at the **enduring puzzle beneath the news**. It would still be worth
   asking a year from now and could be reached from many headlines. **As long as it needs to
   be, in everyday words.** No fixed word limit.
@@ -633,6 +710,54 @@ Write **8** trails: at least 2 per dimension, at least 6 different moves.
   annihilation?" It led to Article 2(4), the ICJ's 1996 nuclear weapons opinion, and the
   Chapter VII veto problem.
 
+### 7.3a Patterns: a closed vocabulary for cross-dig connectors (added v3.5, D35)
+
+**Rejected first, and why:** the initial idea was narrative archetypes ("Maverick vs. The
+System," modeled on Movies' hand-picked trails). Movies' trails were hand-authored per film —
+Paul chose the archetype that fit a film he already knew. Exploring has no equivalent human in
+the loop; a model has to classify *any* headline automatically. A real test (a college-football
+playoff-format dig) produced an angle phrase — "How 12-team math rewrites at-large bids" — so
+specific to that story's own numbers that it could never plausibly match a different story. A
+label that only ever matches itself is worthless as a connector (D34).
+
+**The fix: name the mechanism, not the drama.** These 25 are structural/causal patterns drawn
+from economics, systems theory, statistics and sociology — established concepts, not invented
+flavor — chosen so two stories with nothing narratively in common can still share one:
+
+Function Creep (a system's scope quietly expands past its original purpose) · Teaching to the
+Test (optimizing for the measure instead of the goal it represents) · Moral Hazard (being
+shielded from consequences changes the behavior it was meant to guard against) · Survivorship
+Bias (only the outcomes that made it through get counted) · Selection Bias (the sample isn't
+representative of what it claims to describe) · Network Effect (value compounds simply because
+more people/nodes join) · Tragedy of the Commons (a shared resource degrades because no one
+owns the cost of using it) · Externality (the cost or benefit lands on someone who wasn't part
+of the decision) · Principal-Agent Problem (the person acting doesn't bear the consequences the
+person affected does) · Regulatory Capture (the overseer starts serving the overseen) · Path
+Dependency (an early, possibly arbitrary choice locks in everything downstream) · Threshold
+Effect (nothing changes until a line is crossed, then everything does) · Feedback Loop (an
+effect loops back and amplifies or dampens its own cause) · Diminishing Returns (the same input
+produces less benefit over time) · Winner-Take-All Dynamics (small early advantages compound
+into total dominance) · Information Asymmetry (one side knows something the other doesn't, and
+that gap drives the outcome) · Signal vs. Noise (what looks meaningful is statistical
+variation, or vice versa) · Compounding (small, steady effects accumulate into something large)
+· Bottleneck (the whole system's speed is set by its single slowest part) · Redundancy vs.
+Fragility (a system's backup capacity, or lack of it, determines what survives) · Lock-In
+(switching costs trap people/systems in a choice long after it stops being the best one) ·
+Free-Rider Problem (some benefit from a shared effort without contributing to it) · Diffusion
+of Responsibility (when everyone is accountable, no one is) · Margin of Error (the gap between
+a measurement and the truth becomes the whole story) · Emergent Complexity (simple rules,
+followed at scale, produce behavior nobody designed).
+
+("Goodhart's Law" was the working name for **Teaching to the Test** — renamed because the
+economics term isn't widely recognized, and the idiom carries the identical meaning without
+requiring the reader to know an economist's name.)
+
+**Validated live**, `dev_server/pipeline.py`, across two unrelated real headlines: a Philippine
+impeachment-trial dig tagged its vote-threshold trail **Threshold Effect** and its forced-
+financial-disclosure trail **Information Asymmetry** — neither forced, both immediately
+legible without reading the question first. Canonical source of the list is `PATTERNS` in
+`pipeline.py`; the copy above must be kept in sync with it.
+
 ### 7.4 Prompt rules (both kinds)
 
 - ALWAYS run Google Search before writing. Only search results count, not memory.
@@ -664,6 +789,17 @@ Write **8** trails: at least 2 per dimension, at least 6 different moves.
 **To tune later:** measure how much of the dig's meaning the chosen four cover together, not
 only relevance one by one. exp01's relevance scores bunched together at 0.80–0.87.
 
+**Future direction, not built (D34): trails as connectors between digs.** Step 1 already
+embeds every candidate trail — that embedding is only ever used within this one dig's
+selection and then discarded. The natural extension is to persist it (`exploring.trails`
+gets an embedding column) and, at dig-creation time, query for trails already stored under
+*other* headlines' digs within some cosine threshold of the new candidate. A genuine match
+becomes a visible connector — "this question also came up digging into: ___" — turning a
+trail into a door into a different story, not just a follow-up question on this one. This is
+the original premise behind "trails, doors into other domains," not a new idea; it's blocked
+on the real backend (Supabase, the worker) existing, not on the math. Building it against the
+current in-memory `dev_server/` prototype would mean redoing it once that backend lands.
+
 ### 7.6 Guards (in the worker, before anything is stored as `ready`)
 
 | Guard | Rule | On failure |
@@ -673,11 +809,99 @@ only relevance one by one. exp01's relevance scores bunched together at 0.80–0
 | Citation markers | Strip `\[\d+(\.\d+)*\]` from every text field | Fix in place |
 | Loaded words (D25) | A word list in `lexicon.py` (theatrical, grandstanding, posturing, slammed, blasted, so-called, …) checked **outside quotes and outside `held_by`/`position`** | Retry once with the hit named, then store with a `loaded_terms` flag |
 | Shape | ≥ 6 trails, ≥ 2 per dimension, and `contested`/`interpretations` present | Pick from what's there, and log it |
+| Acute personal crisis (added v3.3) | Classify before research: does this headline/question center on an identifiable, named person's private mental-health crisis or self-harm (not an institution, a system, or a public policy)? | See below — not a retry-then-error guard, a content-shape guard |
 
 **Sources:** keep only chunks cited in `grounding_supports`, rank them by citation count, keep
 the top 5. Resolve each `vertexaisearch…/grounding-api-redirect/…` URL by reading its
 `Location` header **without following it**, since those redirect links aren't permanent.
 Store `{domain, url, cited}`.
+
+**Acute personal crisis guard, in full (added v3.3):** found by stress-testing the trail
+taxonomy against a real headline about a named public figure's suicide attempt. The four
+RSD dimensions (§1 Vocabulary; a proposed fourth, Wonder, isn't built yet) aren't uniformly
+safe here:
+- `semantic` and `social` trails stay legitimate **if aimed at the practice, not the person** —
+  how crisis interventions and wellness checks actually work, what real suicide-reporting
+  standards (WHO; the AFSP's *Reporting on Suicide* recommendations) say about publishing
+  details like this and why, who decided to publish it. These don't require knowing or
+  speculating about anyone's private state.
+- `experiential` trails are suppressed outright. "What's it like to be in crisis," aimed at a
+  specific, currently-identified real person, isn't empathy — it's speculation about someone's
+  private suffering as content for strangers, however carefully worded.
+- Any future Wonder-dimension trail is suppressed outright, for the same reason one register
+  deeper: aiming *thaumazein* at a real person's suffering — making it material for strangers'
+  philosophical arrest — uses someone's worst moment without their consent.
+- **The resource/commerce enrichment layer (working name iDIG Deeper) does not run at all.**
+  No exception. This is a firm product rule, not a judgment call left to the model: recommending
+  a book, a documentary, or any purchase against content about a real person's suicide attempt
+  is unambiguously monetizing it. Right-of-publicity law (e.g. California Civil Code §3344)
+  makes this a legal exposure too, independent of the ethical one — commercial use of a real
+  person's identity without consent is close to the textbook fact pattern those claims are built
+  on.
+- This is a **deterministic classifier the worker runs**, not a system-prompt instruction. A
+  differently-worded headline can talk a model out of an instruction; it can't talk a
+  code-level gate out of running.
+- In place of trails and enrichment for content that trips this guard, the page shows a plain,
+  unmonetized pointer to the 988 Suicide & Crisis Lifeline — not a trail, not a product.
+
+### 7.7 Wonder: a proposed 4th dimension, local to this domain (added v3.4, D32)
+
+**Status: exploratory, this sprint only.** Not yet proven at pipeline scale — validated so far
+by hand-reasoning through two headlines (a Supreme Court/SAVE-database ruling, and a
+"Madden trailer sparks debate over Nicolas Cage's portrayal" story), not by an automated
+`researcher.py` prompt. Treat everything below as a working hypothesis to test this sprint,
+not a committed design the way §7.1–§7.6 are.
+
+**What it is.** The three existing RSD dimensions (§1 Vocabulary) are all instrumental — they
+help the observer navigate a situation: how it works (`semantic`), what it costs to live under
+it (`experiential`), who's saying what (`social`). Wonder is not instrumental. It doesn't
+resolve. It's distinct from `unknowns` specifically: `unknowns` is an *epistemic* gap — more
+evidence would close it. Wonder is a *permanent* open-endedness — no amount of evidence closes
+it, because the question was never really about facts.
+
+**Why "Wonder," specifically.** Grounded in Plato, not vibes: *thaumazein* — wonder — is the
+term Plato (*Theaetetus* 155d) and Aristotle (*Metaphysics* I) use for the origin of philosophy
+itself, the state of being arrested by a question you hadn't considered. Wonder isn't one
+emotional flavor (awe, or melancholy, or vertigo) — it's the structural moment of arrest, which
+can cash out as any of those depending on the story. Candidate **moves** under this dimension
+(untested): `mystery`, `melancholy`, `awe`, `vertigo`. These would sit under Wonder the way
+`tension`/`frame`/`hidden` sit under `social` — flavors of one dimension, not a dimension each.
+
+**The craft difference.** Every other move's hook performs urgency ("here's what makes this
+pressing now") — that fits, because the other 7 moves point toward evidence that can resolve
+something. A Wonder hook shouldn't perform urgency, since urgency implies movement toward
+resolution and Wonder doesn't resolve. It should make the question harder to look away from,
+not more pressing.
+
+**The reasoning technique that produced a good Wonder trail on the first try** (worth writing
+into the actual prompt when this gets built): (1) take the surface claim literally; (2) ask what
+the emotional charge is actually about underneath the literal claim; (3) look for a hidden
+structural fact that recontextualizes the surface claim — often temporal (someone is dead, time
+has passed) or "the original was already X" (the thing being compared against was itself
+constructed or mediated); (4) check for analogical resonance with a totally different register
+(physics, philosophy, an unrelated earlier story) — same abstract shape, different domain; (5)
+ground the feeling in a real, named, existing concept (a real psychological, philosophical, or
+historical term), so it stays evidence-respecting rather than inventing sentiment, keeping faith
+with D24/D25 even for a non-resolving dimension; (6) write the question with the standard craft
+rules (§7.3), with the softened, non-urgent hook described above.
+
+**Open design question, not yet settled:** how a question dig answering a Wonder trail should
+end. Not `still_unknown: what evidence would settle it` — that's the epistemic-gap ending, wrong
+register for this. Something closer to "what this leaves you sitting with," honestly presented
+as non-resolving rather than forcing a take.
+
+**Where it lives (D32): entirely inside `exploring_domain/`.** `idig_logic_core`'s `RSDVector`
+(`core/rsd.py`) and HCS scoring (`core/hcs.py`) are hardcoded to exactly three dimensions —
+verified by reading the source, not assumed — and are live under three other domains
+(`jobs_manager_domain`, `knowledge_center_domain`, `recruiting_domain`) that have nothing to do
+with Exploring. Nothing in this section touches those files. If Wonder proves out this sprint,
+promoting it to core — generalizing `hcs.py`'s pairwise interference-harmony math from three
+dimensions to however many exist — is a deliberate follow-up decision, expected to happen
+alongside Paul's planned migration of Movies onto core/domains, not before.
+
+**Interaction with §7.6:** the acute-personal-crisis guard already accounts for Wonder — any
+Wonder-dimension trail is suppressed outright for content about an identifiable person's private
+crisis, for the same reason `experiential` trails are.
 
 ## 8. Data: Supabase (core project, schema `exploring`)
 
@@ -711,6 +935,7 @@ create table exploring.digs (
   tokens_thinking int,
   snip_count      int not null default 0,
   follow_count    int not null default 0,
+  report_count    int not null default 0,   -- §5.6, no auto-hide yet, just a durable signal
   researched_at   timestamptz,
   fresh_until     timestamptz,
   created_at      timestamptz not null default now(),
@@ -893,10 +1118,16 @@ import.
   `gemini-embedding-001`, which is what the experiments used.
 - Add an MMR / diversity helper next to `cosine_similarity`.
 
-**Environment:** `iDIGcore_w_domains/.env` currently has a **placeholder** `GEMINI_API_KEY`.
-The experiments borrowed the key from `iDIG_demo_resonance-engine-with-attractor/.env`. Put a
-real key in the core `.env` before starting Phase E. Set `EXPLORING_MODEL` so the model can be
-switched without code changes.
+**Environment (revised 2026-09-27):** Exploring uses its **own dedicated key**,
+`EXPLORING_GEMINI_API_KEY`, set in the same shared `iDIGcore_w_domains/.env` file — not the
+plain `GEMINI_API_KEY` that `recruiting_domain`/`knowledge_center_domain`/`jobs_manager_domain`
+already share, and not Movies' separate `GOOGLE_API_KEY` (a different repo entirely, which
+doesn't import `idig_logic_core` — confirmed by checking, D32's finding applies to Movies'
+independence generally, not just the HCS math). Reasoning: quota/billing isolation, so an
+experimental Exploring pipeline can't eat into Hiring's or Movies' production budget or rate
+limit, and clean cost attribution per product — relevant given Paul's plan to license/sell
+these separately rather than operate them as one thing. Set `EXPLORING_MODEL` so the model
+can be switched without code changes.
 
 Production hosting of the worker is **deferred** (runs locally in Sprint 1).
 

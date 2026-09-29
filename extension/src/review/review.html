@@ -43,6 +43,20 @@
           From <span id="domain"></span>
           <a id="url" class="url" target="_blank" rel="noopener noreferrer"></a>
         </p>
+
+        <div id="manual-entry" hidden>
+          <label class="headline-label" for="headline-input">OCR couldn't read this — type the headline</label>
+          <input type="text" id="headline-input" class="headline-input" maxlength="300"
+                 placeholder="Type the headline exactly as it appears in your snip" />
+          <button type="button" id="send" class="primary send-btn">Send to iDIG</button>
+        </div>
+        <p id="ocr-debug" class="ocr-debug" hidden></p>
+
+        <div id="send-status" class="send-status" hidden></div>
+
+        <p id="dig-progress" class="dig-progress" hidden></p>
+        <a id="dig-share-link" class="dig-share-link" target="_blank" rel="noopener noreferrer" hidden>Open shareable page ↗</a>
+        <div id="capture-dig-root"></div>
       </section>
 
       <section id="history" data-panel hidden>
@@ -73,7 +87,8 @@
     </main>
 
     <footer class="actions">
-      <button id="cancel" type="button" class="secondary">Cancel</button>
+      <span id="token-counter" class="token-counter" hidden></span>
+      <button id="cancel" type="button" class="secondary">Close</button>
       <button id="save" type="button" class="primary" hidden>Save</button>
     </footer>
 

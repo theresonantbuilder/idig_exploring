@@ -8,6 +8,9 @@ import {
   type ReviewError,
 } from '../types';
 import { MOCK_DIG, type HeadlineDig, type TrailCandidate } from './mockDig';
+import { MOCK_DEEPER, type DeeperResource, type ResourceType } from './mockDeeper';
+import { sendSnip, digUrl, pollSnip, type DigApiDig, type DigApiResponse } from '../api/idig';
+import { recognize } from '../ocr/ocr';
 
 // Phase A: shows only the cropped image (sprint A7). OCR, the editable
 // headline and Send arrive in Phases B and C. History is local-only, filled
@@ -31,6 +34,10 @@ const PROBLEMS: Record<ReviewError | 'expired', { title: string; text: string }>
 const params = new URLSearchParams(location.search);
 const captureId = params.get('capture');
 let currentCapture: Capture | undefined;
+// The most recently completed real dig for this capture, if any — Save attaches it to the
+// HistoryEntry so History holds the actual research, not just the screenshot (SPEC §11:
+// History is filled only by an explicit Save, so this doesn't save on its own).
+let lastDig: DigApiDig | null = null;
 
 function $(id: string) {
   return document.getElementById(id)!;
@@ -112,12 +119,21 @@ function renderHistoryRow(entry: HistoryEntry): HTMLLIElement {
     <div class="history-full" hidden>
       <img src="${entry.image}" alt="" />
       <a class="history-link" target="_blank" rel="noopener noreferrer"></a>
+      <div class="history-dig-root"></div>
     </div>
   `;
-  li.querySelector<HTMLElement>('.history-domain')!.textContent = entry.domain;
+  li.querySelector<HTMLElement>('.history-domain')!.textContent = entry.headline ?? entry.domain;
   const link = li.querySelector<HTMLAnchorElement>('.history-link')!;
   link.href = entry.url;
   link.textContent = entry.url;
+
+  // Older entries (saved before the real pipeline existed) only ever had the crop image —
+  // `dig` is optional specifically so those still render fine with just image + link.
+  if (entry.dig) {
+    renderDig(toHeadlineDig(entry.dig as DigApiDig), li.querySelector<HTMLElement>('.history-dig-root')!, {
+      getDeeper: (t) => t.deeper,
+    });
+  }
 
   const full = li.querySelector<HTMLElement>('.history-full')!;
   li.querySelector('.history-toggle')!.addEventListener('click', () => {
@@ -223,11 +239,152 @@ $('save').addEventListener('click', async () => {
     url: currentCapture.url,
     domain: currentCapture.domain,
     savedAt: new Date().toISOString(),
+    headline: lastDig?.headline,
+    dig: lastDig ?? undefined,
   };
   await saveHistory([entry, ...(await loadHistory())]);
   await discardCapture();
   closeSelf();
 });
+
+// ---------------------------------------------------------------------------
+// Send (SPEC §4.7): real snips go to the dev server, which opens a new tab on
+// the real page once the pipeline finishes. The extension keeps nothing.
+// ---------------------------------------------------------------------------
+
+const SEND_ERROR_TEXT: Record<'network' | 'timeout' | 'server', string> = {
+  network: "Couldn't reach iDIG — is the local dev server running?",
+  timeout: 'iDIG took too long to respond.',
+  server: 'iDIG rejected this snip.',
+};
+
+// Hidden by default (SPEC's real path is snip -> OCR -> auto-render, no form to fill in) —
+// this only ever appears as a fallback, when OCR couldn't produce a usable headline or a
+// send attempt failed and the observer needs to see/fix what's about to be (re)sent.
+function revealManualEntry() {
+  $('manual-entry').hidden = false;
+}
+
+function showSendStatus(text: string, payload?: object) {
+  revealManualEntry();
+  const status = $('send-status');
+  status.textContent = '';
+  status.append(el('span', undefined, `● iDIG unavailable — ${text} `));
+  const retry = el('button', 'link', 'Retry');
+  retry.type = 'button';
+  retry.addEventListener('click', () => void sendSnipFlow());
+  status.append(retry);
+  if (payload) {
+    const copy = el('button', 'link', 'Copy payload');
+    copy.type = 'button';
+    copy.addEventListener('click', () => void navigator.clipboard.writeText(JSON.stringify(payload, null, 2)));
+    status.append(copy);
+  }
+  status.hidden = false;
+}
+
+// Running total for this panel session only (resets when the panel closes) — enough to
+// tune prompts/thresholds against real cost as you go, not a durable spend tracker.
+let sessionTokens = 0;
+function addToTokenCounter(total: number) {
+  sessionTokens += total;
+  const counter = $('token-counter');
+  counter.textContent = `${sessionTokens.toLocaleString()} tokens this session`;
+  counter.hidden = false;
+}
+
+function toHeadlineDig(dig: DigApiDig): HeadlineDig {
+  return {
+    sourceUrl: dig.source_url,
+    sourceDomain: dig.source_domain,
+    headline: dig.headline,
+    claim: dig.result.claim,
+    what_happened: dig.result.what_happened,
+    why_now: dig.result.why_now,
+    established: dig.result.established,
+    contested: dig.result.contested,
+    left_out: dig.result.left_out,
+    still_unknown: dig.result.still_unknown,
+    sources: dig.sources,
+    trails: [...dig.trails, ...dig.more_trails],
+    explorerCount: dig.explorer_count,
+  };
+}
+
+// Polls every 3s (SPEC §5.2's cadence) until the background pipeline finishes. No
+// per-poll timeout — a slow poll just tries again in 3s — but caps total wait so a
+// stuck dev server doesn't poll forever.
+async function pollUntilDone(id: string, onProgress: (status: string) => void): Promise<DigApiResponse> {
+  const MAX_ATTEMPTS = 40; // ~2 minutes
+  for (let i = 0; i < MAX_ATTEMPTS; i++) {
+    let data: DigApiResponse;
+    try {
+      data = await pollSnip(id);
+    } catch {
+      return { status: 'error', dig: null, error: "Couldn't reach iDIG while waiting for a result." };
+    }
+    if (data.status !== 'received' && data.status !== 'researching') return data;
+    onProgress(data.status);
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+  }
+  return { status: 'error', dig: null, error: 'Timed out waiting for a result.' };
+}
+
+async function sendSnipFlow() {
+  if (!currentCapture) return;
+  const headline = ($('headline-input') as HTMLInputElement).value.trim();
+  if (headline.length < 3 || headline.length > 300) {
+    return showSendStatus('Type the headline (3-300 characters) first.');
+  }
+  const sendButton = $('send') as HTMLButtonElement;
+  const progress = $('dig-progress');
+  const shareLink = $('dig-share-link') as HTMLAnchorElement;
+  sendButton.disabled = true;
+  sendButton.textContent = 'Sending…';
+  $('send-status').hidden = true;
+  shareLink.hidden = true;
+  $('capture-dig-root').replaceChildren();
+  lastDig = null;
+
+  const payload = {
+    headline,
+    source_url: currentCapture.url,
+    source_domain: currentCapture.domain,
+    captured_at: currentCapture.capturedAt,
+    source: 'idig-browser-extension' as const,
+  };
+  const result = await sendSnip(payload);
+  sendButton.disabled = false;
+  sendButton.textContent = 'Send to iDIG';
+
+  if (!result.ok) {
+    return showSendStatus(result.message ?? SEND_ERROR_TEXT[result.kind], payload);
+  }
+
+  progress.hidden = false;
+  progress.textContent = 'Researching your dig… (usually 10-20s)';
+  const data = await pollUntilDone(result.id, (status) => {
+    progress.textContent = status === 'researching' ? 'Researching your dig… (usually 10-20s)' : 'Queued…';
+  });
+
+  if (data.status === 'unverified') {
+    progress.textContent = "We couldn't confirm this against search results. Treat it with care.";
+    return;
+  }
+  if (data.status === 'error' || !data.dig) {
+    progress.hidden = true;
+    return showSendStatus(data.error ?? 'Something went wrong while researching this.', payload);
+  }
+
+  progress.hidden = true;
+  shareLink.href = digUrl(result.id, result.delete_token);
+  shareLink.hidden = false;
+  lastDig = data.dig;
+  renderDig(toHeadlineDig(data.dig), $('capture-dig-root'), { getDeeper: (t) => t.deeper });
+  addToTokenCounter(data.dig.result.usage.total);
+}
+
+$('send').addEventListener('click', () => void sendSnipFlow());
 
 // ---------------------------------------------------------------------------
 // Dig preview (mock content, laid out per SPEC §5.6/§7.1 — see mockDig.ts)
@@ -256,19 +413,103 @@ function listOf(items: string[]): HTMLUListElement {
   return ul;
 }
 
-function trailCard(trail: TrailCandidate): HTMLElement {
+const RESOURCE_TYPE_LABEL: Record<ResourceType, string> = {
+  book: 'Book',
+  course: 'Course',
+  podcast: 'Podcast',
+  video: 'Video',
+  article: 'Article',
+  exhibit: 'Exhibit',
+};
+
+// "iDIG Deeper": 2-3 resources attached under THIS trail specifically —
+// mixed sources (not only affiliate links), so it reads as genuinely useful
+// rather than a merchandising rail. See mockDeeper.ts.
+function deeperResourceItem(resource: DeeperResource): HTMLElement {
+  const item = el('li', 'deeper-item');
+  const head = el('div', 'deeper-item-head');
+  head.append(
+    el('span', `deeper-type deeper-type-${resource.type}`, RESOURCE_TYPE_LABEL[resource.type]),
+    el('span', 'deeper-title', resource.title),
+  );
+  const link = el('a', 'deeper-source', `${resource.source} ↗`);
+  link.href = resource.url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  item.append(head, el('p', 'deeper-reason', resource.reason), link);
+  return item;
+}
+
+function deeperCallout(resources: DeeperResource[] | undefined): HTMLElement | null {
+  if (!resources || resources.length === 0) return null;
+  const list = el('ul', 'deeper-list');
+  for (const resource of resources) list.append(deeperResourceItem(resource));
+  const callout = el('div', 'deeper-callout');
+  callout.append(el('div', 'deeper-label', 'iDIG Deeper'), list);
+  return callout;
+}
+
+// Mock rendering passes MOCK_DEEPER[trail.move] (hand-written for one headline, fine since
+// the Preview tab is clearly labeled mock); real digs pass trail.deeper, the real per-trail
+// resources the Deeper pipeline found for THIS specific headline (pipeline.py's run_deeper).
+function trailCard(trail: TrailCandidate, resources: DeeperResource[] | undefined): HTMLElement {
   const card = el('article', 'trail-card');
   card.append(
-    el('span', 'move-badge', trail.move),
+    el('span', 'pattern-badge', trail.pattern),
+    el('p', 'move-badge', trail.angle),
     el('p', 'trail-question', trail.question),
     el('p', 'trail-hook', trail.hook),
   );
+  const deeper = deeperCallout(resources);
+  if (deeper) card.append(deeper);
   return card;
 }
 
-function renderDig(dig: HeadlineDig) {
-  const root = $('dig-root');
+// AI-disclosure + Report (SPEC §5.6/§5.7) — a disclaimer nobody can act on
+// isn't a safeguard, it's decoration, so this pairs the text with a real
+// (if backend-less, for now) action rather than just a line of copy.
+function renderDisclosure(): HTMLElement {
+  const bar = el('div', 'ai-disclosure');
+  const text = el(
+    'p',
+    'ai-disclosure-text',
+    'Written by AI from real search results, not a human editor. Check the sources below — and tell us if something looks wrong.',
+  );
+  const reportButton = el('button', 'link ai-report-toggle', 'Report this');
+  reportButton.type = 'button';
 
+  const reasons = el('div', 'ai-report-reasons');
+  reasons.hidden = true;
+  const options: { label: string; value: string }[] = [
+    { label: 'Inaccurate', value: 'inaccurate' },
+    { label: 'Concerning', value: 'concerning' },
+    { label: 'Broken link', value: 'broken_link' },
+    { label: 'Other', value: 'other' },
+  ];
+  for (const option of options) {
+    const button = el('button', 'link ai-report-reason', option.label);
+    button.type = 'button';
+    button.addEventListener('click', () => {
+      // No backend yet (Phase D/E) — this just demonstrates the interaction.
+      reasons.replaceChildren(el('span', 'ai-report-thanks', 'Thanks — noted.'));
+    });
+    reasons.append(button);
+  }
+
+  reportButton.addEventListener('click', () => {
+    reasons.hidden = !reasons.hidden;
+  });
+
+  bar.append(text, reportButton, reasons);
+  return bar;
+}
+
+function renderDig(
+  dig: HeadlineDig,
+  root: HTMLElement,
+  options: { getDeeper?: (trail: TrailCandidate) => DeeperResource[] | undefined } = {},
+) {
+  const getDeeper = options.getDeeper ?? ((trail) => MOCK_DEEPER[trail.move]);
   const source = el('p', 'source');
   source.append('From ', el('span', undefined, dig.sourceDomain), ' ');
   const sourceLink = el('a', 'url', dig.sourceUrl);
@@ -301,12 +542,12 @@ function renderDig(dig: HeadlineDig) {
   const shown = dig.trails.filter((t) => t.rank !== null).sort((a, b) => (a.rank ?? 0) - (b.rank ?? 0));
   const hidden = dig.trails.filter((t) => t.rank === null);
   const trailList = el('div', 'trail-list');
-  for (const trail of shown) trailList.append(trailCard(trail));
+  for (const trail of shown) trailList.append(trailCard(trail, getDeeper(trail)));
 
   const moreButton = el('button', 'link', 'More trails');
   moreButton.type = 'button';
   moreButton.addEventListener('click', () => {
-    for (const trail of hidden) trailList.append(trailCard(trail));
+    for (const trail of hidden) trailList.append(trailCard(trail, getDeeper(trail)));
     moreButton.remove();
   });
 
@@ -321,6 +562,7 @@ function renderDig(dig: HeadlineDig) {
   root.replaceChildren(
     source,
     headline,
+    renderDisclosure(),
     claim,
     digBlock('What happened', el('p', undefined, dig.what_happened)),
     digBlock('Why now', el('p', undefined, dig.why_now)),
@@ -341,7 +583,7 @@ const captureTab = document.querySelector<HTMLButtonElement>('[data-tab="capture
 
 async function init() {
   await renderHistory();
-  renderDig(MOCK_DIG);
+  renderDig(MOCK_DIG, $('dig-root'));
 
   const error = params.get('error') as ReviewError | null;
   if (error && error in PROBLEMS) return showProblem(error);
@@ -367,6 +609,39 @@ async function init() {
 
   $('tabs').hidden = false;
   selectTab('capture');
+  void runOcr(capture.image);
+}
+
+// Phase B (SPEC §4.6): fills the editable headline field so there's usually nothing to
+// type — but it stays editable because OCR on small, low-contrast header text is never
+// perfectly reliable, and a wrong headline is worse than a slow one.
+async function runOcr(image: string) {
+  const input = $('headline-input') as HTMLInputElement;
+  const debug = $('ocr-debug');
+  input.disabled = true;
+  input.placeholder = 'Recognizing headline…';
+  debug.hidden = false;
+  debug.textContent = 'OCR: starting…';
+  try {
+    const { text, confidence } = await recognize(image);
+    const cleaned = text.replace(/\s+/g, ' ').trim();
+    debug.textContent = `OCR: confidence ${confidence} — raw text: ${JSON.stringify(text)}`;
+    if (cleaned.length >= 3) {
+      input.value = cleaned;
+      // OCR got something usable — go straight to the pipeline, no form, no click.
+      void sendSnipFlow();
+    } else {
+      // Too short/empty to trust — fall back to letting the observer type it themselves.
+      revealManualEntry();
+    }
+  } catch (e) {
+    // OCR failed outright — same fallback as an unusable result.
+    debug.textContent = `OCR failed: ${e instanceof Error ? `${e.name}: ${e.message}` : String(e)}`;
+    revealManualEntry();
+  } finally {
+    input.disabled = false;
+    input.placeholder = 'Type the headline exactly as it appears in your snip';
+  }
 }
 
 $('cancel').addEventListener('click', async () => {

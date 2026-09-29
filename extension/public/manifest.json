@@ -6,6 +6,9 @@
   "permissions": ["storage", "downloads"],
   "host_permissions": ["<all_urls>"],
   "background": { "service_worker": "background.js", "type": "module" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
@@ -15,7 +18,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["review/review.html", "review.js", "chunks/*", "assets/*"],
+      "resources": ["review/review.html", "review.js", "chunks/*", "assets/*", "ocr/*"],
       "matches": ["http://*/*", "https://*/*"]
     }
   ],

@@ -66,6 +66,8 @@ export const MIN_SELECTION = { width: 24, height: 12 };
 /**
  * A snip the observer chose to keep, in `chrome.storage.local` (the panel's
  * History tab). Written only by an explicit Save — Cancel never creates one.
+ * `headline`/`dig` are optional so older exported History files (saved before
+ * the real pipeline existed) still pass `isHistoryEntry` on import.
  */
 export interface HistoryEntry {
   id: string;
@@ -73,6 +75,9 @@ export interface HistoryEntry {
   url: string;
   domain: string;
   savedAt: string;
+  headline?: string;
+  /** The completed dig, if one was fetched before Save was clicked — see api/idig.ts. */
+  dig?: unknown;
 }
 
 export const HISTORY_KEY = 'idig:history';

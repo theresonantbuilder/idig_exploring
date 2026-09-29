@@ -4,17 +4,45 @@
 // Not from the real Gemini pipeline — Phase D/E doesn't exist yet. For
 // exploring the panel's layout only; see the "Preview" tab.
 
+import type { DeeperResource } from './mockDeeper';
+
 export interface ContestedEntry {
   held_by: string;
   position: string;
 }
 
+// Mirrors PATTERNS in dev_server/pipeline.py — a closed vocabulary of structural/causal
+// patterns (SPEC §7.3a, D35), deliberately NOT narrative archetypes: these name the
+// mechanism, not the drama, so two unrelated stories can share the same tag. Built ahead of
+// D34 (trails as connectors) so a future cross-dig match is an explainable shared tag,
+// rather than a fragile embedding-similarity coincidence.
+export const TRAIL_PATTERNS = [
+  'Function Creep', 'Teaching to the Test', 'Moral Hazard', 'Survivorship Bias',
+  'Selection Bias', 'Network Effect', 'Tragedy of the Commons', 'Externality',
+  'Principal-Agent Problem', 'Regulatory Capture', 'Path Dependency', 'Threshold Effect',
+  'Feedback Loop', 'Diminishing Returns', 'Winner-Take-All Dynamics',
+  'Information Asymmetry', 'Signal vs. Noise', 'Compounding', 'Bottleneck',
+  'Redundancy vs. Fragility', 'Lock-In', 'Free-Rider Problem',
+  'Diffusion of Responsibility', 'Margin of Error', 'Emergent Complexity',
+] as const;
+export type TrailPattern = (typeof TRAIL_PATTERNS)[number];
+
 export interface TrailCandidate {
   move: 'tension' | 'mechanism' | 'precedent' | 'frame' | 'stakes' | 'hidden' | 'scale' | 'unknowns';
   dimension: 'semantic' | 'experiential' | 'social';
+  /** The structural pattern this trail's question is an instance of — see TRAIL_PATTERNS. */
+  pattern: TrailPattern;
+  /** A short, trail-specific phrase (4-8 words) shown as the badge instead of `move` — the
+   *  raw category name undersold the actual question. `move`/`dimension` still drive the
+   *  diversity selection in pipeline.py's pick(); this is display-only. */
+  angle: string;
   question: string;
   hook: string;
   rank: number | null; // 1–4 shown, null = in the remaining 4 behind "More trails"
+  /** Real per-trail resources from the Deeper pipeline — absent on hidden ("more") trails
+   *  and on older History entries saved before this existed. Preview's MOCK_DIG never sets
+   *  this; its rendering falls back to MOCK_DEEPER's lookup-by-move instead (see review.ts). */
+  deeper?: DeeperResource[];
 }
 
 export interface HeadlineDig {
@@ -86,6 +114,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'tension',
       dimension: 'social',
+      pattern: 'Function Creep',
+      angle: 'A benefits database repurposed for elections',
       question: 'Why would a system built to check eligibility for public benefits end up deciding who gets to vote?',
       hook: 'SAVE was created in the 1980s to verify immigration status for benefits, not elections.',
       rank: 1,
@@ -93,6 +123,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'mechanism',
       dimension: 'semantic',
+      pattern: 'Selection Bias',
+      angle: 'How a database mismatch actually happens',
       question: 'How does matching someone’s name against a citizenship database actually produce a false positive?',
       hook: 'Missouri found about 81% of the people SAVE flagged as noncitizens were citizens once cross-checked against passport records.',
       rank: 2,
@@ -100,6 +132,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'stakes',
       dimension: 'experiential',
+      pattern: 'Externality',
+      angle: 'Being wrongly flagged days before an election',
       question: 'What actually happens to a naturalized citizen who gets wrongly flagged right before an election?',
       hook: 'Texas confirmed at least 578 of the 2,724 voters it flagged were citizens, who then had to seek reinstatement.',
       rank: 3,
@@ -107,6 +141,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'hidden',
       dimension: 'social',
+      pattern: 'Diffusion of Responsibility',
+      angle: 'Who actually makes the final call',
       question: 'Who actually decides whether a flagged voter gets removed — and can they appeal?',
       hook: 'SAVE only flags a match; county election officials, not a federal agency, decide whether to act on it.',
       rank: 4,
@@ -114,6 +150,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'precedent',
       dimension: 'semantic',
+      pattern: 'Path Dependency',
+      angle: 'A history of purges gone wrong',
       question: 'When have past attempts to purge noncitizens from voter rolls using government databases gone wrong before?',
       hook: "Florida's 2012 non-citizen voter purge was abandoned after most flagged voters turned out to be citizens.",
       rank: null,
@@ -121,6 +159,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'frame',
       dimension: 'social',
+      pattern: 'Information Asymmetry',
+      angle: 'Two names for the same policy',
       question: "How do 'election integrity' and 'voter suppression' end up describing the exact same policy?",
       hook: 'The administration calls SAVE a verification tool; challengers call it a de facto national purge system.',
       rank: null,
@@ -128,6 +168,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'scale',
       dimension: 'semantic',
+      pattern: 'Margin of Error',
+      angle: '28,635 flags against the real number',
       question: 'How does a 28,000-name flag list compare to how many noncitizens are actually estimated to vote?',
       hook: 'SAVE has flagged 28,635 potential noncitizens out of more than 65 million voters checked since May 2025.',
       rank: null,
@@ -135,6 +177,8 @@ export const MOCK_DIG: HeadlineDig = {
     {
       move: 'unknowns',
       dimension: 'experiential',
+      pattern: 'Signal vs. Noise',
+      angle: 'What proof of accuracy would even look like',
       question: 'What would it take to actually know how accurate a citizenship-verification database is before using it nationwide?',
       hook: "No state has published a full independent audit of SAVE's accuracy — only Texas's and Missouri's numbers are public.",
       rank: null,

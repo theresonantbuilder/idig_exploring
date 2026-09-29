@@ -379,9 +379,13 @@ function startSelection(onDone: (rect: SelectionRect, viewport: { width: number;
 // Docked review panel (iframe onto review.html, slides in from the right)
 // ---------------------------------------------------------------------------
 
-const DEFAULT_PANEL_WIDTH = 520; // 400 + 30%
+// Opens at a fixed default width — but the resize handle's ceiling is the
+// viewport itself (see setUpPanelResize), not a small fixed max, so it can
+// still be dragged out much further. A manual drag overrides this default
+// with a fixed px value from then on (PANEL_WIDTH_KEY) — same as the icon's
+// own remembered position.
+const DEFAULT_PANEL_WIDTH_STYLE = panelWidthStyle(520);
 const MIN_PANEL_WIDTH = 320;
-const MAX_PANEL_WIDTH = 720;
 const PANEL_WIDTH_KEY = 'idig:panelWidth';
 
 function panelWidthStyle(px: number): string {
@@ -406,30 +410,39 @@ function createPanelHost() {
       .scrim.open { background: rgba(8, 12, 20, 0.25); pointer-events: auto; }
       .panel {
         position: fixed; right: ${PANEL_RIGHT_OFFSET}px;
-        width: ${panelWidthStyle(DEFAULT_PANEL_WIDTH)};
-        border-radius: 18px; overflow: hidden;
+        width: ${DEFAULT_PANEL_WIDTH_STYLE};
+        border-radius: 18px;
         transform: translateX(calc(100% + 32px));
         transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), top 0.32s cubic-bezier(0.16, 1, 0.3, 1);
         box-shadow: 0 20px 60px rgba(8, 12, 20, 0.45), 0 0 0 1px rgba(217, 180, 90, 0.16);
         pointer-events: auto;
       }
       .panel.open { transform: translateX(0); }
+      /* Clips just the iframe to the rounded corners, so the resize notch
+         (a sibling, not a child of this) is free to poke past the edge. */
+      .panel-inner { width: 100%; height: 100%; overflow: hidden; border-radius: inherit; }
       iframe { width: 100%; height: 100%; border: 0; display: block; }
       .resize-handle {
-        position: absolute; top: 0; left: 0; width: 9px; height: 100%;
+        position: absolute; top: 0; left: -14px; width: 28px; height: 100%;
         cursor: ew-resize; touch-action: none;
+        display: flex; align-items: center; justify-content: center;
       }
-      .resize-handle::after {
-        content: ""; position: absolute; top: 50%; left: 3px; width: 3px; height: 36px;
-        transform: translateY(-50%); border-radius: 2px; background: rgba(217, 180, 90, 0);
-        transition: background 0.15s ease;
+      .resize-grip {
+        pointer-events: none; letter-spacing: 1px;
+        width: 22px; height: 44px; border-radius: 11px;
+        display: flex; align-items: center; justify-content: center;
+        background: #ffffff; box-shadow: 0 2px 8px rgba(8, 12, 20, 0.28), 0 0 0 1px rgba(20, 35, 58, 0.08);
+        color: ${GOLD}; font-size: 12px; font-weight: 700; line-height: 1;
+        opacity: 0.85; transition: opacity 0.15s ease, transform 0.15s ease;
       }
-      .resize-handle:hover::after, .resize-handle.dragging::after { background: rgba(217, 180, 90, 0.6); }
+      .resize-handle:hover .resize-grip, .resize-handle.dragging .resize-grip {
+        opacity: 1; transform: scaleX(1.12);
+      }
     </style>
     <div class="scrim"></div>
     <div class="panel">
-      <iframe title="iDIG review"></iframe>
-      <div class="resize-handle" aria-hidden="true"></div>
+      <div class="panel-inner"><iframe title="iDIG review"></iframe></div>
+      <div class="resize-handle" aria-hidden="true"><span class="resize-grip">&#10094;&#10094;</span></div>
     </div>
   `;
   attachHost(host);
@@ -470,8 +483,11 @@ function setUpPanelResize(panel: HTMLElement, handle: HTMLElement) {
   handle.addEventListener('pointermove', (event) => {
     if (!dragStart) return;
     // Dragging left (toward the page) widens the panel, which is anchored to the right edge.
+    // The ceiling is the viewport itself (minus margins), not a fixed number —
+    // otherwise a 75vw default would immediately get clamped down on a wide screen.
     const width = dragStart.width + (dragStart.pointerX - event.clientX);
-    panel.style.width = panelWidthStyle(Math.min(MAX_PANEL_WIDTH, Math.max(MIN_PANEL_WIDTH, width)));
+    const max = window.innerWidth - PANEL_MARGIN * 2;
+    panel.style.width = panelWidthStyle(Math.min(max, Math.max(MIN_PANEL_WIDTH, width)));
   });
 
   function endDrag() {
