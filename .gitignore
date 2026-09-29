@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# .env files hold real secrets (Tavily/Groq/DeepSeek keys, etc.) except the two below,
+# which only ever hold a public API origin, never a credential.
+.env
+!extension/.env.development
+!extension/.env.production

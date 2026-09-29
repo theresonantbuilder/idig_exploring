@@ -430,11 +430,13 @@ Find resources for these trails (indexed from 0):
 {trails_block}"""
 
 
-def run_deeper(client, headline: str, claim: str, shown_trails: list) -> dict:
+def run_deeper(client, headline: str, claim: str, shown_trails: list) -> tuple:
     """Real per-trail 'iDIG Deeper' resources: its own grounded two-call pass (call()), run
     after the main dig, over just the trails actually shown. Supplementary — if this comes
     back unverified or empty, the dig still renders fine with no Deeper section, so a
-    failure here never blocks the main dig."""
+    failure here never blocks the main dig. Returns (by_trail, usage) — usage is returned
+    even on failure, since the tokens were still spent on that attempt regardless of whether
+    it produced usable resources."""
     trails_block = "\n".join(
         f'{i}. [{t["move"]}] {t["question"]} (hook: {t["hook"]})' for i, t in enumerate(shown_trails)
     )
@@ -442,7 +444,7 @@ def run_deeper(client, headline: str, claim: str, shown_trails: list) -> dict:
                   DEEPER_PROMPT.format(headline=headline, claim=claim, trails_block=trails_block),
                   DEEPER_SCHEMA, "low")
     if result["unverified"] or not result["result"]:
-        return {}
+        return {}, result["usage"]
     by_trail: dict = {}
     for item in result["result"].get("resources", []):
         idx = item.get("trail_index")
@@ -455,7 +457,7 @@ def run_deeper(client, headline: str, claim: str, shown_trails: list) -> dict:
             "type": item["type"], "title": item["title"], "source": item["source"],
             "reason": item["reason"], "url": url,
         })
-    return by_trail
+    return by_trail, result["usage"]
 
 
 def run_headline_dig(client, headline: str, source_domain: str, date: str) -> dict:
@@ -476,7 +478,8 @@ def run_headline_dig(client, headline: str, source_domain: str, date: str) -> di
         c["rank"] = i
     more = [c for c in cands if c["question"] not in shown_qs]
 
-    deeper_by_index = run_deeper(client, headline, res.get("claim", ""), shown)
+    deeper_by_index, deeper_usage = run_deeper(client, headline, res.get("claim", ""), shown)
+    total_usage = {k: hdig["usage"][k] + deeper_usage[k] for k in hdig["usage"]}
 
     trails = [
         {"move": c["move"], "dimension": c["dimension"], "pattern": c["pattern"], "angle": c["angle"],
@@ -490,7 +493,7 @@ def run_headline_dig(client, headline: str, source_domain: str, date: str) -> di
 
     return {
         "unverified": False,
-        "usage": hdig["usage"],
+        "usage": total_usage,
         "claim": res.get("claim", ""),
         "what_happened": res.get("what_happened", ""),
         "why_now": res.get("why_now", ""),

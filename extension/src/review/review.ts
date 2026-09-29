@@ -265,15 +265,25 @@ function revealManualEntry() {
   $('manual-entry').hidden = false;
 }
 
-function showSendStatus(text: string, payload?: object) {
-  revealManualEntry();
-  const status = $('send-status');
+interface SendUI {
+  sendButton: HTMLButtonElement;
+  sendStatus: HTMLElement;
+  progress: HTMLElement;
+  shareLink: HTMLAnchorElement;
+  digRoot: HTMLElement;
+  /** Capture-tab only: reveals the OCR-fallback field group on failure. */
+  onError?: () => void;
+}
+
+function showSendStatusFor(ui: SendUI, retry: () => void, text: string, payload?: object) {
+  ui.onError?.();
+  const status = ui.sendStatus;
   status.textContent = '';
   status.append(el('span', undefined, `● iDIG unavailable — ${text} `));
-  const retry = el('button', 'link', 'Retry');
-  retry.type = 'button';
-  retry.addEventListener('click', () => void sendSnipFlow());
-  status.append(retry);
+  const retryButton = el('button', 'link', 'Retry');
+  retryButton.type = 'button';
+  retryButton.addEventListener('click', retry);
+  status.append(retryButton);
   if (payload) {
     const copy = el('button', 'link', 'Copy payload');
     copy.type = 'button';
@@ -330,61 +340,126 @@ async function pollUntilDone(id: string, onProgress: (status: string) => void): 
   return { status: 'error', dig: null, error: 'Timed out waiting for a result.' };
 }
 
-async function sendSnipFlow() {
-  if (!currentCapture) return;
-  const headline = ($('headline-input') as HTMLInputElement).value.trim();
-  if (headline.length < 3 || headline.length > 300) {
-    return showSendStatus('Type the headline (3-300 characters) first.');
-  }
-  const sendButton = $('send') as HTMLButtonElement;
-  const progress = $('dig-progress');
-  const shareLink = $('dig-share-link') as HTMLAnchorElement;
-  sendButton.disabled = true;
-  sendButton.textContent = 'Sending…';
-  $('send-status').hidden = true;
-  shareLink.hidden = true;
-  $('capture-dig-root').replaceChildren();
-  lastDig = null;
+async function sendFlow(
+  ui: SendUI,
+  retry: () => void,
+  headline: string,
+  source: { source_url: string; source_domain: string; captured_at: string },
+) {
+  ui.sendButton.disabled = true;
+  ui.sendButton.textContent = 'Sending…';
+  ui.sendStatus.hidden = true;
+  ui.shareLink.hidden = true;
+  ui.digRoot.replaceChildren();
 
-  const payload = {
-    headline,
-    source_url: currentCapture.url,
-    source_domain: currentCapture.domain,
-    captured_at: currentCapture.capturedAt,
-    source: 'idig-browser-extension' as const,
-  };
+  const payload = { headline, ...source, source: 'idig-browser-extension' as const };
   const result = await sendSnip(payload);
-  sendButton.disabled = false;
-  sendButton.textContent = 'Send to iDIG';
+  ui.sendButton.disabled = false;
+  ui.sendButton.textContent = 'Send to iDIG';
 
   if (!result.ok) {
-    return showSendStatus(result.message ?? SEND_ERROR_TEXT[result.kind], payload);
+    return showSendStatusFor(ui, retry, result.message ?? SEND_ERROR_TEXT[result.kind], payload);
   }
 
-  progress.hidden = false;
-  progress.textContent = 'Researching your dig… (usually 10-20s)';
+  ui.progress.hidden = false;
+  ui.progress.textContent = 'Researching your dig… (usually 10-20s)';
   const data = await pollUntilDone(result.id, (status) => {
-    progress.textContent = status === 'researching' ? 'Researching your dig… (usually 10-20s)' : 'Queued…';
+    ui.progress.textContent = status === 'researching' ? 'Researching your dig… (usually 10-20s)' : 'Queued…';
   });
 
   if (data.status === 'unverified') {
-    progress.textContent = "We couldn't confirm this against search results. Treat it with care.";
+    ui.progress.textContent = "We couldn't confirm this against search results. Treat it with care.";
     return;
   }
   if (data.status === 'error' || !data.dig) {
-    progress.hidden = true;
-    return showSendStatus(data.error ?? 'Something went wrong while researching this.', payload);
+    ui.progress.hidden = true;
+    return showSendStatusFor(ui, retry, data.error ?? 'Something went wrong while researching this.', payload);
   }
 
-  progress.hidden = true;
-  shareLink.href = digUrl(result.id, result.delete_token);
-  shareLink.hidden = false;
-  lastDig = data.dig;
-  renderDig(toHeadlineDig(data.dig), $('capture-dig-root'), { getDeeper: (t) => t.deeper });
+  ui.progress.hidden = true;
+  ui.shareLink.href = digUrl(result.id, result.delete_token);
+  ui.shareLink.hidden = false;
+  renderDig(toHeadlineDig(data.dig), ui.digRoot, { getDeeper: (t) => t.deeper });
   addToTokenCounter(data.dig.result.usage.total);
+  return data.dig;
 }
 
-$('send').addEventListener('click', () => void sendSnipFlow());
+const captureUI: SendUI = {
+  sendButton: $('send') as HTMLButtonElement,
+  sendStatus: $('send-status'),
+  progress: $('dig-progress'),
+  shareLink: $('dig-share-link') as HTMLAnchorElement,
+  digRoot: $('capture-dig-root'),
+  onError: revealManualEntry,
+};
+
+async function captureSendClick() {
+  if (!currentCapture) return;
+  const headline = ($('headline-input') as HTMLInputElement).value.trim();
+  if (headline.length < 3 || headline.length > 300) {
+    return showSendStatusFor(captureUI, captureSendClick, 'Type the headline (3-300 characters) first.');
+  }
+  lastDig = null;
+  lastDig =
+    (await sendFlow(captureUI, captureSendClick, headline, {
+      source_url: currentCapture.url,
+      source_domain: currentCapture.domain,
+      captured_at: currentCapture.capturedAt,
+    })) ?? null;
+}
+
+$('send').addEventListener('click', () => void captureSendClick());
+
+// Query tab (no snip needed — SPEC direction 2026-09-29: an observer who just wants to type
+// or paste a headline, with nowhere to snip from, shouldn't need one).
+const queryUI: SendUI = {
+  sendButton: $('query-send') as HTMLButtonElement,
+  sendStatus: $('query-send-status'),
+  progress: $('query-progress'),
+  shareLink: $('query-share-link') as HTMLAnchorElement,
+  digRoot: $('query-dig-root'),
+};
+
+// Accepts a bare domain/URL pasted without a scheme (e.g. "nasa.gov" or
+// "washingtonpost.com/article...") by retrying with https:// prepended, rather than
+// rejecting anything that isn't already a fully-qualified URL.
+function parseSourceUrl(raw: string): string | null {
+  if (!raw) return null;
+  try {
+    return new URL(raw).href;
+  } catch {
+    // fall through to the https:// retry below
+  }
+  try {
+    return new URL(`https://${raw}`).href;
+  } catch {
+    return null;
+  }
+}
+
+async function querySendClick() {
+  const headline = ($('query-headline-input') as HTMLInputElement).value.trim();
+  const rawSource = ($('query-url-input') as HTMLInputElement).value.trim();
+  if (headline.length < 3 || headline.length > 300) {
+    return showSendStatusFor(queryUI, querySendClick, 'Type the headline (3-300 characters) first.');
+  }
+  if (!rawSource) {
+    return showSendStatusFor(queryUI, querySendClick, 'Say where you saw this — paste a URL, or just describe it.');
+  }
+  // If it parses as a URL (with the https:// retry above), use it as a real, clickable
+  // source. Otherwise treat the whole thing as a plain description ("a friend told me",
+  // "NPR broadcast") — source_url stays empty rather than forcing a fake link.
+  const parsedUrl = parseSourceUrl(rawSource);
+  const source = parsedUrl
+    ? { source_url: parsedUrl, source_domain: new URL(parsedUrl).hostname.replace(/^www\./, '') }
+    : { source_url: '', source_domain: rawSource.slice(0, 100) };
+  await sendFlow(queryUI, querySendClick, headline, {
+    ...source,
+    captured_at: new Date().toISOString(),
+  });
+}
+
+$('query-send').addEventListener('click', () => void querySendClick());
 
 // ---------------------------------------------------------------------------
 // Dig preview (mock content, laid out per SPEC §5.6/§7.1 — see mockDig.ts)
@@ -511,12 +586,15 @@ function renderDig(
 ) {
   const getDeeper = options.getDeeper ?? ((trail) => MOCK_DEEPER[trail.move]);
   const source = el('p', 'source');
-  source.append('From ', el('span', undefined, dig.sourceDomain), ' ');
-  const sourceLink = el('a', 'url', dig.sourceUrl);
-  sourceLink.href = dig.sourceUrl;
-  sourceLink.target = '_blank';
-  sourceLink.rel = 'noopener noreferrer';
-  source.append(sourceLink);
+  source.append('From ', el('span', undefined, dig.sourceDomain));
+  // A plain-text source (no real URL — see querySendClick) has nothing to link to.
+  if (dig.sourceUrl) {
+    const sourceLink = el('a', 'url', dig.sourceUrl);
+    sourceLink.href = dig.sourceUrl;
+    sourceLink.target = '_blank';
+    sourceLink.rel = 'noopener noreferrer';
+    source.append(' ', sourceLink);
+  }
 
   const headline = el('h1', 'dig-headline', dig.headline);
   const claim = el('p', 'dig-claim', dig.claim);
@@ -588,12 +666,14 @@ async function init() {
   const error = params.get('error') as ReviewError | null;
   if (error && error in PROBLEMS) return showProblem(error);
 
-  // Opened directly from the launcher icon, with nothing snipped yet — just
-  // browsing. There's no "expired" error here; nothing was ever pending.
+  // Opened directly from the launcher icon, with nothing snipped yet. Defaults to Query
+  // (SPEC direction 2026-09-29) rather than History, since typing a headline is now the
+  // primary thing to do with no active capture — there's no "expired" error here either,
+  // since nothing was ever pending.
   if (!captureId) {
     captureTab.hidden = true;
     $('tabs').hidden = false;
-    selectTab('history');
+    selectTab('query');
     return;
   }
 
@@ -629,7 +709,7 @@ async function runOcr(image: string) {
     if (cleaned.length >= 3) {
       input.value = cleaned;
       // OCR got something usable — go straight to the pipeline, no form, no click.
-      void sendSnipFlow();
+      void captureSendClick();
     } else {
       // Too short/empty to trust — fall back to letting the observer type it themselves.
       revealManualEntry();

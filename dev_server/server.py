@@ -64,9 +64,15 @@ def _validate(body: dict) -> str | None:
     headline = (body.get("headline") or "").strip()
     if not (3 <= len(headline) <= 300):
         return "headline must be 3-300 characters"
+    # source_url is optional — the Query tab lets an observer describe where they saw a
+    # headline in plain text ("a friend told me") instead of requiring a real link. When
+    # given, it must still be a real http(s) URL; when omitted, source_domain (the
+    # description) is what's shown instead of a clickable source.
     url = body.get("source_url") or ""
-    if not re.match(r"^https?://", url) or len(url) > 2048:
+    if url and (not re.match(r"^https?://", url) or len(url) > 2048):
         return "source_url must be http(s) and ≤ 2048 chars"
+    if not (body.get("source_domain") or "").strip():
+        return "source_domain (a URL's domain, or a plain description) is required"
     if body.get("source") not in ALLOWED_SOURCES:
         return "source not allowed"
     return None
@@ -115,8 +121,11 @@ function render(dig) {{
   const contested = r.contested.map(c => `<div class="contested"><span class="held-by">${{esc(c.held_by)}}</span>${{esc(c.position)}}</div>`).join('');
   const sources = dig.sources.map(s => `<li><a href="${{s.url}}" target="_blank" rel="noopener noreferrer">${{esc(s.title)}}</a></li>`).join('');
   const trail = (t) => `<div class="trail"><span class="move">${{esc(t.move)}}</span><p><strong>${{esc(t.question)}}</strong></p><p class="muted">${{esc(t.hook)}}</p></div>`;
+  const sourceLine = dig.source_url
+    ? `From ${{esc(dig.source_domain)}} — <a href="${{dig.source_url}}" target="_blank" rel="noopener noreferrer">${{esc(dig.source_url)}}</a>`
+    : `From ${{esc(dig.source_domain)}}`;
   document.getElementById('root').innerHTML = `
-    <p class="muted">From ${{esc(dig.source_domain)}} — <a href="${{dig.source_url}}" target="_blank" rel="noopener noreferrer">${{esc(dig.source_url)}}</a></p>
+    <p class="muted">${{sourceLine}}</p>
     <h1>${{esc(dig.headline)}}</h1>
     <p class="claim">${{esc(r.claim)}}</p>
     <h2>What happened</h2><p>${{esc(r.what_happened)}}</p>

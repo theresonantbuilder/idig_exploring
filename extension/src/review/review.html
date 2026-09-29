@@ -14,6 +14,7 @@
 
     <nav class="tabs" id="tabs" role="tablist" hidden>
       <button type="button" class="tab" data-tab="capture" role="tab" aria-selected="true">Snip</button>
+      <button type="button" class="tab" data-tab="query" role="tab" aria-selected="false">Query</button>
       <button type="button" class="tab" data-tab="history" role="tab" aria-selected="false">History</button>
       <button type="button" class="tab" data-tab="preview" role="tab" aria-selected="false">Preview</button>
       <div class="tab-actions">
@@ -57,6 +58,26 @@
         <p id="dig-progress" class="dig-progress" hidden></p>
         <a id="dig-share-link" class="dig-share-link" target="_blank" rel="noopener noreferrer" hidden>Open shareable page ↗</a>
         <div id="capture-dig-root"></div>
+      </section>
+
+      <section id="query" data-panel hidden>
+        <h1>Type a headline</h1>
+        <p class="empty">No snip needed — paste or type a headline and where you saw it.</p>
+
+        <label class="headline-label" for="query-headline-input">Headline</label>
+        <input type="text" id="query-headline-input" class="headline-input" maxlength="300"
+               placeholder="Type or paste the headline" />
+
+        <label class="headline-label" for="query-url-input">Source</label>
+        <input type="text" id="query-url-input" class="headline-input" maxlength="2048"
+               placeholder="A URL, or just describe where you saw it" />
+
+        <button type="button" id="query-send" class="primary send-btn">Send to iDIG</button>
+
+        <div id="query-send-status" class="send-status" hidden></div>
+        <p id="query-progress" class="dig-progress" hidden></p>
+        <a id="query-share-link" class="dig-share-link" target="_blank" rel="noopener noreferrer" hidden>Open shareable page ↗</a>
+        <div id="query-dig-root"></div>
       </section>
 
       <section id="history" data-panel hidden>
